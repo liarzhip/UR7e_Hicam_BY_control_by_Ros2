@@ -1,0 +1,4 @@
+u,v,x,y
+# Replace the rows below with REAL measured correspondences.
+# u,v are image pixels; x,y are UR base-frame coordinates in meters.
+# Example format only -- do not calibrate with invented data.

@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-08-04T15:58:21",
+  "feature_dimension": 1782,
+  "sample_count": 100,
+  "class_count": 2,
+  "class_counts": {
+    "螺栓": 57,
+    "螺母": 43
+  },
+  "svm_type": "C_SVC",
+  "svm_kernel": "LINEAR",
+  "svm_c": 1.0,
+  "feature_signature": {
+    "patch_size": 128,
+    "patch_padding_ratio": 0.12,
+    "hog_win_size": [
+      128,
+      128
+    ],
+    "hog_block_size": [
+      32,
+      32
+    ],
+    "hog_block_stride": [
+      16,
+      16
+    ],
+    "hog_cell_size": [
+      16,
+      16
+    ],
+    "hog_bins": 9,
+    "extra_feature_names": [
+      "area_ratio",
+      "aspect_ratio",
+      "perimeter_normalized",
+      "circularity",
+      "rectangularity",
+      "solidity",
+      "extent",
+      "vertex_count_normalized",
+      "gray_mean",
+      "gray_std",
+      "edge_density",
+      "hu_1",
+      "hu_2",
+      "hu_3",
+      "hu_4",
+      "hu_5",
+      "hu_6",
+      "hu_7"
+    ]
+  }
+}

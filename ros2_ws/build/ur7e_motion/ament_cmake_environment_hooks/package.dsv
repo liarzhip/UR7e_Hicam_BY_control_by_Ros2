@@ -1,0 +1,4 @@
+source;share/ur7e_motion/local_setup.bash
+source;share/ur7e_motion/local_setup.dsv
+source;share/ur7e_motion/local_setup.sh
+source;share/ur7e_motion/local_setup.zsh

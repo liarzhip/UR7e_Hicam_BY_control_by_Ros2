@@ -1,0 +1,31 @@
+running develop
+running egg_info
+creating ur7e_vision.egg-info
+writing ur7e_vision.egg-info/PKG-INFO
+writing dependency_links to ur7e_vision.egg-info/dependency_links.txt
+writing entry points to ur7e_vision.egg-info/entry_points.txt
+writing requirements to ur7e_vision.egg-info/requires.txt
+writing top-level names to ur7e_vision.egg-info/top_level.txt
+writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)
+Installing hik_camera_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+Installing svm_detector_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+
+Installed /home/liar/UR7e/ros2_ws/build/ur7e_vision
+running symlink_data
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/resource/ur7e_vision -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/package.xml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/launch/vision.launch.py -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/labels.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/vision.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/homography.yaml.example -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/pixel_base_points.csv -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration

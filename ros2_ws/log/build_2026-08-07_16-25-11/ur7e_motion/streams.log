@@ -1,0 +1,17 @@
+[0.068s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/liar/UR7e/ros2_ws/src/ur7e_motion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion
+[0.202s] [31mCMake Error at CMakeLists.txt:1 (cmake_minimum_rxequired):
+[0.203s]   Unknown CMake command "cmake_minimum_rxequired".
+[0.207s] 
+[0.209s] [0m
+[0.209s] [33mCMake Warning (dev) in CMakeLists.txt:
+[0.209s]   No cmake_minimum_required command is present.  A line of code such as
+[0.210s] 
+[0.210s]     cmake_minimum_required(VERSION 3.28)
+[0.211s] 
+[0.212s]   should be added at the top of the file.  The version specified may be lower
+[0.212s]   if you wish to support older CMake versions for this project.  For more
+[0.213s]   information run "cmake --help-policy CMP0000".
+[0.213s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.214s] [0m
+[0.214s] -- Configuring incomplete, errors occurred!
+[0.218s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/liar/UR7e/ros2_ws/src/ur7e_motion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion

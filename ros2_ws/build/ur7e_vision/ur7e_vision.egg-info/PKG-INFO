@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: ur7e-vision
+Version: 0.1.0
+Summary: HIKROBOT vision nodes for UR7e visual manipulation
+Maintainer: liar
+Maintainer-email: liar@example.com
+License: Apache-2.0

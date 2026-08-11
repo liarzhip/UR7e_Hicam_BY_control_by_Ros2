@@ -1,0 +1,86 @@
+[0.072s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/liar/UR7e/ros2_ws/src/ur7e_motion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion
+[0.900s] -- The C compiler identification is GNU 13.3.0
+[1.525s] -- The CXX compiler identification is GNU 13.3.0
+[1.736s] -- Detecting C compiler ABI info
+[2.815s] -- Detecting C compiler ABI info - done
+[2.860s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.863s] -- Detecting C compile features
+[2.866s] -- Detecting C compile features - done
+[3.005s] -- Detecting CXX compiler ABI info
+[3.870s] -- Detecting CXX compiler ABI info - done
+[3.890s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.893s] -- Detecting CXX compile features
+[3.897s] -- Detecting CXX compile features - done
+[3.940s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[4.621s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[5.021s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.336s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[5.585s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[5.672s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[5.750s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.888s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.267s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[6.284s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[6.745s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[6.813s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[6.919s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[7.401s] -- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[7.612s] -- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)
+[7.710s] -- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+[8.495s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+[9.817s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[10.183s] -- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[10.301s] [0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):
+[10.303s]   Package 'tl_expected' is deprecated (This package will be removed in ROS 2
+[10.303s]   Lyrical Luth.
+[10.303s] 
+[10.304s]         Use tl/expected.hpp from libexpected-dev,
+[10.307s]         or rcpputils/tl_expected/expected.hpp if the system header is not available)
+[10.308s] Call Stack (most recent call first):
+[10.309s]   /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[10.313s]   /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)
+[10.313s]   /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)
+[10.314s]   /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)
+[10.322s]   /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[10.322s]   /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)
+[10.323s]   /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[10.324s]   /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)
+[10.325s]   CMakeLists.txt:18 (find_package)
+[10.326s] 
+[10.326s] [0m
+[10.346s] -- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[10.814s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[10.815s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[11.657s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[11.814s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+[11.904s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+[12.292s] -- Configuring done (12.1s)
+[12.580s] -- Generating done (0.2s)
+[12.628s] -- Build files have been written to: /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[12.707s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/liar/UR7e/ros2_ws/src/ur7e_motion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion
+[12.712s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j4 -l4
+[12.999s] [ 50%] [32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o[0m
+[59.613s] [100%] [32m[1mLinking CXX executable target_motion_node[0m
+[63.267s] [100%] Built target target_motion_node
+[63.331s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j4 -l4
+[63.414s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[63.450s] -- Install configuration: ""
+[63.451s] -- Execute custom install script
+[63.453s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+[63.497s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
+[63.540s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion
+[63.582s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion
+[63.626s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh
+[63.660s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv
+[63.702s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh
+[63.745s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv
+[63.794s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash
+[63.839s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh
+[63.883s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh
+[63.927s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv
+[63.968s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv
+[64.010s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion
+[64.053s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake
+[64.093s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake
+[64.131s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml
+[64.182s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion

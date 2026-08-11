@@ -1,0 +1,14 @@
+target_motion_node:
+  ros__parameters:
+
+    planning_group: "ur_manipulator"
+
+    # 目标上方10 cm
+    pregrasp_offset_z: 0.10
+
+    # 第一次测试非常慢
+    velocity_scale: 0.05
+
+    acceleration_scale: 0.05
+
+    planning_time: 5.0
