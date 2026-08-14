@@ -1,0 +1,3 @@
+[console_scripts]
+hik_camera_node = ur7e_vision.hik_camera_node:main
+svm_detector_node = ur7e_vision.svm_detector_node:main

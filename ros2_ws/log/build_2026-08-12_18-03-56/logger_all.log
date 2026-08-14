@@ -1,0 +1,180 @@
+[0.101s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'ur7e_motion', '--symlink-install']
+[0.101s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['ur7e_motion'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b1d7f191160>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b1d7f190d70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b1d7f190d70>>, mixin_verb=('build',))
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.146s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/liar/UR7e/ros2_ws'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'ignore'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'ros'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['cmake', 'python']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'cmake'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'python'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extensions ['python_setup_py']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_bringup) by extension 'python_setup_py'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'ros'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['cmake', 'python']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'cmake'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'python'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extensions ['python_setup_py']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_cell_description) by extension 'python_setup_py'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_motion) by extension 'ros'
+[0.175s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur7e_motion' with type 'ros.ament_cmake' and name 'ur7e_motion'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extension 'ignore'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extension 'ignore_ament_install'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extensions ['colcon_pkg']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extension 'colcon_pkg'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extensions ['colcon_meta']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extension 'colcon_meta'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extensions ['ros']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur7e_vision) by extension 'ros'
+[0.177s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur7e_vision' with type 'ros.ament_python' and name 'ur7e_vision'
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.193s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ur7e_vision' in 'src/ur7e_vision'
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.195s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/liar/UR7e/ros2_ws/install
+[0.196s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 379 installed packages in /opt/ros/jazzy
+[0.198s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ur7e_motion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'ur7e_motion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/liar/UR7e/ros2_ws/install/ur7e_motion', 'merge_install': False, 'path': '/home/liar/UR7e/ros2_ws/src/ur7e_motion', 'symlink_install': True, 'test_result_base': None}
+[0.239s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.240s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.240s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/liar/UR7e/ros2_ws/src/ur7e_motion' with build type 'ament_cmake'
+[0.240s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/liar/UR7e/ros2_ws/src/ur7e_motion'
+[0.243s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.243s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.243s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.257s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[10.740s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[10.754s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[10.784s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur7e_motion)
+[10.785s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[10.788s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion' for CMake module files
+[10.789s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion' for CMake config files
+[10.789s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur7e_motion', 'cmake_prefix_path')
+[10.789s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.ps1'
+[10.790s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.dsv'
+[10.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.sh'
+[10.792s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib'
+[10.793s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/bin'
+[10.793s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/pkgconfig/ur7e_motion.pc'
+[10.793s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/python3.12/site-packages'
+[10.794s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/bin'
+[10.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.ps1'
+[10.795s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv'
+[10.796s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.sh'
+[10.796s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.bash'
+[10.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.zsh'
+[10.798s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/colcon-core/packages/ur7e_motion)
+[10.799s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur7e_motion)
+[10.800s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion' for CMake module files
+[10.800s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion' for CMake config files
+[10.801s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur7e_motion', 'cmake_prefix_path')
+[10.801s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.ps1'
+[10.802s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.dsv'
+[10.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/hook/cmake_prefix_path.sh'
+[10.804s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib'
+[10.804s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/bin'
+[10.804s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/pkgconfig/ur7e_motion.pc'
+[10.804s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/python3.12/site-packages'
+[10.805s] Level 1:colcon.colcon_core.environment:checking '/home/liar/UR7e/ros2_ws/install/ur7e_motion/bin'
+[10.805s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.ps1'
+[10.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv'
+[10.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.sh'
+[10.809s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.bash'
+[10.810s] INFO:colcon.colcon_core.shell:Creating package script '/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.zsh'
+[10.811s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/liar/UR7e/ros2_ws/install/ur7e_motion/share/colcon-core/packages/ur7e_motion)
+[10.813s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[10.813s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[10.813s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[10.814s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[10.819s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[10.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[10.820s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[10.854s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[10.855s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/liar/UR7e/ros2_ws/install/local_setup.ps1'
+[10.859s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/liar/UR7e/ros2_ws/install/_local_setup_util_ps1.py'
+[10.863s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/liar/UR7e/ros2_ws/install/setup.ps1'
+[10.867s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/liar/UR7e/ros2_ws/install/local_setup.sh'
+[10.871s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/liar/UR7e/ros2_ws/install/_local_setup_util_sh.py'
+[10.879s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/liar/UR7e/ros2_ws/install/setup.sh'
+[10.886s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/liar/UR7e/ros2_ws/install/local_setup.bash'
+[10.891s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/liar/UR7e/ros2_ws/install/setup.bash'
+[10.894s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/liar/UR7e/ros2_ws/install/local_setup.zsh'
+[10.897s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/liar/UR7e/ros2_ws/install/setup.zsh'

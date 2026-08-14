@@ -1,6 +1,8 @@
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/uninstall.dir
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/ur7e_motion_uninstall.dir
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/target_motion_node.dir
+/home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/gripper_io_node.dir
+/home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/pick_task_node.dir
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/test.dir
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/edit_cache.dir
 /home/liar/UR7e/ros2_ws/build/ur7e_motion/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,6 @@
 /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node
+/home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/pick_task_node
 /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
 /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion
 /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion

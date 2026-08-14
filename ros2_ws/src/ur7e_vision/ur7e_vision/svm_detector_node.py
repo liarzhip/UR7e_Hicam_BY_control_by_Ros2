@@ -23,7 +23,7 @@ from ur7e_vision.traditional_svm import (
 )
 
 
-def normalize_rect_angle(rect):
+def normalize_rect_angle(rect): # 归一化角度
     """
     Return an approximately [-90, 90) in-plane angle.
     OpenCV minAreaRect angle convention changes with rectangle side ordering.
@@ -38,7 +38,7 @@ def normalize_rect_angle(rect):
     return float(angle)
 
 
-def quaternion_normalize(q):
+def quaternion_normalize(q): # 
     q = np.asarray(q, dtype=np.float64)
     n = np.linalg.norm(q)
     if n < 1e-12:
@@ -73,10 +73,10 @@ class SvmDetectorNode(Node):
         # ============================================================
         # ROS topics
         # ============================================================
-        self.declare_parameter("image_topic", "/hik_camera/image_raw")
-        self.declare_parameter("debug_topic", "/vision/debug_image")
-        self.declare_parameter("target_pose_topic", "/vision/target_pose")
-        self.declare_parameter("target_class_topic", "/vision/target_class")
+        self.declare_parameter("image_topic", "/hik_camera/image_raw") # 订阅的图像话题
+        self.declare_parameter("debug_topic", "/vision/debug_image") # 发布的调试图像话题
+        self.declare_parameter("target_pose_topic", "/vision/target_pose") # 发布的目标位姿话题
+        self.declare_parameter("target_class_topic", "/vision/target_class") # 发布的目标类别话题
 
         # ============================================================
         # SVM model parameters
@@ -126,7 +126,7 @@ class SvmDetectorNode(Node):
         # ============================================================
         # Robot target parameters
         # ============================================================
-        self.declare_parameter("target_z", -999.0)
+        self.declare_parameter("target_z", 0.165)
         self.declare_parameter("target_frame", "base")
 
         self.declare_parameter("fixed_qx", 0.995)
@@ -495,6 +495,31 @@ class SvmDetectorNode(Node):
         )
 
     def is_stable(self, u, v):
+        """
+        收集连续 stable_frames 帧目标中心，并计算平均坐标。
+
+        返回：
+            ready:
+                是否已经收集满 stable_frames 帧。
+
+            stable:
+                True  = 所有样本相对平均中心的最大偏差
+                        <= stable_pixel_tolerance。
+                False = 已收集满，但波动超过阈值。
+
+            center:
+                stable_frames 帧的平均像素坐标 [u_mean, v_mean]。
+                未收集满时返回 None。
+
+            max_dev:
+                stable_frames 帧中距离平均中心最大的像素距离。
+                未收集满时返回 None。
+
+        注意：
+            stable=False 不再阻止最终位姿发布。
+            当收集满 stable_frames 帧以后，无论 stable True/False，
+            都会使用平均坐标进行后续定位。
+        """
         self.stable_history.append(
             np.array(
                 [u, v],
@@ -502,26 +527,48 @@ class SvmDetectorNode(Node):
             )
         )
 
+        # 正常情况下 HIK 节点每轮正好发布 stable_frames 帧。
+        # 这里仍保留滑动窗口保护。
         if len(self.stable_history) > self.stable_frames:
             self.stable_history.pop(0)
 
+        # 尚未收集满规定帧数，不输出最终定位结果。
         if len(self.stable_history) < self.stable_frames:
-            return False
+            return False, False, None, None
 
         arr = np.vstack(
             self.stable_history
         )
+
+        # ----------------------------------------------------
+        # 最终用于机械臂定位的 5 帧平均像素坐标
+        # ----------------------------------------------------
         center = arr.mean(
             axis=0
         )
-        max_dev = np.linalg.norm(
+
+        # 每一帧相对平均中心的二维欧氏距离。
+        deviations = np.linalg.norm(
             arr - center,
             axis=1,
-        ).max()
-
-        return bool(
-            max_dev <= self.stable_pixel_tolerance
         )
+
+        max_dev = float(
+            deviations.max()
+        )
+
+        stable = bool(
+            max_dev
+            <= self.stable_pixel_tolerance
+        )
+
+        return (
+            True,
+            stable,
+            center,
+            max_dev,
+        )
+
 
     # ================================================================
     # Main image callback
@@ -701,14 +748,43 @@ class SvmDetectorNode(Node):
                 cv2.LINE_AA,
             )
 
-            stable = self.is_stable(
+            (
+                stable_ready,
+                stable,
+                stable_center,
+                stable_max_dev,
+            ) = self.is_stable(
                 u,
                 v,
             )
 
+            # 前 stable_frames-1 帧只用于积累定位数据。
+            if stable_ready:
+                stable_u = float(
+                    stable_center[0]
+                )
+                stable_v = float(
+                    stable_center[1]
+                )
+
+                stability_text = (
+                    f"stable={stable} "
+                    f"avg=({stable_u:.1f},{stable_v:.1f}) "
+                    f"max_dev={stable_max_dev:.2f}px"
+                )
+            else:
+                stable_u = None
+                stable_v = None
+
+                stability_text = (
+                    f"collecting="
+                    f"{len(self.stable_history)}/"
+                    f"{self.stable_frames}"
+                )
+
             cv2.putText(
                 debug,
-                f"stable={stable}",
+                stability_text,
                 (10, 25),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.7,
@@ -723,21 +799,80 @@ class SvmDetectorNode(Node):
                 class_msg
             )
 
-            # Never publish a robot target from:
-            #   1) an unstable detection,
-            #   2) uncalibrated image coordinates,
-            #   3) an unconfigured target Z,
-            #   4) an SVM result rejected as "unknown".
+            # Homography 加载以后，还可以同时显示机器人 XY 和相机里面的 uv
+            if self.H is not None:
+                base_x, base_y = self.pixel_to_base_xy(u, v)
+
+                self.get_logger().info(
+                    f"Detected: class={label}, "
+                    f"score={class_score:.3f}, "
+                    f"pixel=({u:.1f}, {v:.1f}), "
+                    f"base=({base_x:.4f}, {base_y:.4f}) m, "
+                    f"angle={angle_deg:.1f} deg",
+                    throttle_duration_sec=1.0,
+                )
+            else:
+                self.get_logger().info(
+                    f"Detected: class={label}, "
+                    f"score={class_score:.3f}, "
+                    f"pixel=({u:.1f}, {v:.1f}), "
+                    f"angle={angle_deg:.1f} deg",
+                    throttle_duration_sec=1.0,
+                )
+
+            # ========================================================
+            # 5 帧最终定位结果
+            # ========================================================
+            # 与原版不同：
+            #
+            # stable=True
+            #   -> 使用 5 帧平均坐标正常发布。
+            #
+            # stable=False
+            #   -> 仍然使用 5 帧平均坐标发布，
+            #      但通过 WARNING 明确告诉操作者当前定位波动较大。
+            #
+            # 尚未收集满 stable_frames 帧时，不发布最终 target_pose。
+            #
+            # 其他安全条件仍然保留：
+            #   1. 必须已经完成 Homography 标定；
+            #   2. target_z 必须有效；
+            #   3. SVM 结果不能为 unknown。
             if (
-                stable
+                stable_ready
                 and self.H is not None
                 and self.target_z > -10.0
                 and label != "unknown"
             ):
+                # ----------------------------------------------------
+                # 关键修改：
+                # 使用 stable_frames 帧的平均像素坐标，
+                # 而不是当前第 5 帧的 (u, v)。
+                # ----------------------------------------------------
                 base_x, base_y = self.pixel_to_base_xy(
-                    u,
-                    v,
+                    stable_u,
+                    stable_v,
                 )
+
+                if stable:
+                    self.get_logger().info(
+                        f"Stable positioning result: "
+                        f"frames={self.stable_frames}, "
+                        f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
+                        f"max_dev={stable_max_dev:.2f}px <= "
+                        f"{self.stable_pixel_tolerance:.2f}px, "
+                        f"base=({base_x:.4f}, {base_y:.4f}) m"
+                    )
+                else:
+                    self.get_logger().warning(
+                        f"UNSTABLE positioning: "
+                        f"frames={self.stable_frames}, "
+                        f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
+                        f"max_dev={stable_max_dev:.2f}px > "
+                        f"{self.stable_pixel_tolerance:.2f}px. "
+                        f"Still publishing the AVERAGE position: "
+                        f"base=({base_x:.4f}, {base_y:.4f}) m"
+                    )
 
                 q = self.fixed_q.copy()
 
@@ -746,10 +881,12 @@ class SvmDetectorNode(Node):
                         angle_deg
                         + self.yaw_offset_deg
                     )
+
                     q = quaternion_multiply(
                         yaw_quaternion(yaw),
                         q,
                     )
+
                     q = quaternion_normalize(
                         q
                     )
@@ -774,7 +911,7 @@ class SvmDetectorNode(Node):
                 cv2.putText(
                     debug,
                     (
-                        f"base=({base_x:.3f},"
+                        f"AVG base=({base_x:.3f},"
                         f"{base_y:.3f},"
                         f"{self.target_z:.3f})"
                     ),
@@ -785,6 +922,33 @@ class SvmDetectorNode(Node):
                     2,
                     cv2.LINE_AA,
                 )
+
+                # ----------------------------------------------------
+                # 本轮 stable_frames 帧已经形成一个最终结果。
+                # 立即清空，确保下一次 Home 的 5 帧不会混入本轮数据。
+                # ----------------------------------------------------
+                self.stable_history.clear()
+
+                self.get_logger().info(
+                    "5-frame positioning cycle completed; "
+                    "stable_history cleared for the next Home cycle."
+                )
+
+            # 如果已经收集满 5 帧，但由于未标定、target_z 无效
+            # 或类别为 unknown 而没有进入上面的 target_pose 发布分支，
+            # 也必须结束本轮，避免下一次 Home 混入旧数据。
+            if (
+                stable_ready
+                and len(self.stable_history) >= self.stable_frames
+            ):
+                self.get_logger().warning(
+                    "5-frame positioning cycle finished, but target_pose "
+                    "was not published because one of the required conditions "
+                    "was not satisfied (homography/target_z/class). "
+                    "stable_history will be cleared."
+                )
+
+                self.stable_history.clear()
 
             self._publish_debug(
                 msg,

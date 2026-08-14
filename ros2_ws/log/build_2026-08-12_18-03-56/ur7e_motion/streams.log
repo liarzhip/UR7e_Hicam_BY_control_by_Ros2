@@ -1,0 +1,28 @@
+[0.015s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[0.112s] [ 25%] [32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o[0m
+[0.112s] [ 75%] Built target target_motion_node
+[9.976s] [100%] [32m[1mLinking CXX executable gripper_io_node[0m
+[10.481s] [100%] Built target gripper_io_node
+[10.499s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[10.513s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[10.522s] -- Install configuration: ""
+[10.522s] -- Execute custom install script
+[10.523s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+[10.523s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node
+[10.524s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
+[10.524s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion
+[10.524s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion
+[10.525s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh
+[10.525s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv
+[10.525s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh
+[10.525s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv
+[10.525s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash
+[10.526s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh
+[10.526s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh
+[10.526s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv
+[10.527s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv
+[10.541s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion
+[10.542s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake
+[10.542s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake
+[10.542s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml
+[10.543s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion

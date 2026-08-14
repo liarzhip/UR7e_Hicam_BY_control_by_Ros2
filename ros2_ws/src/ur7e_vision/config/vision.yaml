@@ -1,7 +1,7 @@
 hik_camera_node:
   ros__parameters:
     device_index: 0
-    publish_fps: 10.0
+    publish_fps: 15.0
     frame_id: "hik_camera_optical_frame"
     image_topic: "/hik_camera/image_raw"
 
@@ -32,7 +32,7 @@ svm_detector_node:
     # Leave empty on first camera test.
     # After planar calibration, set this to an absolute path, for example:
     # /home/liar/UR7e/ros2_ws/src/ur7e_vision/calibration/homography.yaml
-    homography_file: ""
+    homography_file: "/home/liar/UR7e/ros2_ws/src/ur7e_vision/calibration/homography.yaml"
 
     labels_file: "/home/liar/UR7e/ros2_ws/src/ur7e_vision/config/labels.yaml"
 
@@ -49,7 +49,7 @@ svm_detector_node:
     # IMPORTANT:
     # Set this to the real target/grasp plane Z in UR base coordinates (meters)
     # after calibration. Sentinel disables /vision/target_pose publication.
-    target_z: -999.0
+    target_z: 0.165
 
     target_frame: "base"
 

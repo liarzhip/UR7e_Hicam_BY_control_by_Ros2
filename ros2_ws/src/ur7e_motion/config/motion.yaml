@@ -1,14 +1,68 @@
 target_motion_node:
   ros__parameters:
-
     planning_group: "ur_manipulator"
+    velocity_scale: 0.35
+    acceleration_scale: 0.05250499
+    planning_time: 3.0
 
-    # 目标上方10 cm
-    pregrasp_offset_z: 0.10
+    # 前期实验 true；稳定后可改 false
+    manual_plan_execute_enabled: True
 
-    # 第一次测试非常慢
-    velocity_scale: 0.05
+    # 第一次先留空；通过 /ur7e/set_home_here 获取后填入
+    home_joint_values:
+      [
+        -0.78541309,
+        -1.57084288,
+        -1.57078362,
+        -1.57078670,
+        1.57077169,
+        3.14160013,
+      ]
 
-    acceleration_scale: 0.05
+gripper_io_node:
+  ros__parameters:
+    output_pin: 0
+    feedback_pin: 0
+    open_output_state: true
+    close_output_state: false
+    feedback_active_state: true
+    feedback_timeout_sec: 3.0
+    feedback_idle_timeout_sec: 2.0
+    set_io_timeout_sec: 2.0
+    io_states_topic: "/io_and_status_controller/io_states"
+    set_io_service: "/io_and_status_controller/set_io"
 
-    planning_time: 5.0
+pick_task_node:
+  ros__parameters:
+    vision_target_topic: "/vision/target_pose"
+    motion_command_topic: "/ur7e/target_pose_cmd"
+    camera_trigger_topic: "/hik_camera/run_once"
+
+    direct_move_service: "/ur7e/move_to_target"
+    plan_service: "/ur7e/plan_to_target"
+    execute_service: "/ur7e/execute_last_plan"
+    go_home_service: "/ur7e/go_home"
+
+    gripper_open_service: "/gripper/open"
+    gripper_close_service: "/gripper/close"
+
+    required_frame: "base"
+
+    pregrasp_height: 0.10
+    grasp_offset_z: 0.0
+    lift_height: 0.10
+
+    home_settle_sec: 3.0
+    command_settle_sec: 0.20
+    camera_ready_timeout_sec: 5.0
+    vision_wait_timeout_sec: 10.0
+
+    service_wait_timeout_sec: 3.0
+    plan_timeout_sec: 12.0
+    execute_timeout_sec: 45.0
+    gripper_timeout_sec: 6.0
+
+    # false = 直接 move；true = plan 后 execute
+    use_separate_plan_execute: true
+    # false 时会在 PREGRASP 停止
+    full_pick_enabled: true

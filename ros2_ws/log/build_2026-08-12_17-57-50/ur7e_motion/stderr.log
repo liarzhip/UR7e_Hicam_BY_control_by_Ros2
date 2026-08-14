@@ -1,0 +1,86 @@
+[0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):
+  Package 'tl_expected' is deprecated (This package will be removed in ROS 2
+  Lyrical Luth.
+
+        Use tl/expected.hpp from libexpected-dev,
+        or rcpputils/tl_expected/expected.hpp if the system header is not available)
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)
+  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)
+  CMakeLists.txt:18 (find_package)
+
+[0m
+[01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:[m[K In constructor ‘[01m[KGripperIONode::[01;32m[KGripperIONode[m[K()[m[K’:
+[01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:60:62:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_client[m[K(const std::string&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = ur_msgs::srv::SetIO; typename rclcpp::Client<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Client<ur_msgs::srv::SetIO> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   60 |     set_io_client_ = [01;35m[Kthis->create_client<ur_msgs::srv::SetIO>([m[K
+      |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   61 | [01;35m[K      set_io_service_, rmw_qos_profile_services_default, io_callback_group_)[m[K;
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:176[m[K,
+                 from [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:12[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:159:1:[m[K [01;36m[Knote: [m[Kdeclared here
+  159 | [01;36m[KNode[m[K::create_client(
+      | [01;36m[K^~~~[m[K
+[01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:63:61:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   63 |     open_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+      |                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   64 | [01;35m[K      "/gripper/open",[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~[m[K                                       
+   65 | [01;35m[K      std::bind([m[K
+      |       [01;35m[K~~~~~~~~~~[m[K                                             
+   66 | [01;35m[K        &GripperIONode::openCallback, this,[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+   67 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K       
+   68 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                      
+   69 | [01;35m[K      service_callback_group_)[m[K;
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                               
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+  192 | [01;36m[KNode[m[K::create_service(
+      | [01;36m[K^~~~[m[K
+[01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:71:62:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   71 |     close_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+      |                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   72 | [01;35m[K      "/gripper/close",[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~[m[K                                       
+   73 | [01;35m[K      std::bind([m[K
+      |       [01;35m[K~~~~~~~~~~[m[K                                              
+   74 | [01;35m[K        &GripperIONode::closeCallback, this,[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+   75 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K        
+   76 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                       
+   77 | [01;35m[K      service_callback_group_)[m[K;
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+  192 | [01;36m[KNode[m[K::create_service(
+      | [01;36m[K^~~~[m[K
+[01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:79:63:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   79 |     status_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+      |                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   80 | [01;35m[K      "/gripper/status",[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~[m[K                                       
+   81 | [01;35m[K      std::bind([m[K
+      |       [01;35m[K~~~~~~~~~~[m[K                                               
+   82 | [01;35m[K        &GripperIONode::statusCallback, this,[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+   83 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K         
+   84 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                        
+   85 | [01;35m[K      service_callback_group_)[m[K;
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                 
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+  192 | [01;36m[KNode[m[K::create_service(
+      | [01;36m[K^~~~[m[K

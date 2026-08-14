@@ -1,0 +1,141 @@
+[0.023s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[0.281s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.638s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.700s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.801s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.821s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.867s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.908s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.065s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.069s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.236s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.391s] -- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[1.472s] -- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)
+[1.515s] -- Found ur_msgs: 2.5.0 (/opt/ros/jazzy/share/ur_msgs/cmake)
+[1.810s] -- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+[1.848s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+[2.142s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[2.209s] -- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[2.225s] [0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):
+[2.225s]   Package 'tl_expected' is deprecated (This package will be removed in ROS 2
+[2.225s]   Lyrical Luth.
+[2.225s] 
+[2.225s]         Use tl/expected.hpp from libexpected-dev,
+[2.225s]         or rcpputils/tl_expected/expected.hpp if the system header is not available)
+[2.225s] Call Stack (most recent call first):
+[2.225s]   /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[2.225s]   /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)
+[2.225s]   /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)
+[2.225s]   /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)
+[2.226s]   /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[2.226s]   /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)
+[2.226s]   /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[2.226s]   /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)
+[2.226s]   CMakeLists.txt:18 (find_package)
+[2.226s] 
+[2.226s] [0m
+[2.228s] -- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[2.376s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.602s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[2.675s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+[2.708s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+[2.899s] -- Configuring done (2.6s)
+[2.975s] -- Generating done (0.1s)
+[2.989s] -- Build files have been written to: /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[3.046s] [ 25%] [32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o[0m
+[3.094s] [ 50%] [32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o[0m
+[13.822s] [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:[m[K In constructor ‘[01m[KGripperIONode::[01;32m[KGripperIONode[m[K()[m[K’:
+[13.823s] [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:60:62:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_client[m[K(const std::string&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = ur_msgs::srv::SetIO; typename rclcpp::Client<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Client<ur_msgs::srv::SetIO> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[13.823s]    60 |     set_io_client_ = [01;35m[Kthis->create_client<ur_msgs::srv::SetIO>([m[K
+[13.823s]       |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[13.823s]    61 | [01;35m[K      set_io_service_, rmw_qos_profile_services_default, io_callback_group_)[m[K;
+[13.823s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[13.823s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663[m[K,
+[13.823s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[13.823s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[13.823s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:176[m[K,
+[13.824s]                  from [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:12[m[K:
+[13.824s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:159:1:[m[K [01;36m[Knote: [m[Kdeclared here
+[13.824s]   159 | [01;36m[KNode[m[K::create_client(
+[13.824s]       | [01;36m[K^~~~[m[K
+[13.861s] [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:63:61:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[13.861s]    63 |     open_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+[13.862s]       |                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[13.862s]    64 | [01;35m[K      "/gripper/open",[m[K
+[13.862s]       |       [01;35m[K~~~~~~~~~~~~~~~~[m[K                                       
+[13.862s]    65 | [01;35m[K      std::bind([m[K
+[13.862s]       |       [01;35m[K~~~~~~~~~~[m[K                                             
+[13.862s]    66 | [01;35m[K        &GripperIONode::openCallback, this,[m[K
+[13.862s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+[13.862s]    67 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+[13.863s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K       
+[13.864s]    68 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+[13.864s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                      
+[13.864s]    69 | [01;35m[K      service_callback_group_)[m[K;
+[13.864s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                               
+[13.864s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+[13.864s]   192 | [01;36m[KNode[m[K::create_service(
+[13.864s]       | [01;36m[K^~~~[m[K
+[13.865s] [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:71:62:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[13.865s]    71 |     close_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+[13.865s]       |                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[13.865s]    72 | [01;35m[K      "/gripper/close",[m[K
+[13.865s]       |       [01;35m[K~~~~~~~~~~~~~~~~~[m[K                                       
+[13.865s]    73 | [01;35m[K      std::bind([m[K
+[13.866s]       |       [01;35m[K~~~~~~~~~~[m[K                                              
+[13.866s]    74 | [01;35m[K        &GripperIONode::closeCallback, this,[m[K
+[13.866s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+[13.866s]    75 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+[13.866s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K        
+[13.867s]    76 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+[13.867s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                       
+[13.867s]    77 | [01;35m[K      service_callback_group_)[m[K;
+[13.867s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                
+[13.867s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+[13.867s]   192 | [01;36m[KNode[m[K::create_service(
+[13.867s]       | [01;36m[K^~~~[m[K
+[13.868s] [01m[K/home/liar/UR7e/ros2_ws/src/ur7e_motion/src/gripper_io_node.cpp:79:63:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [35m[K[with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (GripperIONode::*(GripperIONode*, std::_Placeholder<1>, std::_Placeholder<2>))(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K[m[K’ is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[13.870s]    79 |     status_srv_ = [01;35m[Kthis->create_service<std_srvs::srv::Trigger>([m[K
+[13.870s]       |                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[13.871s]    80 | [01;35m[K      "/gripper/status",[m[K
+[13.872s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~[m[K                                       
+[13.872s]    81 | [01;35m[K      std::bind([m[K
+[13.872s]       |       [01;35m[K~~~~~~~~~~[m[K                                               
+[13.873s]    82 | [01;35m[K        &GripperIONode::statusCallback, this,[m[K
+[13.873s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                  
+[13.873s]    83 | [01;35m[K        std::placeholders::_1, std::placeholders::_2),[m[K
+[13.873s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K         
+[13.873s]    84 | [01;35m[K      rmw_qos_profile_services_default,[m[K
+[13.873s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                        
+[13.873s]    85 | [01;35m[K      service_callback_group_)[m[K;
+[13.873s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                 
+[13.874s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:192:1:[m[K [01;36m[Knote: [m[Kdeclared here
+[13.874s]   192 | [01;36m[KNode[m[K::create_service(
+[13.874s]       | [01;36m[K^~~~[m[K
+[26.234s] [ 75%] [32m[1mLinking CXX executable gripper_io_node[0m
+[26.997s] [ 75%] Built target gripper_io_node
+[31.941s] [100%] [32m[1mLinking CXX executable target_motion_node[0m
+[32.951s] [100%] Built target target_motion_node
+[32.974s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/liar/UR7e/ros2_ws/build/ur7e_motion -- -j8 -l8
+[33.003s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[33.020s] -- Install configuration: ""
+[33.021s] -- Execute custom install script
+[33.021s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+[33.022s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node
+[33.042s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
+[33.043s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion
+[33.043s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion
+[33.044s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh
+[33.044s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv
+[33.045s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh
+[33.048s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv
+[33.051s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash
+[33.051s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh
+[33.052s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh
+[33.052s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv
+[33.052s] -- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv
+[33.072s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion
+[33.073s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake
+[33.073s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake
+[33.074s] -- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml
+[33.081s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_motion' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/liar/UR7e/ros2_ws/build/ur7e_motion

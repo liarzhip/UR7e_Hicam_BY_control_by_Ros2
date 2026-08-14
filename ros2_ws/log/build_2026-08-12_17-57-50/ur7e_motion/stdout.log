@@ -1,0 +1,51 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+-- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)
+-- Found ur_msgs: 2.5.0 (/opt/ros/jazzy/share/ur_msgs/cmake)
+-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+-- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)
+-- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+-- Configuring done (2.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/liar/UR7e/ros2_ws/build/ur7e_motion
+[ 25%] [32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable gripper_io_node[0m
+[ 75%] Built target gripper_io_node
+[100%] [32m[1mLinking CXX executable target_motion_node[0m
+[100%] Built target target_motion_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv
+-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake
+-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml

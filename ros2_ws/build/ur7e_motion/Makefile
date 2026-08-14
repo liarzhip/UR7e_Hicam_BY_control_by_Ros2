@@ -210,6 +210,80 @@ target_motion_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_motion_node.dir/build.make CMakeFiles/target_motion_node.dir/build
 .PHONY : target_motion_node/fast
 
+#=============================================================================
+# Target rules for targets named gripper_io_node
+
+# Build rule for target.
+gripper_io_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_io_node
+.PHONY : gripper_io_node
+
+# fast build rule for target.
+gripper_io_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gripper_io_node.dir/build.make CMakeFiles/gripper_io_node.dir/build
+.PHONY : gripper_io_node/fast
+
+#=============================================================================
+# Target rules for targets named pick_task_node
+
+# Build rule for target.
+pick_task_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pick_task_node
+.PHONY : pick_task_node
+
+# fast build rule for target.
+pick_task_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_task_node.dir/build.make CMakeFiles/pick_task_node.dir/build
+.PHONY : pick_task_node/fast
+
+src/gripper_io_node.o: src/gripper_io_node.cpp.o
+.PHONY : src/gripper_io_node.o
+
+# target to build an object file
+src/gripper_io_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gripper_io_node.dir/build.make CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o
+.PHONY : src/gripper_io_node.cpp.o
+
+src/gripper_io_node.i: src/gripper_io_node.cpp.i
+.PHONY : src/gripper_io_node.i
+
+# target to preprocess a source file
+src/gripper_io_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gripper_io_node.dir/build.make CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.i
+.PHONY : src/gripper_io_node.cpp.i
+
+src/gripper_io_node.s: src/gripper_io_node.cpp.s
+.PHONY : src/gripper_io_node.s
+
+# target to generate assembly for a file
+src/gripper_io_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gripper_io_node.dir/build.make CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.s
+.PHONY : src/gripper_io_node.cpp.s
+
+src/pick_task_node.o: src/pick_task_node.cpp.o
+.PHONY : src/pick_task_node.o
+
+# target to build an object file
+src/pick_task_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_task_node.dir/build.make CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o
+.PHONY : src/pick_task_node.cpp.o
+
+src/pick_task_node.i: src/pick_task_node.cpp.i
+.PHONY : src/pick_task_node.i
+
+# target to preprocess a source file
+src/pick_task_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_task_node.dir/build.make CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.i
+.PHONY : src/pick_task_node.cpp.i
+
+src/pick_task_node.s: src/pick_task_node.cpp.s
+.PHONY : src/pick_task_node.s
+
+# target to generate assembly for a file
+src/pick_task_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_task_node.dir/build.make CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.s
+.PHONY : src/pick_task_node.cpp.s
+
 src/target_motion_node.o: src/target_motion_node.cpp.o
 .PHONY : src/target_motion_node.o
 
@@ -249,7 +323,15 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... ur7e_motion_uninstall"
+	@echo "... gripper_io_node"
+	@echo "... pick_task_node"
 	@echo "... target_motion_node"
+	@echo "... src/gripper_io_node.o"
+	@echo "... src/gripper_io_node.i"
+	@echo "... src/gripper_io_node.s"
+	@echo "... src/pick_task_node.o"
+	@echo "... src/pick_task_node.i"
+	@echo "... src/pick_task_node.s"
 	@echo "... src/target_motion_node.o"
 	@echo "... src/target_motion_node.i"
 	@echo "... src/target_motion_node.s"

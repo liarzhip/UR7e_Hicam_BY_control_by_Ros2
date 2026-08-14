@@ -1,0 +1,680 @@
+[0.000000] (-) TimerEvent: {}
+[0.000345] (-) JobUnselected: {'identifier': 'ur7e_vision'}
+[0.000417] (ur7e_motion) JobQueued: {'identifier': 'ur7e_motion', 'dependencies': OrderedDict()}
+[0.000469] (ur7e_motion) JobStarted: {'identifier': 'ur7e_motion'}
+[0.026551] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'cmake'}
+[0.028059] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '/home/liar/UR7e/ros2_ws/src/ur7e_motion', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e/ros2_ws', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3360', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '4076', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '133403', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:33233', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/4044,unix/ubuntu:/tmp/.ICE-unix/4044', 'INVOCATION_ID': '9548ed51a348453587a83d03e77d5e88', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-a3d668e6d98984a6.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[0.097339] (-) TimerEvent: {}
+[0.200742] (-) TimerEvent: {}
+[0.295039] (ur7e_motion) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.301125] (-) TimerEvent: {}
+[0.404616] (-) TimerEvent: {}
+[0.505413] (-) TimerEvent: {}
+[0.512216] (ur7e_motion) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.569340] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.605698] (-) TimerEvent: {}
+[0.708197] (-) TimerEvent: {}
+[0.808953] (-) TimerEvent: {}
+[0.908758] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.909162] (-) TimerEvent: {}
+[0.916536] (ur7e_motion) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.918216] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.919081] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.962089] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.010212] (-) TimerEvent: {}
+[1.112113] (-) TimerEvent: {}
+[1.213852] (-) TimerEvent: {}
+[1.301040] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.313363] (ur7e_motion) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.314638] (-) TimerEvent: {}
+[1.314888] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.315088] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.342102] (ur7e_motion) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.415140] (-) TimerEvent: {}
+[1.515981] (-) TimerEvent: {}
+[1.619389] (-) TimerEvent: {}
+[1.703223] (ur7e_motion) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.720156] (-) TimerEvent: {}
+[1.820712] (-) TimerEvent: {}
+[1.883798] (ur7e_motion) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.921256] (-) TimerEvent: {}
+[2.022055] (-) TimerEvent: {}
+[2.030470] (ur7e_motion) StdoutLine: {'line': b'-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.122531] (-) TimerEvent: {}
+[2.163973] (ur7e_motion) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.211875] (ur7e_motion) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.222755] (-) TimerEvent: {}
+[2.268580] (ur7e_motion) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.325042] (ur7e_motion) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.325620] (-) TimerEvent: {}
+[2.426487] (-) TimerEvent: {}
+[2.528324] (-) TimerEvent: {}
+[2.538155] (ur7e_motion) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.548909] (ur7e_motion) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.630695] (-) TimerEvent: {}
+[2.731588] (-) TimerEvent: {}
+[2.826397] (ur7e_motion) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[2.831788] (-) TimerEvent: {}
+[2.867656] (ur7e_motion) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[2.919871] (ur7e_motion) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.932019] (-) TimerEvent: {}
+[3.032874] (-) TimerEvent: {}
+[3.094066] (ur7e_motion) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[3.133226] (-) TimerEvent: {}
+[3.167195] (ur7e_motion) StdoutLine: {'line': b'-- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[3.206201] (ur7e_motion) StdoutLine: {'line': b'-- Found ur_msgs: 2.5.0 (/opt/ros/jazzy/share/ur_msgs/cmake)\n'}
+[3.233694] (-) TimerEvent: {}
+[3.335160] (-) TimerEvent: {}
+[3.435665] (-) TimerEvent: {}
+[3.509149] (ur7e_motion) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[3.536289] (-) TimerEvent: {}
+[3.637100] (-) TimerEvent: {}
+[3.737739] (-) TimerEvent: {}
+[3.819041] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread \n'}
+[3.838135] (-) TimerEvent: {}
+[3.940059] (-) TimerEvent: {}
+[4.040582] (-) TimerEvent: {}
+[4.138455] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[4.140838] (-) TimerEvent: {}
+[4.241673] (-) TimerEvent: {}
+[4.293867] (ur7e_motion) StdoutLine: {'line': b'-- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[4.332205] (ur7e_motion) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):\n'}
+[4.332501] (ur7e_motion) StderrLine: {'line': b"  Package 'tl_expected' is deprecated (This package will be removed in ROS 2\n"}
+[4.332809] (ur7e_motion) StderrLine: {'line': b'  Lyrical Luth.\n'}
+[4.332956] (ur7e_motion) StderrLine: {'line': b'\n'}
+[4.333102] (ur7e_motion) StderrLine: {'line': b'        Use tl/expected.hpp from libexpected-dev,\n'}
+[4.333243] (ur7e_motion) StderrLine: {'line': b'        or rcpputils/tl_expected/expected.hpp if the system header is not available)\n'}
+[4.333381] (ur7e_motion) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.333522] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[4.333650] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)\n'}
+[4.333782] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)\n'}
+[4.333919] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)\n'}
+[4.334175] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[4.334359] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)\n'}
+[4.334509] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[4.334713] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)\n'}
+[4.334866] (ur7e_motion) StderrLine: {'line': b'  CMakeLists.txt:19 (find_package)\n'}
+[4.334996] (ur7e_motion) StderrLine: {'line': b'\n'}
+[4.335131] (ur7e_motion) StderrLine: {'line': b'\x1b[0m\n'}
+[4.340772] (ur7e_motion) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[4.341881] (-) TimerEvent: {}
+[4.442542] (-) TimerEvent: {}
+[4.543110] (-) TimerEvent: {}
+[4.561349] (ur7e_motion) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[4.561729] (ur7e_motion) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[4.643875] (-) TimerEvent: {}
+[4.745117] (-) TimerEvent: {}
+[4.846660] (-) TimerEvent: {}
+[4.947616] (-) TimerEvent: {}
+[4.974896] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono \n'}
+[5.048311] (-) TimerEvent: {}
+[5.062980] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options \n'}
+[5.118776] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread \n'}
+[5.148876] (-) TimerEvent: {}
+[5.249640] (-) TimerEvent: {}
+[5.351430] (-) TimerEvent: {}
+[5.356158] (ur7e_motion) StdoutLine: {'line': b'-- Configuring done (5.3s)\n'}
+[5.448319] (ur7e_motion) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[5.451888] (-) TimerEvent: {}
+[5.460810] (ur7e_motion) StdoutLine: {'line': b'-- Build files have been written to: /home/liar/UR7e/ros2_ws/build/ur7e_motion\n'}
+[5.517298] (ur7e_motion) CommandEnded: {'returncode': 0}
+[5.519070] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'build'}
+[5.519128] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/liar/UR7e/ros2_ws/build/ur7e_motion', '--', '-j8', '-l8'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e/ros2_ws', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3360', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '4076', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '133403', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:33233', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/4044,unix/ubuntu:/tmp/.ICE-unix/4044', 'INVOCATION_ID': '9548ed51a348453587a83d03e77d5e88', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-a3d668e6d98984a6.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[5.552230] (-) TimerEvent: {}
+[5.653339] (-) TimerEvent: {}
+[5.688195] (ur7e_motion) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o\x1b[0m\n'}
+[5.693802] (ur7e_motion) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o\x1b[0m\n'}
+[5.719251] (ur7e_motion) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o\x1b[0m\n'}
+[5.754251] (-) TimerEvent: {}
+[5.855382] (-) TimerEvent: {}
+[5.957112] (-) TimerEvent: {}
+[6.062297] (-) TimerEvent: {}
+[6.163267] (-) TimerEvent: {}
+[6.264547] (-) TimerEvent: {}
+[6.365513] (-) TimerEvent: {}
+[6.470914] (-) TimerEvent: {}
+[6.571764] (-) TimerEvent: {}
+[6.672261] (-) TimerEvent: {}
+[6.772933] (-) TimerEvent: {}
+[6.875301] (-) TimerEvent: {}
+[6.976371] (-) TimerEvent: {}
+[7.077379] (-) TimerEvent: {}
+[7.181101] (-) TimerEvent: {}
+[7.281821] (-) TimerEvent: {}
+[7.384342] (-) TimerEvent: {}
+[7.484942] (-) TimerEvent: {}
+[7.586885] (-) TimerEvent: {}
+[7.690597] (-) TimerEvent: {}
+[7.791247] (-) TimerEvent: {}
+[7.895579] (-) TimerEvent: {}
+[7.996707] (-) TimerEvent: {}
+[8.099724] (-) TimerEvent: {}
+[8.202988] (-) TimerEvent: {}
+[8.304068] (-) TimerEvent: {}
+[8.406168] (-) TimerEvent: {}
+[8.507037] (-) TimerEvent: {}
+[8.607578] (-) TimerEvent: {}
+[8.708663] (-) TimerEvent: {}
+[8.811217] (-) TimerEvent: {}
+[8.913280] (-) TimerEvent: {}
+[9.014617] (-) TimerEvent: {}
+[9.115698] (-) TimerEvent: {}
+[9.218193] (-) TimerEvent: {}
+[9.319423] (-) TimerEvent: {}
+[9.422779] (-) TimerEvent: {}
+[9.525196] (-) TimerEvent: {}
+[9.643621] (-) TimerEvent: {}
+[9.744822] (-) TimerEvent: {}
+[9.845499] (-) TimerEvent: {}
+[9.946976] (-) TimerEvent: {}
+[10.047705] (-) TimerEvent: {}
+[10.149378] (-) TimerEvent: {}
+[10.250261] (-) TimerEvent: {}
+[10.351806] (-) TimerEvent: {}
+[10.454428] (-) TimerEvent: {}
+[10.556023] (-) TimerEvent: {}
+[10.657691] (-) TimerEvent: {}
+[10.760224] (-) TimerEvent: {}
+[10.861931] (-) TimerEvent: {}
+[10.962812] (-) TimerEvent: {}
+[11.065655] (-) TimerEvent: {}
+[11.166530] (-) TimerEvent: {}
+[11.267204] (-) TimerEvent: {}
+[11.368211] (-) TimerEvent: {}
+[11.469255] (-) TimerEvent: {}
+[11.571560] (-) TimerEvent: {}
+[11.672643] (-) TimerEvent: {}
+[11.774107] (-) TimerEvent: {}
+[11.878868] (-) TimerEvent: {}
+[11.979702] (-) TimerEvent: {}
+[12.081887] (-) TimerEvent: {}
+[12.182636] (-) TimerEvent: {}
+[12.283247] (-) TimerEvent: {}
+[12.386502] (-) TimerEvent: {}
+[12.487428] (-) TimerEvent: {}
+[12.589597] (-) TimerEvent: {}
+[12.691977] (-) TimerEvent: {}
+[12.793393] (-) TimerEvent: {}
+[12.894003] (-) TimerEvent: {}
+[12.996194] (-) TimerEvent: {}
+[13.097310] (-) TimerEvent: {}
+[13.198763] (-) TimerEvent: {}
+[13.300897] (-) TimerEvent: {}
+[13.401777] (-) TimerEvent: {}
+[13.504331] (-) TimerEvent: {}
+[13.607450] (-) TimerEvent: {}
+[13.712851] (-) TimerEvent: {}
+[13.814705] (-) TimerEvent: {}
+[13.917349] (-) TimerEvent: {}
+[14.019800] (-) TimerEvent: {}
+[14.120727] (-) TimerEvent: {}
+[14.221509] (-) TimerEvent: {}
+[14.326743] (-) TimerEvent: {}
+[14.432708] (-) TimerEvent: {}
+[14.535173] (-) TimerEvent: {}
+[14.636119] (-) TimerEvent: {}
+[14.738666] (-) TimerEvent: {}
+[14.839963] (-) TimerEvent: {}
+[14.941665] (-) TimerEvent: {}
+[15.043469] (-) TimerEvent: {}
+[15.144938] (-) TimerEvent: {}
+[15.246530] (-) TimerEvent: {}
+[15.348949] (-) TimerEvent: {}
+[15.457829] (-) TimerEvent: {}
+[15.558915] (-) TimerEvent: {}
+[15.660134] (-) TimerEvent: {}
+[15.763513] (-) TimerEvent: {}
+[15.864864] (-) TimerEvent: {}
+[15.966742] (-) TimerEvent: {}
+[16.070033] (-) TimerEvent: {}
+[16.172415] (-) TimerEvent: {}
+[16.274858] (-) TimerEvent: {}
+[16.377716] (-) TimerEvent: {}
+[16.479511] (-) TimerEvent: {}
+[16.583281] (-) TimerEvent: {}
+[16.686181] (-) TimerEvent: {}
+[16.787479] (-) TimerEvent: {}
+[16.890241] (-) TimerEvent: {}
+[16.991722] (-) TimerEvent: {}
+[17.093643] (-) TimerEvent: {}
+[17.195062] (-) TimerEvent: {}
+[17.295753] (-) TimerEvent: {}
+[17.396807] (-) TimerEvent: {}
+[17.497600] (-) TimerEvent: {}
+[17.600210] (-) TimerEvent: {}
+[17.701658] (-) TimerEvent: {}
+[17.805669] (-) TimerEvent: {}
+[17.906312] (-) TimerEvent: {}
+[18.007158] (-) TimerEvent: {}
+[18.110367] (-) TimerEvent: {}
+[18.211710] (-) TimerEvent: {}
+[18.312471] (-) TimerEvent: {}
+[18.417295] (-) TimerEvent: {}
+[18.519977] (-) TimerEvent: {}
+[18.623016] (-) TimerEvent: {}
+[18.726704] (-) TimerEvent: {}
+[18.827502] (-) TimerEvent: {}
+[18.930730] (-) TimerEvent: {}
+[19.033045] (-) TimerEvent: {}
+[19.134396] (-) TimerEvent: {}
+[19.238844] (-) TimerEvent: {}
+[19.341416] (-) TimerEvent: {}
+[19.443029] (-) TimerEvent: {}
+[19.544327] (-) TimerEvent: {}
+[19.650100] (-) TimerEvent: {}
+[19.753347] (-) TimerEvent: {}
+[19.854072] (-) TimerEvent: {}
+[19.959758] (-) TimerEvent: {}
+[20.063283] (-) TimerEvent: {}
+[20.164756] (-) TimerEvent: {}
+[20.265754] (-) TimerEvent: {}
+[20.366527] (-) TimerEvent: {}
+[20.467259] (-) TimerEvent: {}
+[20.568980] (-) TimerEvent: {}
+[20.669994] (-) TimerEvent: {}
+[20.771752] (-) TimerEvent: {}
+[20.872702] (-) TimerEvent: {}
+[20.975488] (-) TimerEvent: {}
+[21.078252] (-) TimerEvent: {}
+[21.178831] (-) TimerEvent: {}
+[21.280349] (-) TimerEvent: {}
+[21.381867] (-) TimerEvent: {}
+[21.483502] (-) TimerEvent: {}
+[21.587759] (-) TimerEvent: {}
+[21.696274] (-) TimerEvent: {}
+[21.797553] (-) TimerEvent: {}
+[21.899339] (-) TimerEvent: {}
+[22.002230] (-) TimerEvent: {}
+[22.103090] (-) TimerEvent: {}
+[22.205432] (-) TimerEvent: {}
+[22.310067] (-) TimerEvent: {}
+[22.411472] (-) TimerEvent: {}
+[22.513358] (-) TimerEvent: {}
+[22.614754] (-) TimerEvent: {}
+[22.718437] (-) TimerEvent: {}
+[22.819754] (-) TimerEvent: {}
+[22.923456] (-) TimerEvent: {}
+[23.025036] (-) TimerEvent: {}
+[23.126485] (-) TimerEvent: {}
+[23.228016] (-) TimerEvent: {}
+[23.330828] (-) TimerEvent: {}
+[23.432941] (-) TimerEvent: {}
+[23.535875] (-) TimerEvent: {}
+[23.638386] (-) TimerEvent: {}
+[23.742262] (-) TimerEvent: {}
+[23.846572] (-) TimerEvent: {}
+[23.947170] (-) TimerEvent: {}
+[24.049068] (-) TimerEvent: {}
+[24.150723] (-) TimerEvent: {}
+[24.251617] (-) TimerEvent: {}
+[24.358298] (-) TimerEvent: {}
+[24.463398] (-) TimerEvent: {}
+[24.567829] (-) TimerEvent: {}
+[24.670684] (-) TimerEvent: {}
+[24.775724] (-) TimerEvent: {}
+[24.883095] (-) TimerEvent: {}
+[24.985422] (-) TimerEvent: {}
+[25.087553] (-) TimerEvent: {}
+[25.190145] (-) TimerEvent: {}
+[25.295124] (-) TimerEvent: {}
+[25.397942] (-) TimerEvent: {}
+[25.504998] (-) TimerEvent: {}
+[25.610363] (-) TimerEvent: {}
+[25.712962] (-) TimerEvent: {}
+[25.815885] (-) TimerEvent: {}
+[25.917113] (-) TimerEvent: {}
+[26.020529] (-) TimerEvent: {}
+[26.121614] (-) TimerEvent: {}
+[26.222943] (-) TimerEvent: {}
+[26.327023] (-) TimerEvent: {}
+[26.429660] (-) TimerEvent: {}
+[26.533565] (-) TimerEvent: {}
+[26.636647] (-) TimerEvent: {}
+[26.737353] (-) TimerEvent: {}
+[26.839038] (-) TimerEvent: {}
+[26.940365] (-) TimerEvent: {}
+[27.041162] (-) TimerEvent: {}
+[27.143254] (-) TimerEvent: {}
+[27.245715] (-) TimerEvent: {}
+[27.346614] (-) TimerEvent: {}
+[27.447345] (-) TimerEvent: {}
+[27.548055] (-) TimerEvent: {}
+[27.650650] (-) TimerEvent: {}
+[27.751870] (-) TimerEvent: {}
+[27.852963] (-) TimerEvent: {}
+[27.954793] (-) TimerEvent: {}
+[28.061915] (-) TimerEvent: {}
+[28.162807] (-) TimerEvent: {}
+[28.270716] (-) TimerEvent: {}
+[28.373655] (-) TimerEvent: {}
+[28.479329] (-) TimerEvent: {}
+[28.582084] (-) TimerEvent: {}
+[28.683625] (-) TimerEvent: {}
+[28.784955] (-) TimerEvent: {}
+[28.889286] (-) TimerEvent: {}
+[28.994112] (-) TimerEvent: {}
+[29.103701] (-) TimerEvent: {}
+[29.205585] (-) TimerEvent: {}
+[29.309249] (-) TimerEvent: {}
+[29.411693] (-) TimerEvent: {}
+[29.513895] (-) TimerEvent: {}
+[29.614773] (-) TimerEvent: {}
+[29.715537] (-) TimerEvent: {}
+[29.818013] (-) TimerEvent: {}
+[29.918666] (-) TimerEvent: {}
+[30.020197] (-) TimerEvent: {}
+[30.122453] (-) TimerEvent: {}
+[30.225041] (-) TimerEvent: {}
+[30.326105] (-) TimerEvent: {}
+[30.427052] (-) TimerEvent: {}
+[30.528738] (-) TimerEvent: {}
+[30.657145] (-) TimerEvent: {}
+[30.758324] (-) TimerEvent: {}
+[30.861121] (-) TimerEvent: {}
+[30.962247] (-) TimerEvent: {}
+[31.067248] (-) TimerEvent: {}
+[31.170141] (-) TimerEvent: {}
+[31.271555] (-) TimerEvent: {}
+[31.372626] (-) TimerEvent: {}
+[31.475445] (-) TimerEvent: {}
+[31.576634] (-) TimerEvent: {}
+[31.677697] (-) TimerEvent: {}
+[31.779168] (-) TimerEvent: {}
+[31.882478] (-) TimerEvent: {}
+[31.983804] (-) TimerEvent: {}
+[32.084628] (-) TimerEvent: {}
+[32.185615] (-) TimerEvent: {}
+[32.288171] (-) TimerEvent: {}
+[32.389255] (-) TimerEvent: {}
+[32.489923] (-) TimerEvent: {}
+[32.596773] (-) TimerEvent: {}
+[32.701709] (-) TimerEvent: {}
+[32.804596] (-) TimerEvent: {}
+[32.905255] (-) TimerEvent: {}
+[33.006208] (-) TimerEvent: {}
+[33.107319] (-) TimerEvent: {}
+[33.210598] (-) TimerEvent: {}
+[33.311939] (-) TimerEvent: {}
+[33.412457] (-) TimerEvent: {}
+[33.515122] (-) TimerEvent: {}
+[33.616530] (-) TimerEvent: {}
+[33.719881] (-) TimerEvent: {}
+[33.828794] (-) TimerEvent: {}
+[33.930148] (-) TimerEvent: {}
+[34.032842] (-) TimerEvent: {}
+[34.135259] (-) TimerEvent: {}
+[34.239243] (-) TimerEvent: {}
+[34.340625] (-) TimerEvent: {}
+[34.442727] (-) TimerEvent: {}
+[34.546256] (-) TimerEvent: {}
+[34.651250] (-) TimerEvent: {}
+[34.752601] (-) TimerEvent: {}
+[34.853497] (-) TimerEvent: {}
+[34.958015] (-) TimerEvent: {}
+[35.058999] (-) TimerEvent: {}
+[35.160768] (-) TimerEvent: {}
+[35.263768] (-) TimerEvent: {}
+[35.367764] (-) TimerEvent: {}
+[35.468916] (-) TimerEvent: {}
+[35.574827] (-) TimerEvent: {}
+[35.676164] (-) TimerEvent: {}
+[35.780774] (-) TimerEvent: {}
+[35.882306] (-) TimerEvent: {}
+[35.986955] (-) TimerEvent: {}
+[36.092560] (-) TimerEvent: {}
+[36.193525] (-) TimerEvent: {}
+[36.295356] (-) TimerEvent: {}
+[36.397411] (-) TimerEvent: {}
+[36.498668] (-) TimerEvent: {}
+[36.599818] (-) TimerEvent: {}
+[36.701617] (-) TimerEvent: {}
+[36.802385] (-) TimerEvent: {}
+[36.902985] (-) TimerEvent: {}
+[37.003568] (-) TimerEvent: {}
+[37.105604] (-) TimerEvent: {}
+[37.206232] (-) TimerEvent: {}
+[37.306980] (-) TimerEvent: {}
+[37.410184] (-) TimerEvent: {}
+[37.510731] (-) TimerEvent: {}
+[37.612798] (-) TimerEvent: {}
+[37.724892] (-) TimerEvent: {}
+[37.830066] (-) TimerEvent: {}
+[37.933318] (-) TimerEvent: {}
+[38.034481] (-) TimerEvent: {}
+[38.136368] (-) TimerEvent: {}
+[38.237754] (-) TimerEvent: {}
+[38.341838] (-) TimerEvent: {}
+[38.442679] (-) TimerEvent: {}
+[38.546274] (-) TimerEvent: {}
+[38.647787] (-) TimerEvent: {}
+[38.749857] (-) TimerEvent: {}
+[38.852165] (-) TimerEvent: {}
+[38.954170] (-) TimerEvent: {}
+[39.057696] (-) TimerEvent: {}
+[39.158277] (-) TimerEvent: {}
+[39.260018] (-) TimerEvent: {}
+[39.361610] (-) TimerEvent: {}
+[39.474984] (-) TimerEvent: {}
+[39.579680] (-) TimerEvent: {}
+[39.681045] (-) TimerEvent: {}
+[39.784318] (-) TimerEvent: {}
+[39.885452] (-) TimerEvent: {}
+[39.992031] (-) TimerEvent: {}
+[40.106913] (-) TimerEvent: {}
+[40.208003] (-) TimerEvent: {}
+[40.310283] (-) TimerEvent: {}
+[40.411948] (-) TimerEvent: {}
+[40.514809] (-) TimerEvent: {}
+[40.615803] (-) TimerEvent: {}
+[40.716399] (-) TimerEvent: {}
+[40.817748] (-) TimerEvent: {}
+[40.918367] (-) TimerEvent: {}
+[41.019739] (-) TimerEvent: {}
+[41.124506] (-) TimerEvent: {}
+[41.226721] (-) TimerEvent: {}
+[41.329572] (-) TimerEvent: {}
+[41.433628] (-) TimerEvent: {}
+[41.534851] (-) TimerEvent: {}
+[41.635676] (-) TimerEvent: {}
+[41.738388] (-) TimerEvent: {}
+[41.843029] (-) TimerEvent: {}
+[41.945661] (-) TimerEvent: {}
+[42.052090] (-) TimerEvent: {}
+[42.155209] (-) TimerEvent: {}
+[42.257076] (-) TimerEvent: {}
+[42.294039] (ur7e_motion) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable gripper_io_node\x1b[0m\n'}
+[42.358010] (-) TimerEvent: {}
+[42.461265] (-) TimerEvent: {}
+[42.564542] (-) TimerEvent: {}
+[42.666063] (-) TimerEvent: {}
+[42.766830] (-) TimerEvent: {}
+[42.867579] (-) TimerEvent: {}
+[42.970829] (-) TimerEvent: {}
+[43.072121] (-) TimerEvent: {}
+[43.175902] (-) TimerEvent: {}
+[43.277025] (-) TimerEvent: {}
+[43.320116] (ur7e_motion) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable pick_task_node\x1b[0m\n'}
+[43.377595] (-) TimerEvent: {}
+[43.484098] (-) TimerEvent: {}
+[43.590002] (-) TimerEvent: {}
+[43.696743] (-) TimerEvent: {}
+[43.799622] (-) TimerEvent: {}
+[43.900786] (-) TimerEvent: {}
+[44.001530] (-) TimerEvent: {}
+[44.102475] (-) TimerEvent: {}
+[44.204351] (-) TimerEvent: {}
+[44.306929] (-) TimerEvent: {}
+[44.372874] (ur7e_motion) StdoutLine: {'line': b'[ 83%] Built target gripper_io_node\n'}
+[44.407763] (-) TimerEvent: {}
+[44.509090] (-) TimerEvent: {}
+[44.609974] (-) TimerEvent: {}
+[44.713610] (-) TimerEvent: {}
+[44.815947] (-) TimerEvent: {}
+[44.910150] (ur7e_motion) StdoutLine: {'line': b'[ 83%] Built target pick_task_node\n'}
+[44.918676] (-) TimerEvent: {}
+[45.019944] (-) TimerEvent: {}
+[45.121607] (-) TimerEvent: {}
+[45.223641] (-) TimerEvent: {}
+[45.328124] (-) TimerEvent: {}
+[45.429425] (-) TimerEvent: {}
+[45.532953] (-) TimerEvent: {}
+[45.635270] (-) TimerEvent: {}
+[45.736558] (-) TimerEvent: {}
+[45.843530] (-) TimerEvent: {}
+[45.945660] (-) TimerEvent: {}
+[46.050254] (-) TimerEvent: {}
+[46.151836] (-) TimerEvent: {}
+[46.253097] (-) TimerEvent: {}
+[46.358389] (-) TimerEvent: {}
+[46.459697] (-) TimerEvent: {}
+[46.561070] (-) TimerEvent: {}
+[46.667015] (-) TimerEvent: {}
+[46.770639] (-) TimerEvent: {}
+[46.872241] (-) TimerEvent: {}
+[46.973910] (-) TimerEvent: {}
+[47.074650] (-) TimerEvent: {}
+[47.176657] (-) TimerEvent: {}
+[47.277660] (-) TimerEvent: {}
+[47.378466] (-) TimerEvent: {}
+[47.479739] (-) TimerEvent: {}
+[47.582772] (-) TimerEvent: {}
+[47.685435] (-) TimerEvent: {}
+[47.787098] (-) TimerEvent: {}
+[47.887610] (-) TimerEvent: {}
+[47.988937] (-) TimerEvent: {}
+[48.089384] (-) TimerEvent: {}
+[48.191759] (-) TimerEvent: {}
+[48.292454] (-) TimerEvent: {}
+[48.393956] (-) TimerEvent: {}
+[48.497023] (-) TimerEvent: {}
+[48.599515] (-) TimerEvent: {}
+[48.700556] (-) TimerEvent: {}
+[48.802332] (-) TimerEvent: {}
+[48.904690] (-) TimerEvent: {}
+[49.007811] (-) TimerEvent: {}
+[49.110961] (-) TimerEvent: {}
+[49.214290] (-) TimerEvent: {}
+[49.315877] (-) TimerEvent: {}
+[49.416699] (-) TimerEvent: {}
+[49.517588] (-) TimerEvent: {}
+[49.618869] (-) TimerEvent: {}
+[49.719848] (-) TimerEvent: {}
+[49.824626] (-) TimerEvent: {}
+[49.928564] (-) TimerEvent: {}
+[50.032246] (-) TimerEvent: {}
+[50.137117] (-) TimerEvent: {}
+[50.238828] (-) TimerEvent: {}
+[50.341359] (-) TimerEvent: {}
+[50.443275] (-) TimerEvent: {}
+[50.544465] (-) TimerEvent: {}
+[50.645778] (-) TimerEvent: {}
+[50.749278] (-) TimerEvent: {}
+[50.852855] (-) TimerEvent: {}
+[50.955004] (-) TimerEvent: {}
+[51.057786] (-) TimerEvent: {}
+[51.159789] (-) TimerEvent: {}
+[51.261795] (-) TimerEvent: {}
+[51.364476] (-) TimerEvent: {}
+[51.466015] (-) TimerEvent: {}
+[51.568097] (-) TimerEvent: {}
+[51.672018] (-) TimerEvent: {}
+[51.773024] (-) TimerEvent: {}
+[51.876775] (-) TimerEvent: {}
+[51.979976] (-) TimerEvent: {}
+[52.080650] (-) TimerEvent: {}
+[52.181167] (-) TimerEvent: {}
+[52.282911] (-) TimerEvent: {}
+[52.383680] (-) TimerEvent: {}
+[52.486497] (-) TimerEvent: {}
+[52.593192] (-) TimerEvent: {}
+[52.694354] (-) TimerEvent: {}
+[52.796068] (-) TimerEvent: {}
+[52.897188] (-) TimerEvent: {}
+[52.997855] (-) TimerEvent: {}
+[53.101985] (-) TimerEvent: {}
+[53.205808] (-) TimerEvent: {}
+[53.309659] (-) TimerEvent: {}
+[53.413365] (-) TimerEvent: {}
+[53.517066] (-) TimerEvent: {}
+[53.621411] (-) TimerEvent: {}
+[53.722518] (-) TimerEvent: {}
+[53.825690] (-) TimerEvent: {}
+[53.927130] (-) TimerEvent: {}
+[54.027771] (-) TimerEvent: {}
+[54.133827] (-) TimerEvent: {}
+[54.236916] (-) TimerEvent: {}
+[54.342022] (-) TimerEvent: {}
+[54.443842] (-) TimerEvent: {}
+[54.545749] (-) TimerEvent: {}
+[54.648384] (-) TimerEvent: {}
+[54.749556] (-) TimerEvent: {}
+[54.852084] (-) TimerEvent: {}
+[54.953197] (-) TimerEvent: {}
+[55.054427] (-) TimerEvent: {}
+[55.157072] (-) TimerEvent: {}
+[55.258073] (-) TimerEvent: {}
+[55.359737] (-) TimerEvent: {}
+[55.461469] (-) TimerEvent: {}
+[55.563408] (-) TimerEvent: {}
+[55.664962] (-) TimerEvent: {}
+[55.766879] (-) TimerEvent: {}
+[55.867841] (-) TimerEvent: {}
+[55.968531] (-) TimerEvent: {}
+[56.071114] (-) TimerEvent: {}
+[56.172581] (-) TimerEvent: {}
+[56.275566] (-) TimerEvent: {}
+[56.299314] (ur7e_motion) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable target_motion_node\x1b[0m\n'}
+[56.376644] (-) TimerEvent: {}
+[56.479160] (-) TimerEvent: {}
+[56.580667] (-) TimerEvent: {}
+[56.684602] (-) TimerEvent: {}
+[56.785036] (-) TimerEvent: {}
+[56.885509] (-) TimerEvent: {}
+[56.986950] (-) TimerEvent: {}
+[57.089673] (-) TimerEvent: {}
+[57.191438] (-) TimerEvent: {}
+[57.292428] (-) TimerEvent: {}
+[57.393661] (-) TimerEvent: {}
+[57.494720] (-) TimerEvent: {}
+[57.600353] (-) TimerEvent: {}
+[57.701377] (-) TimerEvent: {}
+[57.804069] (-) TimerEvent: {}
+[57.908521] (-) TimerEvent: {}
+[58.009827] (-) TimerEvent: {}
+[58.110728] (-) TimerEvent: {}
+[58.165188] (ur7e_motion) StdoutLine: {'line': b'[100%] Built target target_motion_node\n'}
+[58.211177] (-) TimerEvent: {}
+[58.212463] (ur7e_motion) CommandEnded: {'returncode': 0}
+[58.215426] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'install'}
+[58.258783] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/liar/UR7e/ros2_ws/build/ur7e_motion'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e/ros2_ws', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3360', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '4076', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '133403', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:33233', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/4044,unix/ubuntu:/tmp/.ICE-unix/4044', 'INVOCATION_ID': '9548ed51a348453587a83d03e77d5e88', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-a3d668e6d98984a6.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[58.294938] (ur7e_motion) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[58.298107] (ur7e_motion) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[58.302715] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node\n'}
+[58.311708] (-) TimerEvent: {}
+[58.334385] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node\n'}
+[58.371427] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/pick_task_node\n'}
+[58.405866] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml\n'}
+[58.411991] (-) TimerEvent: {}
+[58.440923] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion\n'}
+[58.488077] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion\n'}
+[58.512377] (-) TimerEvent: {}
+[58.515076] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh\n'}
+[58.541383] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv\n'}
+[58.571219] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh\n'}
+[58.603947] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv\n'}
+[58.613054] (-) TimerEvent: {}
+[58.630837] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash\n'}
+[58.668302] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh\n'}
+[58.701893] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh\n'}
+[58.713654] (-) TimerEvent: {}
+[58.732351] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv\n'}
+[58.761065] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv\n'}
+[58.791934] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion\n'}
+[58.813954] (-) TimerEvent: {}
+[58.823401] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake\n'}
+[58.847715] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake\n'}
+[58.876982] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml\n'}
+[58.913286] (ur7e_motion) CommandEnded: {'returncode': 0}
+[58.914331] (-) TimerEvent: {}
+[58.966971] (ur7e_motion) JobEnded: {'identifier': 'ur7e_motion', 'rc': 0}
+[58.968030] (-) EventReactorShutdown: {}

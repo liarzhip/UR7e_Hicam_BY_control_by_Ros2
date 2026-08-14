@@ -315,7 +315,7 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install("TARGETS" "target_motion_node" "DESTINATION" "lib/ur7e_motion")
+# install("TARGETS" "target_motion_node" "gripper_io_node" "pick_task_node" "DESTINATION" "lib/ur7e_motion")
 include("/home/liar/UR7e/ros2_ws/build/ur7e_motion/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "config" "launch" "DESTINATION" "share/ur7e_motion")
