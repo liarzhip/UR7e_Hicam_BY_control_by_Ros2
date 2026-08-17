@@ -282,7 +282,8 @@ std_srvs/srv/Trigger \
 "{}"
 ```
 
-### 相机坐标变换homography.yaml
+## 重要配置文件
+### 1. 相机坐标变换homography.yaml
 ```yaml
 homography:
   rows: 3
