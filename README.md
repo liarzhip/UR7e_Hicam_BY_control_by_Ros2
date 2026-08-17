@@ -51,7 +51,7 @@ data: true
 
 
 UR7e的相关IP设置：
-```json
+```yaml
 Robot IP:
 192.168.0.10 # 在示教器上设置
 
@@ -150,7 +150,7 @@ ros2 run ur7e_vision hik_camera_node \
   ~/UR7e/ros2_ws/src/ur7e_vision/config/vision.yaml
 ```
 相机的IP配置：
-```json
+```yaml
 HIK Camera:
 192.168.1.20
 
@@ -283,7 +283,7 @@ std_srvs/srv/Trigger \
 ```
 
 ### 相机坐标变换homography.yaml
-```json
+```yaml
 homography:
   rows: 3
   cols: 3
