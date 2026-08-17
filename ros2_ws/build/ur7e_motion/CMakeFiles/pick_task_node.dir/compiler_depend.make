@@ -409,8 +409,13 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp \
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
+  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__builder.hpp \
+  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__struct.hpp \
+  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__traits.hpp \
+  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__type_support.hpp \
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/empty.hpp \
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/string.hpp \
   /opt/ros/jazzy/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /opt/ros/jazzy/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
   /opt/ros/jazzy/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
@@ -1080,6 +1085,16 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 
 /usr/include/c++/13/bits/unique_ptr.h:
 
+/usr/include/c++/13/bits/unique_lock.h:
+
+/usr/include/c++/13/bits/uniform_int_dist.h:
+
+/usr/include/c++/13/cerrno:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
 /opt/ros/jazzy/include/rclcpp/rclcpp/serialization.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
@@ -1518,6 +1533,8 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 
 /opt/ros/jazzy/include/rmw/rmw/events_statuses/incompatible_type.h:
 
+/opt/ros/jazzy/include/std_msgs/std_msgs/msg/string.hpp:
+
 /opt/ros/jazzy/include/rcl/rcl/wait.h:
 
 /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp:
@@ -1549,6 +1566,8 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 /opt/ros/jazzy/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp:
 
 /opt/ros/jazzy/include/rmw/rmw/impl/config.h:
+
+/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:
 
 /usr/include/c++/13/bits/ios_base.h:
 
@@ -1908,10 +1927,6 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 
 /opt/ros/jazzy/include/rcutils/rcutils/types/uint8_array.h:
 
-/usr/include/c++/13/cerrno:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
 /opt/ros/jazzy/include/rcutils/rcutils/visibility_control_macros.h:
 
 /opt/ros/jazzy/include/rmw/rmw/discovery_options.h:
@@ -1921,8 +1936,6 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 /opt/ros/jazzy/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
-
-/usr/include/c++/13/bits/uniform_int_dist.h:
 
 /opt/ros/jazzy/include/rmw/rmw/dynamic_message_type_support.h:
 
@@ -1939,6 +1952,8 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 /opt/ros/jazzy/include/rmw/rmw/event_callback_type.h:
 
 /usr/include/x86_64-linux-gnu/bits/ss_flags.h:
+
+/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__traits.hpp:
 
 /opt/ros/jazzy/include/rmw/rmw/events_statuses/events_statuses.h:
 
@@ -1967,6 +1982,8 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 /opt/ros/jazzy/include/rclcpp/rclcpp/executors/executor_entities_collector.hpp:
 
 /opt/ros/jazzy/include/rmw/rmw/impl/cpp/demangle.hpp:
+
+/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__type_support.hpp:
 
 /opt/ros/jazzy/include/rmw/rmw/init.h:
 
@@ -2166,6 +2183,8 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 
 /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
 
+/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__builder.hpp:
+
 /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/detail/node_interfaces_helpers.hpp:
 
 /opt/ros/jazzy/include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message_type.hpp:
@@ -2341,7 +2360,3 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o: /home/liar/UR7e/ros2_ws/
 /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
-/usr/include/c++/13/bits/unique_lock.h:

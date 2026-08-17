@@ -27,7 +27,7 @@ public:
     open_output_state_ = this->declare_parameter<bool>("open_output_state", true);
     close_output_state_ = this->declare_parameter<bool>("close_output_state", false);
     feedback_active_state_ = this->declare_parameter<bool>("feedback_active_state", true);
-    feedback_timeout_sec_ = this->declare_parameter<double>("feedback_timeout_sec", 3.0);
+    feedback_timeout_sec_ = this->declare_parameter<double>("feedback_timeout_sec", 6.0);
     feedback_idle_timeout_sec_ = this->declare_parameter<double>("feedback_idle_timeout_sec", 2.0);
     set_io_timeout_sec_ = this->declare_parameter<double>("set_io_timeout_sec", 2.0);
     io_states_topic_ = this->declare_parameter<std::string>(

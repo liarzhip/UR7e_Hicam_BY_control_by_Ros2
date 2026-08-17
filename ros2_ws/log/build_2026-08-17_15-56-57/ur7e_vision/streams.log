@@ -1,0 +1,18 @@
+[4.753s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/ros2_ws/build/ur7e_vision/build --no-deps symlink_data
+[5.742s] running develop
+[6.764s] running egg_info
+[6.804s] writing ur7e_vision.egg-info/PKG-INFO
+[6.804s] writing dependency_links to ur7e_vision.egg-info/dependency_links.txt
+[6.806s] writing entry points to ur7e_vision.egg-info/entry_points.txt
+[6.807s] writing requirements to ur7e_vision.egg-info/requires.txt
+[6.807s] writing top-level names to ur7e_vision.egg-info/top_level.txt
+[6.950s] reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[6.955s] writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[7.018s] running build_ext
+[7.020s] Creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)
+[7.024s] Installing hik_camera_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+[7.029s] Installing svm_detector_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+[7.031s] 
+[7.031s] Installed /home/liar/UR7e/ros2_ws/build/ur7e_vision
+[7.031s] running symlink_data
+[7.130s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/ros2_ws/build/ur7e_vision/build --no-deps symlink_data

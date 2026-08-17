@@ -76,7 +76,10 @@ class SvmDetectorNode(Node):
         self.declare_parameter("image_topic", "/hik_camera/image_raw") # 订阅的图像话题
         self.declare_parameter("debug_topic", "/vision/debug_image") # 发布的调试图像话题
         self.declare_parameter("target_pose_topic", "/vision/target_pose") # 发布的目标位姿话题
-        self.declare_parameter("target_class_topic", "/vision/target_class") # 发布的目标类别话题
+        self.declare_parameter("target_class_topic", "/vision/target_class") # 发布的逐帧目标类别话题
+        # 每次 5 帧定位周期只发布一次最终状态：
+        #   target:bolt / target:nut / none / invalid
+        self.declare_parameter("result_status_topic", "/vision/result_status")
 
         # ============================================================
         # SVM model parameters
@@ -153,6 +156,9 @@ class SvmDetectorNode(Node):
         self.debug_topic = str(self.get_parameter("debug_topic").value)
         self.target_pose_topic = str(self.get_parameter("target_pose_topic").value)
         self.target_class_topic = str(self.get_parameter("target_class_topic").value)
+        self.result_status_topic = str(
+            self.get_parameter("result_status_topic").value
+        )
 
         svm_model_value = str(self.get_parameter("svm_model").value).strip()
         svm_model_dir_value = str(
@@ -259,6 +265,11 @@ class SvmDetectorNode(Node):
             self.target_class_topic,
             10,
         )
+        self.result_pub = self.create_publisher(
+            String,
+            self.result_status_topic,
+            10,
+        )
         self.debug_pub = self.create_publisher(
             Image,
             self.debug_topic,
@@ -273,9 +284,18 @@ class SvmDetectorNode(Node):
 
         self.stable_history = []
 
+        # 一次 /hik_camera/run_once 会产生 stable_frames 张图。
+        # 这里对整轮图像计数，从而可以明确区分：
+        #   none    = 整轮都没有候选目标
+        #   invalid = 看到了候选，但本轮没有形成合法 bolt/nut 位姿
+        self.cycle_frame_count = 0
+        self.cycle_had_candidate = False
+        self.class_history = []
+
         self.get_logger().info(
             f"Detector ready. image={self.image_topic}, "
-            f"target={self.target_pose_topic}"
+            f"target={self.target_pose_topic}, "
+            f"result={self.result_status_topic}"
         )
         self.get_logger().info(
             "Base XY compensation: "
@@ -592,11 +612,56 @@ class SvmDetectorNode(Node):
         )
 
 
+
+    def _publish_result_status(self, status):
+        msg = String()
+        msg.data = str(status)
+        self.result_pub.publish(msg)
+        self.get_logger().info(
+            f"Vision cycle result: {msg.data}"
+        )
+
+    def _reset_positioning_cycle(self):
+        self.stable_history.clear()
+        self.class_history.clear()
+        self.cycle_frame_count = 0
+        self.cycle_had_candidate = False
+
+    def _finish_positioning_cycle(self, status):
+        self._publish_result_status(status)
+        self._reset_positioning_cycle()
+
+    def _final_cycle_label(self):
+        """
+        对本轮已经选中的目标类别做多数投票。
+        只把 bolt / nut 视为可分拣类别。
+        """
+        valid = [
+            str(label).strip().lower()
+            for label in self.class_history
+            if str(label).strip().lower() in ("bolt", "nut")
+        ]
+
+        if not valid:
+            return None
+
+        bolt_count = valid.count("bolt")
+        nut_count = valid.count("nut")
+
+        if bolt_count == nut_count:
+            return None
+
+        return "bolt" if bolt_count > nut_count else "nut"
+
     # ================================================================
     # Main image callback
     # ================================================================
     def on_image(self, msg):
         try:
+            # HIK 当前每次 run_once 发布 stable_frames 张图。
+            # 无论这一帧有没有检测到目标，都属于当前定位周期。
+            self.cycle_frame_count += 1
+
             img = self.bridge.imgmsg_to_cv2(
                 msg,
                 desired_encoding="passthrough",
@@ -692,11 +757,22 @@ class SvmDetectorNode(Node):
                 )
 
             if not candidates:
-                self.stable_history.clear()
                 self._publish_debug(
                     msg,
                     debug,
                 )
+
+                # 只有整轮 stable_frames 张图都没有候选，才认为桌面为空。
+                # 如果前面某些帧看到了候选而本轮最终不完整，则返回 invalid，
+                # 由任务节点重拍，而不是误认为分拣已经结束。
+                if self.cycle_frame_count >= self.stable_frames:
+                    status = (
+                        "invalid"
+                        if self.cycle_had_candidate
+                        else "none"
+                    )
+                    self._finish_positioning_cycle(status)
+
                 return
 
             # Preserve the original ROS V1 policy:
@@ -750,6 +826,11 @@ class SvmDetectorNode(Node):
                     class_id,
                     f"class_{class_id}",
                 )
+
+            self.cycle_had_candidate = True
+            self.class_history.append(
+                str(label).strip().lower()
+            )
 
             cv2.putText(
                 debug,
@@ -821,6 +902,12 @@ class SvmDetectorNode(Node):
                 class_msg
             )
 
+            final_label = (
+                self._final_cycle_label()
+                if stable_ready
+                else None
+            )
+
             # Homography 加载以后，还可以同时显示机器人 XY 和相机里面的 uv
             if self.H is not None:
                 base_x, base_y = self.pixel_to_base_xy(u, v)
@@ -864,7 +951,7 @@ class SvmDetectorNode(Node):
                 stable_ready
                 and self.H is not None
                 and self.target_z > -10.0
-                and label != "unknown"
+                and final_label in ("bolt", "nut")
             ):
                 # ----------------------------------------------------
                 # 关键修改：
@@ -879,6 +966,7 @@ class SvmDetectorNode(Node):
                 if stable:
                     self.get_logger().info(
                         f"Stable positioning result: "
+                        f"class={final_label}, "
                         f"frames={self.stable_frames}, "
                         f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
                         f"max_dev={stable_max_dev:.2f}px <= "
@@ -888,6 +976,7 @@ class SvmDetectorNode(Node):
                 else:
                     self.get_logger().warning(
                         f"UNSTABLE positioning: "
+                        f"class={final_label}, "
                         f"frames={self.stable_frames}, "
                         f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
                         f"max_dev={stable_max_dev:.2f}px > "
@@ -930,6 +1019,11 @@ class SvmDetectorNode(Node):
                     pose
                 )
 
+                # 最终类别与最终 Pose 同一轮发布，任务节点据此冻结本轮目标。
+                final_class_msg = String()
+                final_class_msg.data = final_label
+                self.class_pub.publish(final_class_msg)
+
                 cv2.putText(
                     debug,
                     (
@@ -945,32 +1039,23 @@ class SvmDetectorNode(Node):
                     cv2.LINE_AA,
                 )
 
-                # ----------------------------------------------------
-                # 本轮 stable_frames 帧已经形成一个最终结果。
-                # 立即清空，确保下一次 Home 的 5 帧不会混入本轮数据。
-                # ----------------------------------------------------
-                self.stable_history.clear()
-
-                self.get_logger().info(
-                    "5-frame positioning cycle completed; "
-                    "stable_history cleared for the next Home cycle."
+                # 本轮形成合法目标：
+                # 先发布 Pose，再发布 target:<class> 最终状态，然后清空整轮缓存。
+                self._finish_positioning_cycle(
+                    f"target:{final_label}"
                 )
 
-            # 如果已经收集满 5 帧，但由于未标定、target_z 无效
-            # 或类别为 unknown 而没有进入上面的 target_pose 发布分支，
-            # 也必须结束本轮，避免下一次 Home 混入旧数据。
+            # 已经走完一整轮图像，但没有形成合法 bolt/nut 位姿。
+            # 这不是“桌面为空”，而是 invalid；任务节点会按配置重新拍照。
             if (
-                stable_ready
-                and len(self.stable_history) >= self.stable_frames
+                self.cycle_frame_count >= self.stable_frames
+                and self.cycle_frame_count != 0
             ):
                 self.get_logger().warning(
-                    "5-frame positioning cycle finished, but target_pose "
-                    "was not published because one of the required conditions "
-                    "was not satisfied (homography/target_z/class). "
-                    "stable_history will be cleared."
+                    "Vision cycle completed but no valid bolt/nut pose was "
+                    "produced. Publishing result=invalid."
                 )
-
-                self.stable_history.clear()
+                self._finish_positioning_cycle("invalid")
 
             self._publish_debug(
                 msg,

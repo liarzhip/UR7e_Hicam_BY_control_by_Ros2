@@ -1,0 +1,376 @@
+[0.000000] (-) TimerEvent: {}
+[0.000320] (ur7e_motion) JobQueued: {'identifier': 'ur7e_motion', 'dependencies': OrderedDict()}
+[0.000397] (ur7e_vision) JobQueued: {'identifier': 'ur7e_vision', 'dependencies': OrderedDict()}
+[0.000467] (ur7e_motion) JobStarted: {'identifier': 'ur7e_motion'}
+[0.023458] (ur7e_vision) JobStarted: {'identifier': 'ur7e_vision'}
+[0.049518] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'cmake'}
+[0.053090] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'build'}
+[0.053236] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/liar/UR7e/ros2_ws/build/ur7e_motion', '--', '-j8', '-l8'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2951', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '3536', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '6392', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:35944', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/3511,unix/ubuntu:/tmp/.ICE-unix/3511', 'INVOCATION_ID': '93f2ba03f6924c4a858752cf9e550517', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-12b34a0b678f65c8.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[0.098642] (-) TimerEvent: {}
+[0.199080] (-) TimerEvent: {}
+[0.301680] (-) TimerEvent: {}
+[0.402833] (-) TimerEvent: {}
+[0.504188] (-) TimerEvent: {}
+[0.604826] (-) TimerEvent: {}
+[0.706352] (-) TimerEvent: {}
+[0.774844] (ur7e_motion) StdoutLine: {'line': b'[ 33%] Built target target_motion_node\n'}
+[0.807255] (-) TimerEvent: {}
+[0.912359] (-) TimerEvent: {}
+[1.015012] (-) TimerEvent: {}
+[1.117954] (-) TimerEvent: {}
+[1.132617] (ur7e_motion) StdoutLine: {'line': b'[ 66%] Built target pick_task_node\n'}
+[1.218597] (-) TimerEvent: {}
+[1.319324] (-) TimerEvent: {}
+[1.420327] (-) TimerEvent: {}
+[1.516208] (ur7e_motion) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o\x1b[0m\n'}
+[1.521191] (-) TimerEvent: {}
+[1.622908] (-) TimerEvent: {}
+[1.724840] (-) TimerEvent: {}
+[1.827486] (-) TimerEvent: {}
+[1.929131] (-) TimerEvent: {}
+[2.032456] (-) TimerEvent: {}
+[2.133449] (-) TimerEvent: {}
+[2.236361] (-) TimerEvent: {}
+[2.337930] (-) TimerEvent: {}
+[2.439667] (-) TimerEvent: {}
+[2.540302] (-) TimerEvent: {}
+[2.643050] (-) TimerEvent: {}
+[2.744464] (-) TimerEvent: {}
+[2.845139] (-) TimerEvent: {}
+[2.946744] (-) TimerEvent: {}
+[3.052293] (-) TimerEvent: {}
+[3.152989] (-) TimerEvent: {}
+[3.254651] (-) TimerEvent: {}
+[3.355376] (-) TimerEvent: {}
+[3.455882] (-) TimerEvent: {}
+[3.556515] (-) TimerEvent: {}
+[3.657396] (-) TimerEvent: {}
+[3.759178] (-) TimerEvent: {}
+[3.859854] (-) TimerEvent: {}
+[3.962792] (-) TimerEvent: {}
+[4.066195] (-) TimerEvent: {}
+[4.167866] (-) TimerEvent: {}
+[4.268940] (-) TimerEvent: {}
+[4.376107] (-) TimerEvent: {}
+[4.477378] (-) TimerEvent: {}
+[4.578116] (-) TimerEvent: {}
+[4.679374] (-) TimerEvent: {}
+[4.781095] (-) TimerEvent: {}
+[4.884767] (-) TimerEvent: {}
+[4.988303] (-) TimerEvent: {}
+[5.089337] (-) TimerEvent: {}
+[5.189754] (-) TimerEvent: {}
+[5.290991] (-) TimerEvent: {}
+[5.391679] (-) TimerEvent: {}
+[5.430023] (ur7e_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/liar/UR7e/ros2_ws/build/ur7e_vision/build', '--no-deps', 'symlink_data'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_vision', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2951', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '3536', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '6392', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:35944', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/3511,unix/ubuntu:/tmp/.ICE-unix/3511', 'INVOCATION_ID': '93f2ba03f6924c4a858752cf9e550517', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-12b34a0b678f65c8.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_vision', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}, 'shell': False}
+[5.492405] (-) TimerEvent: {}
+[5.593272] (-) TimerEvent: {}
+[5.696652] (-) TimerEvent: {}
+[5.797735] (-) TimerEvent: {}
+[5.898536] (-) TimerEvent: {}
+[5.999547] (-) TimerEvent: {}
+[6.103467] (-) TimerEvent: {}
+[6.204838] (-) TimerEvent: {}
+[6.306317] (-) TimerEvent: {}
+[6.407265] (-) TimerEvent: {}
+[6.514286] (-) TimerEvent: {}
+[6.618340] (-) TimerEvent: {}
+[6.723076] (-) TimerEvent: {}
+[6.823880] (-) TimerEvent: {}
+[6.925332] (-) TimerEvent: {}
+[6.928041] (ur7e_vision) StdoutLine: {'line': b'running develop\n'}
+[7.025805] (-) TimerEvent: {}
+[7.129977] (-) TimerEvent: {}
+[7.230742] (-) TimerEvent: {}
+[7.331631] (-) TimerEvent: {}
+[7.432152] (-) TimerEvent: {}
+[7.533671] (-) TimerEvent: {}
+[7.635357] (-) TimerEvent: {}
+[7.697366] (ur7e_vision) StdoutLine: {'line': b'running egg_info\n'}
+[7.737511] (-) TimerEvent: {}
+[7.762038] (ur7e_vision) StdoutLine: {'line': b'writing ur7e_vision.egg-info/PKG-INFO\n'}
+[7.767836] (ur7e_vision) StdoutLine: {'line': b'writing dependency_links to ur7e_vision.egg-info/dependency_links.txt\n'}
+[7.768421] (ur7e_vision) StdoutLine: {'line': b'writing entry points to ur7e_vision.egg-info/entry_points.txt\n'}
+[7.768644] (ur7e_vision) StdoutLine: {'line': b'writing requirements to ur7e_vision.egg-info/requires.txt\n'}
+[7.768791] (ur7e_vision) StdoutLine: {'line': b'writing top-level names to ur7e_vision.egg-info/top_level.txt\n'}
+[7.840245] (-) TimerEvent: {}
+[7.905755] (ur7e_vision) StdoutLine: {'line': b"reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'\n"}
+[7.906188] (ur7e_vision) StdoutLine: {'line': b"writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'\n"}
+[7.940396] (-) TimerEvent: {}
+[8.036814] (ur7e_vision) StdoutLine: {'line': b'running build_ext\n'}
+[8.037732] (ur7e_vision) StdoutLine: {'line': b'Creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)\n'}
+[8.042333] (-) TimerEvent: {}
+[8.043981] (ur7e_vision) StdoutLine: {'line': b'Installing hik_camera_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision\n'}
+[8.047484] (ur7e_vision) StdoutLine: {'line': b'Installing svm_detector_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision\n'}
+[8.050864] (ur7e_vision) StdoutLine: {'line': b'\n'}
+[8.051267] (ur7e_vision) StdoutLine: {'line': b'Installed /home/liar/UR7e/ros2_ws/build/ur7e_vision\n'}
+[8.052517] (ur7e_vision) StdoutLine: {'line': b'running symlink_data\n'}
+[8.142914] (-) TimerEvent: {}
+[8.243545] (-) TimerEvent: {}
+[8.266923] (ur7e_vision) CommandEnded: {'returncode': 0}
+[8.333636] (ur7e_vision) JobEnded: {'identifier': 'ur7e_vision', 'rc': 0}
+[8.345569] (-) TimerEvent: {}
+[8.446672] (-) TimerEvent: {}
+[8.547830] (-) TimerEvent: {}
+[8.651549] (-) TimerEvent: {}
+[8.752975] (-) TimerEvent: {}
+[8.856627] (-) TimerEvent: {}
+[8.962732] (-) TimerEvent: {}
+[9.063690] (-) TimerEvent: {}
+[9.167610] (-) TimerEvent: {}
+[9.270193] (-) TimerEvent: {}
+[9.372564] (-) TimerEvent: {}
+[9.474712] (-) TimerEvent: {}
+[9.579297] (-) TimerEvent: {}
+[9.692460] (-) TimerEvent: {}
+[9.796759] (-) TimerEvent: {}
+[9.897470] (-) TimerEvent: {}
+[9.998496] (-) TimerEvent: {}
+[10.100352] (-) TimerEvent: {}
+[10.203615] (-) TimerEvent: {}
+[10.308620] (-) TimerEvent: {}
+[10.412071] (-) TimerEvent: {}
+[10.513199] (-) TimerEvent: {}
+[10.615644] (-) TimerEvent: {}
+[10.721918] (-) TimerEvent: {}
+[10.825799] (-) TimerEvent: {}
+[10.931708] (-) TimerEvent: {}
+[11.032810] (-) TimerEvent: {}
+[11.134591] (-) TimerEvent: {}
+[11.235185] (-) TimerEvent: {}
+[11.336910] (-) TimerEvent: {}
+[11.437620] (-) TimerEvent: {}
+[11.538160] (-) TimerEvent: {}
+[11.638877] (-) TimerEvent: {}
+[11.739345] (-) TimerEvent: {}
+[11.839946] (-) TimerEvent: {}
+[11.940472] (-) TimerEvent: {}
+[12.041043] (-) TimerEvent: {}
+[12.141857] (-) TimerEvent: {}
+[12.242330] (-) TimerEvent: {}
+[12.342776] (-) TimerEvent: {}
+[12.443224] (-) TimerEvent: {}
+[12.543807] (-) TimerEvent: {}
+[12.644331] (-) TimerEvent: {}
+[12.745430] (-) TimerEvent: {}
+[12.849293] (-) TimerEvent: {}
+[12.954236] (-) TimerEvent: {}
+[13.054828] (-) TimerEvent: {}
+[13.160008] (-) TimerEvent: {}
+[13.261186] (-) TimerEvent: {}
+[13.362013] (-) TimerEvent: {}
+[13.463431] (-) TimerEvent: {}
+[13.564992] (-) TimerEvent: {}
+[13.666678] (-) TimerEvent: {}
+[13.769195] (-) TimerEvent: {}
+[13.870448] (-) TimerEvent: {}
+[13.972464] (-) TimerEvent: {}
+[14.075314] (-) TimerEvent: {}
+[14.176377] (-) TimerEvent: {}
+[14.281078] (-) TimerEvent: {}
+[14.386620] (-) TimerEvent: {}
+[14.487632] (-) TimerEvent: {}
+[14.588834] (-) TimerEvent: {}
+[14.689762] (-) TimerEvent: {}
+[14.791780] (-) TimerEvent: {}
+[14.892992] (-) TimerEvent: {}
+[14.996596] (-) TimerEvent: {}
+[15.097388] (-) TimerEvent: {}
+[15.198597] (-) TimerEvent: {}
+[15.299498] (-) TimerEvent: {}
+[15.400337] (-) TimerEvent: {}
+[15.501545] (-) TimerEvent: {}
+[15.602797] (-) TimerEvent: {}
+[15.704926] (-) TimerEvent: {}
+[15.805352] (-) TimerEvent: {}
+[15.906114] (-) TimerEvent: {}
+[16.006746] (-) TimerEvent: {}
+[16.107751] (-) TimerEvent: {}
+[16.208363] (-) TimerEvent: {}
+[16.309239] (-) TimerEvent: {}
+[16.413004] (-) TimerEvent: {}
+[16.515408] (-) TimerEvent: {}
+[16.617223] (-) TimerEvent: {}
+[16.718679] (-) TimerEvent: {}
+[16.819399] (-) TimerEvent: {}
+[16.920074] (-) TimerEvent: {}
+[17.021369] (-) TimerEvent: {}
+[17.122329] (-) TimerEvent: {}
+[17.225002] (-) TimerEvent: {}
+[17.326119] (-) TimerEvent: {}
+[17.428413] (-) TimerEvent: {}
+[17.531182] (-) TimerEvent: {}
+[17.632106] (-) TimerEvent: {}
+[17.734147] (-) TimerEvent: {}
+[17.836791] (-) TimerEvent: {}
+[17.939399] (-) TimerEvent: {}
+[18.040753] (-) TimerEvent: {}
+[18.142425] (-) TimerEvent: {}
+[18.243798] (-) TimerEvent: {}
+[18.344696] (-) TimerEvent: {}
+[18.445371] (-) TimerEvent: {}
+[18.546088] (-) TimerEvent: {}
+[18.648679] (-) TimerEvent: {}
+[18.749695] (-) TimerEvent: {}
+[18.859051] (-) TimerEvent: {}
+[18.960584] (-) TimerEvent: {}
+[19.062729] (-) TimerEvent: {}
+[19.163665] (-) TimerEvent: {}
+[19.264897] (-) TimerEvent: {}
+[19.366277] (-) TimerEvent: {}
+[19.469329] (-) TimerEvent: {}
+[19.570586] (-) TimerEvent: {}
+[19.671598] (-) TimerEvent: {}
+[19.773395] (-) TimerEvent: {}
+[19.877602] (-) TimerEvent: {}
+[19.980445] (-) TimerEvent: {}
+[20.083205] (-) TimerEvent: {}
+[20.187270] (-) TimerEvent: {}
+[20.291139] (-) TimerEvent: {}
+[20.392160] (-) TimerEvent: {}
+[20.492692] (-) TimerEvent: {}
+[20.594496] (-) TimerEvent: {}
+[20.696395] (-) TimerEvent: {}
+[20.797920] (-) TimerEvent: {}
+[20.901916] (-) TimerEvent: {}
+[21.002864] (-) TimerEvent: {}
+[21.105727] (-) TimerEvent: {}
+[21.209550] (-) TimerEvent: {}
+[21.310107] (-) TimerEvent: {}
+[21.412547] (-) TimerEvent: {}
+[21.514340] (-) TimerEvent: {}
+[21.619279] (-) TimerEvent: {}
+[21.720530] (-) TimerEvent: {}
+[21.823606] (-) TimerEvent: {}
+[21.928399] (-) TimerEvent: {}
+[22.037653] (-) TimerEvent: {}
+[22.139638] (-) TimerEvent: {}
+[22.242982] (-) TimerEvent: {}
+[22.349100] (-) TimerEvent: {}
+[22.450830] (-) TimerEvent: {}
+[22.552797] (-) TimerEvent: {}
+[22.657825] (-) TimerEvent: {}
+[22.758501] (-) TimerEvent: {}
+[22.860646] (-) TimerEvent: {}
+[22.961760] (-) TimerEvent: {}
+[23.063487] (-) TimerEvent: {}
+[23.164256] (-) TimerEvent: {}
+[23.266129] (-) TimerEvent: {}
+[23.368000] (-) TimerEvent: {}
+[23.469435] (-) TimerEvent: {}
+[23.571911] (-) TimerEvent: {}
+[23.672944] (-) TimerEvent: {}
+[23.775180] (-) TimerEvent: {}
+[23.876423] (-) TimerEvent: {}
+[23.977589] (-) TimerEvent: {}
+[24.078849] (-) TimerEvent: {}
+[24.181801] (-) TimerEvent: {}
+[24.286175] (-) TimerEvent: {}
+[24.389276] (-) TimerEvent: {}
+[24.491925] (-) TimerEvent: {}
+[24.597477] (-) TimerEvent: {}
+[24.698349] (-) TimerEvent: {}
+[24.799228] (-) TimerEvent: {}
+[24.900927] (-) TimerEvent: {}
+[25.005279] (-) TimerEvent: {}
+[25.107238] (-) TimerEvent: {}
+[25.211427] (-) TimerEvent: {}
+[25.313881] (-) TimerEvent: {}
+[25.415329] (-) TimerEvent: {}
+[25.517252] (-) TimerEvent: {}
+[25.619129] (-) TimerEvent: {}
+[25.719859] (-) TimerEvent: {}
+[25.820347] (-) TimerEvent: {}
+[25.921578] (-) TimerEvent: {}
+[26.022532] (-) TimerEvent: {}
+[26.123445] (-) TimerEvent: {}
+[26.224402] (-) TimerEvent: {}
+[26.325492] (-) TimerEvent: {}
+[26.427543] (-) TimerEvent: {}
+[26.528719] (-) TimerEvent: {}
+[26.629405] (-) TimerEvent: {}
+[26.730925] (-) TimerEvent: {}
+[26.832608] (-) TimerEvent: {}
+[26.934806] (-) TimerEvent: {}
+[27.036422] (-) TimerEvent: {}
+[27.137071] (-) TimerEvent: {}
+[27.240169] (-) TimerEvent: {}
+[27.340958] (-) TimerEvent: {}
+[27.441466] (-) TimerEvent: {}
+[27.541963] (-) TimerEvent: {}
+[27.644152] (-) TimerEvent: {}
+[27.745638] (-) TimerEvent: {}
+[27.846948] (-) TimerEvent: {}
+[27.947530] (-) TimerEvent: {}
+[28.048635] (-) TimerEvent: {}
+[28.149683] (-) TimerEvent: {}
+[28.252487] (-) TimerEvent: {}
+[28.355840] (-) TimerEvent: {}
+[28.457027] (-) TimerEvent: {}
+[28.558365] (-) TimerEvent: {}
+[28.662376] (-) TimerEvent: {}
+[28.763517] (-) TimerEvent: {}
+[28.866542] (-) TimerEvent: {}
+[28.967668] (-) TimerEvent: {}
+[29.070462] (-) TimerEvent: {}
+[29.171509] (-) TimerEvent: {}
+[29.276502] (-) TimerEvent: {}
+[29.377597] (-) TimerEvent: {}
+[29.478967] (-) TimerEvent: {}
+[29.580632] (-) TimerEvent: {}
+[29.683060] (-) TimerEvent: {}
+[29.784261] (-) TimerEvent: {}
+[29.888684] (-) TimerEvent: {}
+[29.991538] (-) TimerEvent: {}
+[30.092522] (-) TimerEvent: {}
+[30.193433] (-) TimerEvent: {}
+[30.295182] (-) TimerEvent: {}
+[30.398563] (-) TimerEvent: {}
+[30.499322] (-) TimerEvent: {}
+[30.600007] (-) TimerEvent: {}
+[30.700983] (-) TimerEvent: {}
+[30.802076] (-) TimerEvent: {}
+[30.825535] (ur7e_motion) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable gripper_io_node\x1b[0m\n'}
+[30.902883] (-) TimerEvent: {}
+[31.003682] (-) TimerEvent: {}
+[31.104238] (-) TimerEvent: {}
+[31.204948] (-) TimerEvent: {}
+[31.305775] (-) TimerEvent: {}
+[31.407937] (-) TimerEvent: {}
+[31.511053] (-) TimerEvent: {}
+[31.611500] (-) TimerEvent: {}
+[31.714090] (-) TimerEvent: {}
+[31.814941] (-) TimerEvent: {}
+[31.915604] (-) TimerEvent: {}
+[32.017070] (-) TimerEvent: {}
+[32.067003] (ur7e_motion) StdoutLine: {'line': b'[100%] Built target gripper_io_node\n'}
+[32.117694] (-) TimerEvent: {}
+[32.123395] (ur7e_motion) CommandEnded: {'returncode': 0}
+[32.128497] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'install'}
+[32.168127] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/liar/UR7e/ros2_ws/build/ur7e_motion'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'INPUT_METHOD': 'fcitx5', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.132.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2951', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '3536', 'BUNDLED_DEBUGPY_PATH': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '6392', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'MVCAM_SOFTWARE_LIBENV': '/opt/MVS/lib', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:35944', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/miniconda3/condabin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/3511,unix/ubuntu:/tmp/.ICE-unix/3511', 'INVOCATION_ID': '93f2ba03f6924c4a858752cf9e550517', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/liar/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-12b34a0b678f65c8.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/96fc51e6439d4d1fc8868cac819d90e6/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-596b8463bc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'MVCAM_MVS_LIBENV': '/opt/MVS/lib', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '3b35bc18e67fc33fd37e694877e1c245', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/MVS/Samples/64/Python/MvImport:/opt/MVS/Samples/64/Python/MvImport:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[32.205938] (ur7e_motion) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[32.209995] (ur7e_motion) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[32.214362] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node\n'}
+[32.215885] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node\n'}
+[32.216666] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/pick_task_node\n'}
+[32.218322] (-) TimerEvent: {}
+[32.221238] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml\n'}
+[32.221703] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion\n'}
+[32.222532] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion\n'}
+[32.222755] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh\n'}
+[32.223814] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv\n'}
+[32.224379] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh\n'}
+[32.224961] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv\n'}
+[32.225880] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash\n'}
+[32.226435] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh\n'}
+[32.226782] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh\n'}
+[32.227075] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv\n'}
+[32.227311] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv\n'}
+[32.263186] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion\n'}
+[32.266256] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake\n'}
+[32.268661] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake\n'}
+[32.269629] (ur7e_motion) StdoutLine: {'line': b'-- Up-to-date symlink: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml\n'}
+[32.277001] (ur7e_motion) CommandEnded: {'returncode': 0}
+[32.318700] (-) TimerEvent: {}
+[32.323523] (ur7e_motion) JobEnded: {'identifier': 'ur7e_motion', 'rc': 0}
+[32.326699] (-) EventReactorShutdown: {}

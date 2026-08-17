@@ -410,8 +410,13 @@ CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.hpp
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__traits.hpp
+ /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__builder.hpp
+ /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__struct.hpp
+ /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__traits.hpp
+ /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__type_support.hpp
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/empty.hpp
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+ /opt/ros/jazzy/include/std_msgs/std_msgs/msg/string.hpp
  /opt/ros/jazzy/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp
  /opt/ros/jazzy/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp
  /opt/ros/jazzy/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp

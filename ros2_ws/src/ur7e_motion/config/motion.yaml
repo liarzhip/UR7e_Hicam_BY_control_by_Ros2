@@ -1,24 +1,17 @@
 target_motion_node:
   ros__parameters:
-    planning_group: "ur_manipulator"
+    planning_group: ur_manipulator
     velocity_scale: 0.35
     acceleration_scale: 0.05250499
     planning_time: 3.0
-
-    # 前期实验 true；稳定后可改 false
-    manual_plan_execute_enabled: True
-
-    # 第一次先留空；通过 /ur7e/set_home_here 获取后填入
+    manual_plan_execute_enabled: true
     home_joint_values:
-      [
-        -0.78541309,
-        -1.57084288,
-        -1.57078362,
-        -1.57078670,
-        1.57077169,
-        3.14160013,
-      ]
-
+    - -0.78541309
+    - -1.57084288
+    - -1.57078362
+    - -1.5707867
+    - 1.57077169
+    - 3.14160013
 gripper_io_node:
   ros__parameters:
     output_pin: 0
@@ -29,40 +22,52 @@ gripper_io_node:
     feedback_timeout_sec: 3.0
     feedback_idle_timeout_sec: 2.0
     set_io_timeout_sec: 2.0
-    io_states_topic: "/io_and_status_controller/io_states"
-    set_io_service: "/io_and_status_controller/set_io"
-
+    io_states_topic: /io_and_status_controller/io_states
+    set_io_service: /io_and_status_controller/set_io
 pick_task_node:
   ros__parameters:
-    vision_target_topic: "/vision/target_pose"
-    motion_command_topic: "/ur7e/target_pose_cmd"
-    camera_trigger_topic: "/hik_camera/run_once"
-
-    direct_move_service: "/ur7e/move_to_target"
-    plan_service: "/ur7e/plan_to_target"
-    execute_service: "/ur7e/execute_last_plan"
-    go_home_service: "/ur7e/go_home"
-
-    gripper_open_service: "/gripper/open"
-    gripper_close_service: "/gripper/close"
-
-    required_frame: "base"
-
-    pregrasp_height: 0.10
+    vision_target_topic: /vision/target_pose
+    motion_command_topic: /ur7e/target_pose_cmd
+    camera_trigger_topic: /hik_camera/run_once
+    direct_move_service: /ur7e/move_to_target
+    plan_service: /ur7e/plan_to_target
+    execute_service: /ur7e/execute_last_plan
+    go_home_service: /ur7e/go_home
+    gripper_open_service: /gripper/open
+    gripper_close_service: /gripper/close
+    required_frame: base
+    pregrasp_height: 0.1
     grasp_offset_z: 0.0
-    lift_height: 0.10
-
+    lift_height: 0.1
     home_settle_sec: 3.0
-    command_settle_sec: 0.20
+    command_settle_sec: 0.2
     camera_ready_timeout_sec: 5.0
     vision_wait_timeout_sec: 10.0
-
     service_wait_timeout_sec: 3.0
     plan_timeout_sec: 12.0
     execute_timeout_sec: 45.0
     gripper_timeout_sec: 6.0
-
-    # false = 直接 move；true = plan 后 execute
     use_separate_plan_execute: true
-    # false 时会在 PREGRASP 停止
     full_pick_enabled: true
+    vision_result_topic: /vision/result_status
+    motion_stop_service: /ur7e/stop
+    drop_positions_configured: true
+    bolt_drop_x: 0.6159235295592549
+    bolt_drop_y: 0.03287270193404044
+    bolt_drop_z: 0.18496513709158918
+    nut_drop_x: 0.7612316182016269
+    nut_drop_y: -0.10927055918957285
+    nut_drop_z: 0.1849483479466365
+    drop_approach_height: 0.1
+    drop_lowering_enabled: true
+    vision_retry_count: 2
+    vision_retry_delay_sec: 0.5
+    max_cycles: 0
+    bolt_drop_qx: 0.3826638600522937
+    bolt_drop_qy: 0.9238833638569462
+    bolt_drop_qz: -0.00028139964768411456
+    bolt_drop_qw: 0.0027966073178793184
+    nut_drop_qx: 0.3826532817509251
+    nut_drop_qy: 0.9238877990744219
+    nut_drop_qz: -0.00029588229512614496
+    nut_drop_qw: 0.002777254099923359

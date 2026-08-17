@@ -302,3 +302,8 @@ calibration:
   mean_xy_error_m: 0.0009254134903210749
   max_xy_error_m: 0.002870496919034476
 ```
+## 其他常用指令
+1. 输出TCP坐标（position+orientation）
+```sh
+ros2 topic echo /tcp_pose_broadcaster/pose --once
+```
