@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+"""
+终端运行指令:
+    cd ~/UR7e/ros2_ws/src/ur7e_vision
+
+    python3 tools/compute_homography.py \
+    calibration/pixel_base_points.csv \
+    calibration/homography.yaml
+
+    cat calibration/homography.yaml
+"""
+
 import argparse
 import csv
 from pathlib import Path

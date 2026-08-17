@@ -129,6 +129,11 @@ class SvmDetectorNode(Node):
         self.declare_parameter("target_z", 0.165)
         self.declare_parameter("target_frame", "base")
 
+        # Homography -> Base XY 后的固定系统补偿，单位：m
+        # 当前机械臂需要沿 Base -X、-Y 各补偿 10 mm。
+        self.declare_parameter("target_offset_x", -0.010)
+        self.declare_parameter("target_offset_y", -0.015)
+
         self.declare_parameter("fixed_qx", 0.995)
         self.declare_parameter("fixed_qy", 0.086)
         self.declare_parameter("fixed_qz", 0.019)
@@ -195,6 +200,13 @@ class SvmDetectorNode(Node):
 
         self.target_z = float(self.get_parameter("target_z").value)
         self.target_frame = str(self.get_parameter("target_frame").value)
+
+        self.target_offset_x = float(
+            self.get_parameter("target_offset_x").value
+        )
+        self.target_offset_y = float(
+            self.get_parameter("target_offset_y").value
+        )
 
         self.fixed_q = quaternion_normalize([
             float(self.get_parameter("fixed_qx").value),
@@ -264,6 +276,11 @@ class SvmDetectorNode(Node):
         self.get_logger().info(
             f"Detector ready. image={self.image_topic}, "
             f"target={self.target_pose_topic}"
+        )
+        self.get_logger().info(
+            "Base XY compensation: "
+            f"dX={self.target_offset_x * 1000.0:.1f} mm, "
+            f"dY={self.target_offset_y * 1000.0:.1f} mm"
         )
 
         if self.classifier is not None:
@@ -489,9 +506,14 @@ class SvmDetectorNode(Node):
             src,
             self.H,
         )
+        # Homography 得到原始 Base XY 后，再叠加固定系统补偿。
+        # 这样 Homography 只负责坐标映射，offset 负责 TCP/夹爪等固定偏差。
+        base_x = float(dst[0, 0, 0]) + self.target_offset_x
+        base_y = float(dst[0, 0, 1]) + self.target_offset_y
+
         return (
-            float(dst[0, 0, 0]),
-            float(dst[0, 0, 1]),
+            base_x,
+            base_y,
         )
 
     def is_stable(self, u, v):

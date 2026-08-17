@@ -62,7 +62,7 @@ def _load_hik_sdk():
         module = __import__("MvCameraControl_class", fromlist=["*"]) # pyright: ignore[reportUndefinedVariable]
     except Exception as exc:
         raise RuntimeError(
-            "Cannot import HIKROBOT MVS Python SDK. "
+             "Cannot import HIKROBOT MVS Python SDK. "
             "Run: find /opt/MVS -name MvCameraControl_class.py 2>/dev/null ; "
             "then export HIK_MVS_PYTHON_PATH=<directory-containing-that-file>"
         ) from exc
