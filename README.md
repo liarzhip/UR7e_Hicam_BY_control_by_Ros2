@@ -1,6 +1,11 @@
 ## ROS2 指令整合:
 
-### 0. 如果修改过以下源码，先编译一次
+### 0. 前期准备
+#### (1)终端建立
+
+建立终端：\
+![alt text](./image/terminal.png)
+#### (2)修改编译
 
 target_motion_node.cpp\
 gripper_io_node.cpp\
@@ -20,7 +25,7 @@ colcon build \
 source ~/UR7e/ros2_ws/install/setup.bash
 ```
 
-如果只修改了：\
+如果只修改了：
 
 ```yaml
 motion.yaml
@@ -29,8 +34,6 @@ vision.yaml
 
 通常不用重新编译，只需要重启对应节点。\
 
-建立终端：\
-![alt text](./image/terminal.png)
 ### 1. 启动 UR7e Driver
 
 ```sh
@@ -59,7 +62,7 @@ robot_program_running \
 data: true
 ```
 
-有时如果不长时间操作，程序会自动断开，这是需要重新在示教器上点击运行。\
+有时如果不长时间操作，程序会自动断开，这是需要重新在示教器上点击运行。
 
 UR7e的相关IP设置：
 
