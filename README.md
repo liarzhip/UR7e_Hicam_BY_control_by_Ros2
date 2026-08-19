@@ -27,8 +27,10 @@ motion.yaml
 vision.yaml
 ```
 
-通常不用重新编译，只需要重启对应节点。
+通常不用重新编译，只需要重启对应节点。\
 
+建立终端：\
+![alt text](./image/terminal.png)
 ### 1. 启动 UR7e Driver
 
 ```sh
@@ -267,11 +269,18 @@ ros2 run ur7e_motion pick_task_node \
   ~/UR7e/ros2_ws/src/ur7e_motion/config/motion.yaml
 ```
 
-执行：
+**手动执行：**
 
 ```sh
 ros2 service call \
 /pick/start \
+std_srvs/srv/Trigger \
+"{}"
+```
+**手动停止：**
+```sh
+ros2 service call \
+/pick/stop \
 std_srvs/srv/Trigger \
 "{}"
 ```
@@ -308,7 +317,7 @@ LIFT
 HOME
 ```
 
-第一次定位home位置：
+第一次定位home位置：首先使用示教器将机械臂移动到指定位置后执行
 
 ```sh
 ros2 service call \
@@ -317,7 +326,7 @@ std_srvs/srv/Trigger \
 "{}"
 ```
 
-会返回：
+会返回类似6个关节变量的值：
 
 ```sh
 home_joint_values:
@@ -365,7 +374,7 @@ calibration:
 ros2 topic echo /tcp_pose_broadcaster/pose --once
 ```
 
-## VScode配置
+## VScode主题配置
 
 ```json
 {

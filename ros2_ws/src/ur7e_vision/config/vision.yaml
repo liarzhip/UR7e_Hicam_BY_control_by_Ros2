@@ -2,74 +2,48 @@ hik_camera_node:
   ros__parameters:
     device_index: 0
     publish_fps: 15.0
-    frame_id: "hik_camera_optical_frame"
-    image_topic: "/hik_camera/image_raw"
-
-    # First integration version: prefer Mono8.
-    # HOG/Hu/geometric features do not require color.
-    force_mono8: False
-
-    pixel_format: "keep"
-
-    # Keep 1.0 during calibration.
-    # If changed later, the homography must be recalibrated for that image size.
+    frame_id: hik_camera_optical_frame
+    image_topic: /hik_camera/image_raw
+    force_mono8: false
+    pixel_format: keep
     resize_scale: 1.0
-
     gain_auto: false
     gain: 23.0
-
 svm_detector_node:
   ros__parameters:
-    image_topic: "/hik_camera/image_raw"
-    debug_topic: "/vision/debug_image"
-    target_pose_topic: "/vision/target_pose"
-    target_class_topic: "/vision/target_class"
-
-    # Put your OpenCV SVM XML here after building the package.
-    # If it does not exist, contour-only mode is used.
-    svm_model: "/home/liar/UR7e/ros2_ws/src/ur7e_vision/config/svm_model.xml"
-
-    # Leave empty on first camera test.
-    # After planar calibration, set this to an absolute path, for example:
-    # /home/liar/UR7e/ros2_ws/src/ur7e_vision/calibration/homography.yaml
-    homography_file: "/home/liar/UR7e/ros2_ws/src/ur7e_vision/calibration/homography.yaml"
-
-    labels_file: "/home/liar/UR7e/ros2_ws/src/ur7e_vision/config/labels.yaml"
-
+    image_topic: /hik_camera/image_raw
+    debug_topic: /vision/debug_image
+    target_pose_topic: /vision/target_pose
+    target_class_topic: /vision/target_class
+    svm_model: /home/liar/UR7e/ros2_ws/src/ur7e_vision/config/svm_model.xml
+    homography_file: /home/liar/UR7e/ros2_ws/src/ur7e_vision/calibration/homography.yaml
+    labels_file: /home/liar/UR7e/ros2_ws/src/ur7e_vision/config/labels.yaml
     min_area: 500.0
     max_area: 10000000.0
-
     blur_size: 5
-    threshold_mode: "otsu" # otsu | binary | canny
+    threshold_mode: otsu
     binary_threshold: 100
     canny_low: 50
     canny_high: 150
     invert_binary: false
-
-    # IMPORTANT:
-    # Set this to the real target/grasp plane Z in UR base coordinates (meters)
-    # after calibration. Sentinel disables /vision/target_pose publication.
     target_z: 0.165
-
-    target_frame: "base"
-
-    # Fixed grasp orientation copied from your current base -> tool0 test.
-    # Keep fixed for the first visual-motion experiment.
-    fixed_qx: 0.995
-    fixed_qy: 0.086
-    fixed_qz: 0.019
-    fixed_qw: -0.047
-
-    # V1: false. Enable only after XY positioning is validated.
-    use_detection_angle: false
+    target_frame: base
+    fixed_qx: 0.9238700051322959
+    fixed_qy: 0.38269617379663273
+    fixed_qz: -0.0022329597426112052
+    fixed_qw: 0.0016929468558880931
+    use_detection_angle: true
     yaw_offset_deg: 0.0
-
-    # -1 accepts any SVM class. >=0 filters one numeric class.
     target_class_id: -1
-
-    # Allows contour-only pipeline testing before SVM model is copied.
     publish_when_no_svm: true
-
-    # Require the detected center to remain within tolerance for N frames.
     stable_frames: 5
-    stable_pixel_tolerance: 3.0
+    stable_pixel_tolerance: 10.0
+    use_detection_angle_for_bolt: true
+    use_detection_angle_for_nut: true
+    target_selection_mode: confidence
+    min_target_score: 0.50
+    target_match_radius_px: 100.0
+    min_track_frames: 3
+    min_class_consistency_frames: 3
+    require_stable_position: true
+    angle_vector_length_px: 100.0

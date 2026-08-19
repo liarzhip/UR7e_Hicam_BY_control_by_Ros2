@@ -1,0 +1,18 @@
+[1.945s] Invoking command in '/home/liar/UR7e/build/ur7e_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/build/ur7e_vision/build --no-deps symlink_data
+[2.425s] running develop
+[2.733s] running egg_info
+[2.763s] writing ur7e_vision.egg-info/PKG-INFO
+[2.763s] writing dependency_links to ur7e_vision.egg-info/dependency_links.txt
+[2.764s] writing entry points to ur7e_vision.egg-info/entry_points.txt
+[2.764s] writing requirements to ur7e_vision.egg-info/requires.txt
+[2.764s] writing top-level names to ur7e_vision.egg-info/top_level.txt
+[2.826s] reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[2.827s] writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[2.863s] running build_ext
+[2.863s] Creating /home/liar/UR7e/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)
+[2.864s] Installing hik_camera_node script to /home/liar/UR7e/install/ur7e_vision/lib/ur7e_vision
+[2.865s] Installing svm_detector_node script to /home/liar/UR7e/install/ur7e_vision/lib/ur7e_vision
+[2.865s] 
+[2.865s] Installed /home/liar/UR7e/build/ur7e_vision
+[2.865s] running symlink_data
+[2.902s] Invoked command in '/home/liar/UR7e/build/ur7e_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/build/ur7e_vision/build --no-deps symlink_data

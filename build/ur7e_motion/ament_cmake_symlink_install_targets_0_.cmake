@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/liar/UR7e/build/ur7e_motion/target_motion_node" "/home/liar/UR7e/build/ur7e_motion/gripper_io_node" "/home/liar/UR7e/build/ur7e_motion/pick_task_node" "TARGETS" "target_motion_node" "gripper_io_node" "pick_task_node" "DESTINATION" "lib/ur7e_motion")

@@ -1,0 +1,82 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+-- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)
+-- Found ur_msgs: 2.5.0 (/opt/ros/jazzy/share/ur_msgs/cmake)
+-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+-- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):
+  Package 'tl_expected' is deprecated (This package will be removed in ROS 2
+  Lyrical Luth.
+
+        Use tl/expected.hpp from libexpected-dev,
+        or rcpputils/tl_expected/expected.hpp if the system header is not available)
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)
+  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)
+  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)
+  CMakeLists.txt:19 (find_package)
+
+[0m
+-- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+-- Configuring done (10.7s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/liar/UR7e/build/ur7e_motion
+[ 50%] [32mBuilding CXX object CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable gripper_io_node[0m
+[ 83%] [32m[1mLinking CXX executable pick_task_node[0m
+[100%] [32m[1mLinking CXX executable target_motion_node[0m
+[100%] Built target gripper_io_node
+[100%] Built target pick_task_node
+[100%] Built target target_motion_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/liar/UR7e/install/ur7e_motion/lib/ur7e_motion/target_motion_node
+-- Symlinking: /home/liar/UR7e/install/ur7e_motion/lib/ur7e_motion/gripper_io_node
+-- Symlinking: /home/liar/UR7e/install/ur7e_motion/lib/ur7e_motion/pick_task_node
+-- Symlinking: /home/liar/UR7e/install/ur7e_motion/share/ur7e_motion/config/motion.yaml
+[31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:105 (message):
+  ament_cmake_symlink_install_directory() can't find
+  '/home/liar/UR7e/ros2_ws/src/ur7e_motion/launch'
+Call Stack (most recent call first):
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:322 (ament_cmake_symlink_install_directory)
+  cmake_install.cmake:46 (include)
+
+[0m

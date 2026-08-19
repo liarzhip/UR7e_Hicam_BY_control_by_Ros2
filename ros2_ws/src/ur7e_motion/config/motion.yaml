@@ -71,3 +71,4 @@ pick_task_node:
     nut_drop_qy: 0.9238877990744219
     nut_drop_qz: -0.00029588229512614496
     nut_drop_qw: 0.002777254099923359
+    align_after_lift_before_drop: False

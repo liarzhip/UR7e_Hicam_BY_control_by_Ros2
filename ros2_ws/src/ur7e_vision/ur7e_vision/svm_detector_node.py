@@ -134,20 +134,58 @@ class SvmDetectorNode(Node):
 
         # Homography -> Base XY 后的固定系统补偿，单位：m
         # 当前机械臂需要沿 Base -X、-Y 各补偿 10 mm。
-        self.declare_parameter("target_offset_x", -0.010)
-        self.declare_parameter("target_offset_y", -0.015)
+        self.declare_parameter("target_offset_x", -0.005)
+        self.declare_parameter("target_offset_y", -0.007)
 
-        self.declare_parameter("fixed_qx", 0.995)
-        self.declare_parameter("fixed_qy", 0.086)
-        self.declare_parameter("fixed_qz", 0.019)
-        self.declare_parameter("fixed_qw", -0.047)
-        self.declare_parameter("use_detection_angle", False)
+        # Zero-angle grasp reference: the user's taught HOME pose with
+        # the gripper level / vertical-down.
+        self.declare_parameter("fixed_qx", 0.9238700051322959)
+        self.declare_parameter("fixed_qy", 0.38269617379663273)
+        self.declare_parameter("fixed_qz", -0.0022329597426112052)
+        self.declare_parameter("fixed_qw", 0.0016929468558880931)
+
+        # Master switch plus class-specific switches.
+        # Bolt has a meaningful long-axis angle; nut is rotationally symmetric,
+        # so nut angle is disabled by default.
+        self.declare_parameter("use_detection_angle", True)
+        self.declare_parameter("use_detection_angle_for_bolt", True)
+        self.declare_parameter("use_detection_angle_for_nut", True)
+
+        # Fine adjustment after image-angle -> Base yaw-delta conversion.
         self.declare_parameter("yaw_offset_deg", 0.0)
 
         self.declare_parameter("target_class_id", -1)
         self.declare_parameter("publish_when_no_svm", True)
         self.declare_parameter("stable_frames", 5)
         self.declare_parameter("stable_pixel_tolerance", 3.0)
+
+        # ============================================================
+        # Multi-target association / classification robustness
+        # ============================================================
+        # First frame: confidence | largest
+        self.declare_parameter("target_selection_mode", "confidence")
+
+        # Only bolt/nut predictions above this score are eligible to be picked.
+        # Low-confidence/unknown objects make the cycle INVALID rather than NONE.
+        self.declare_parameter("min_target_score", 0.55)
+
+        # After the first frame locks one object, later frames may only match
+        # a candidate near the previously tracked center.
+        self.declare_parameter("target_match_radius_px", 80.0)
+
+        # A 5-frame cycle may tolerate one missed frame, but still requires
+        # enough observations of the SAME tracked target.
+        self.declare_parameter("min_track_frames", 4)
+
+        # Final class must have at least this many votes on the same track.
+        self.declare_parameter("min_class_consistency_frames", 4)
+
+        # Never publish a position if the tracked centers are not stable.
+        self.declare_parameter("require_stable_position", True)
+
+        # Pixel vector length used to transform image angle through Homography
+        # into a Base-frame yaw.
+        self.declare_parameter("angle_vector_length_px", 80.0)
 
         # ============================================================
         # Read parameters
@@ -223,6 +261,15 @@ class SvmDetectorNode(Node):
         self.use_detection_angle = bool(
             self.get_parameter("use_detection_angle").value
         )
+
+        self.use_detection_angle_for_bolt = bool(
+            self.get_parameter("use_detection_angle_for_bolt").value
+        )
+
+        self.use_detection_angle_for_nut = bool(
+            self.get_parameter("use_detection_angle_for_nut").value
+        )
+
         self.yaw_offset_deg = float(
             self.get_parameter("yaw_offset_deg").value
         )
@@ -239,6 +286,37 @@ class SvmDetectorNode(Node):
         )
         self.stable_pixel_tolerance = float(
             self.get_parameter("stable_pixel_tolerance").value
+        )
+
+        self.target_selection_mode = str(
+            self.get_parameter("target_selection_mode").value
+        ).strip().lower()
+
+        self.min_target_score = float(
+            self.get_parameter("min_target_score").value
+        )
+
+        self.target_match_radius_px = float(
+            self.get_parameter("target_match_radius_px").value
+        )
+
+        self.min_track_frames = max(
+            1,
+            int(self.get_parameter("min_track_frames").value),
+        )
+
+        self.min_class_consistency_frames = max(
+            1,
+            int(self.get_parameter("min_class_consistency_frames").value),
+        )
+
+        self.require_stable_position = bool(
+            self.get_parameter("require_stable_position").value
+        )
+
+        self.angle_vector_length_px = max(
+            5.0,
+            float(self.get_parameter("angle_vector_length_px").value),
         )
 
         # ============================================================
@@ -282,15 +360,19 @@ class SvmDetectorNode(Node):
             5,
         )
 
+        # One run_once cycle tracks ONE physical object only.
         self.stable_history = []
-
-        # 一次 /hik_camera/run_once 会产生 stable_frames 张图。
-        # 这里对整轮图像计数，从而可以明确区分：
-        #   none    = 整轮都没有候选目标
-        #   invalid = 看到了候选，但本轮没有形成合法 bolt/nut 位姿
-        self.cycle_frame_count = 0
-        self.cycle_had_candidate = False
+        self.angle_history = []
         self.class_history = []
+        self.score_history = []
+
+        self.track_center = None
+        self.cycle_frame_count = 0
+
+        # True when an object-like contour was seen, even if SVM confidence was
+        # too low. This prevents "classification failed" from being mistaken
+        # for an empty table.
+        self.cycle_had_object_like_contour = False
 
         self.get_logger().info(
             f"Detector ready. image={self.image_topic}, "
@@ -301,6 +383,12 @@ class SvmDetectorNode(Node):
             "Base XY compensation: "
             f"dX={self.target_offset_x * 1000.0:.1f} mm, "
             f"dY={self.target_offset_y * 1000.0:.1f} mm"
+        )
+
+        self.get_logger().info(
+            "Grasp reference orientation (angle=0 deg): "
+            "q=(0.923870, 0.382696, -0.002233, 0.001693); "
+            "bolt_angle=ON, nut_angle=OFF"
         )
 
         if self.classifier is not None:
@@ -536,60 +624,142 @@ class SvmDetectorNode(Node):
             base_y,
         )
 
-    def is_stable(self, u, v):
+    def _publish_result_status(self, status):
+        msg = String()
+        msg.data = str(status)
+        self.result_pub.publish(msg)
+        self.get_logger().info(
+            f"Vision cycle result: {msg.data}"
+        )
+
+    def _reset_positioning_cycle(self):
+        self.stable_history.clear()
+        self.angle_history.clear()
+        self.class_history.clear()
+        self.score_history.clear()
+
+        self.track_center = None
+        self.cycle_frame_count = 0
+        self.cycle_had_object_like_contour = False
+
+    def _finish_positioning_cycle(self, status):
+        self._publish_result_status(status)
+        self._reset_positioning_cycle()
+
+    def _select_initial_candidate(self, candidates):
         """
-        收集连续 stable_frames 帧目标中心，并计算平均坐标。
+        Lock ONE physical target on the first usable frame.
 
-        返回：
-            ready:
-                是否已经收集满 stable_frames 帧。
+        confidence:
+            choose the most confidently classified bolt/nut,
+            then use area as a tie-breaker.
 
-            stable:
-                True  = 所有样本相对平均中心的最大偏差
-                        <= stable_pixel_tolerance。
-                False = 已收集满，但波动超过阈值。
-
-            center:
-                stable_frames 帧的平均像素坐标 [u_mean, v_mean]。
-                未收集满时返回 None。
-
-            max_dev:
-                stable_frames 帧中距离平均中心最大的像素距离。
-                未收集满时返回 None。
-
-        注意：
-            stable=False 不再阻止最终位姿发布。
-            当收集满 stable_frames 帧以后，无论 stable True/False，
-            都会使用平均坐标进行后续定位。
+        largest:
+            preserve the old policy.
         """
-        self.stable_history.append(
-            np.array(
-                [u, v],
-                dtype=np.float64,
+        if not candidates:
+            return None
+
+        if self.target_selection_mode == "largest":
+            return max(
+                candidates,
+                key=lambda c: (
+                    c["area"],
+                    c["score"],
+                ),
+            )
+
+        return max(
+            candidates,
+            key=lambda c: (
+                c["score"],
+                c["area"],
+            ),
+        )
+
+    def _match_tracked_candidate(self, candidates):
+        """
+        Associate later frames with the SAME target by nearest-center gating.
+        """
+        if not candidates:
+            return None
+
+        if self.track_center is None:
+            return self._select_initial_candidate(
+                candidates
+            )
+
+        tx, ty = self.track_center
+
+        ranked = []
+        for candidate in candidates:
+            d = math.hypot(
+                candidate["u"] - tx,
+                candidate["v"] - ty,
+            )
+            ranked.append(
+                (d, -candidate["score"], -candidate["area"], candidate)
+            )
+
+        ranked.sort(
+            key=lambda item: (
+                item[0],
+                item[1],
+                item[2],
             )
         )
 
-        # 正常情况下 HIK 节点每轮正好发布 stable_frames 帧。
-        # 这里仍保留滑动窗口保护。
-        if len(self.stable_history) > self.stable_frames:
-            self.stable_history.pop(0)
+        distance, _, _, selected = ranked[0]
 
-        # 尚未收集满规定帧数，不输出最终定位结果。
-        if len(self.stable_history) < self.stable_frames:
-            return False, False, None, None
+        if distance > self.target_match_radius_px:
+            return None
+
+        return selected
+
+    def _final_cycle_label(self):
+        """
+        Majority vote on the SAME tracked target.
+        """
+        valid = [
+            str(label).strip().lower()
+            for label in self.class_history
+            if str(label).strip().lower() in ("bolt", "nut")
+        ]
+
+        if not valid:
+            return None, 0
+
+        bolt_count = valid.count("bolt")
+        nut_count = valid.count("nut")
+
+        if bolt_count == nut_count:
+            return None, max(
+                bolt_count,
+                nut_count,
+            )
+
+        if bolt_count > nut_count:
+            return "bolt", bolt_count
+
+        return "nut", nut_count
+
+    def _tracked_position_statistics(self):
+        """
+        Use the median center for robustness against one small localization
+        outlier. Stability is still checked using the maximum distance.
+        """
+        if not self.stable_history:
+            return None, None, None
 
         arr = np.vstack(
             self.stable_history
         )
 
-        # ----------------------------------------------------
-        # 最终用于机械臂定位的 5 帧平均像素坐标
-        # ----------------------------------------------------
-        center = arr.mean(
-            axis=0
+        center = np.median(
+            arr,
+            axis=0,
         )
 
-        # 每一帧相对平均中心的二维欧氏距离。
         deviations = np.linalg.norm(
             arr - center,
             axis=1,
@@ -605,61 +775,368 @@ class SvmDetectorNode(Node):
         )
 
         return (
-            True,
-            stable,
             center,
             max_dev,
+            stable,
         )
 
+    def _stable_detection_angle_deg(self):
+        """
+        Rectangle orientation is 180-degree periodic.
+        Average it with a doubled-angle circular mean.
+        """
+        if not self.angle_history:
+            return None
 
+        radians = np.radians(
+            np.asarray(
+                self.angle_history,
+                dtype=np.float64,
+            )
+        )
 
-    def _publish_result_status(self, status):
-        msg = String()
-        msg.data = str(status)
-        self.result_pub.publish(msg)
+        c = float(
+            np.mean(
+                np.cos(2.0 * radians)
+            )
+        )
+        s = float(
+            np.mean(
+                np.sin(2.0 * radians)
+            )
+        )
+
+        return float(
+            0.5
+            * math.degrees(
+                math.atan2(s, c)
+            )
+        )
+
+    def _image_direction_to_base_yaw_deg(
+        self,
+        u,
+        v,
+        image_angle_deg,
+    ):
+        """
+        Transform an image-plane direction through Homography and return the
+        corresponding absolute direction angle in the robot Base XY plane.
+        """
+        if self.H is None:
+            return None
+
+        theta = math.radians(
+            float(image_angle_deg)
+        )
+
+        length = self.angle_vector_length_px
+
+        u2 = float(u) + length * math.cos(theta)
+        v2 = float(v) + length * math.sin(theta)
+
+        x1, y1 = self.pixel_to_base_xy(
+            float(u),
+            float(v),
+        )
+        x2, y2 = self.pixel_to_base_xy(
+            u2,
+            v2,
+        )
+
+        return float(
+            math.degrees(
+                math.atan2(
+                    y2 - y1,
+                    x2 - x1,
+                )
+            )
+        )
+
+    def _pixel_angle_to_base_delta_yaw_deg(
+        self,
+        u,
+        v,
+        image_angle_deg,
+    ):
+        """
+        Convert the detected IMAGE angle into a RELATIVE yaw rotation in Base.
+
+        fixed_q is defined as the desired gripper orientation when image angle
+        == 0 deg. Therefore we must NOT multiply fixed_q by the absolute Base
+        direction. Instead:
+
+            delta_yaw =
+                BaseDirection(image_angle)
+                - BaseDirection(image_angle=0)
+
+        This preserves the taught HOME orientation when angle == 0 and only
+        rotates the gripper around Base Z by the target's relative in-plane
+        rotation.
+
+        Because minAreaRect orientation is 180-degree periodic, delta is
+        normalized to [-90, 90).
+        """
+        target_base_yaw = self._image_direction_to_base_yaw_deg(
+            u,
+            v,
+            image_angle_deg,
+        )
+
+        reference_base_yaw = self._image_direction_to_base_yaw_deg(
+            u,
+            v,
+            0.0,
+        )
+
+        if (
+            target_base_yaw is None
+            or reference_base_yaw is None
+        ):
+            return None
+
+        delta = (
+            target_base_yaw
+            - reference_base_yaw
+        )
+
+        while delta >= 90.0:
+            delta -= 180.0
+
+        while delta < -90.0:
+            delta += 180.0
+
+        return float(delta)
+
+    def _finalize_cycle(
+        self,
+        msg,
+        debug,
+    ):
+        """
+        Finish exactly one camera burst.
+
+        TARGET:
+            enough observations belong to the SAME spatial track,
+            class vote is consistent, and position is stable.
+
+        NONE:
+            no object-like contour was seen at all.
+
+        INVALID:
+            an object was seen, but association / class / stability was not
+            reliable enough for robot motion.
+        """
+        matched_frames = len(
+            self.stable_history
+        )
+
+        if matched_frames == 0:
+            if self.cycle_had_object_like_contour:
+                self._finish_positioning_cycle(
+                    "invalid"
+                )
+            else:
+                self._finish_positioning_cycle(
+                    "none"
+                )
+            return
+
+        if matched_frames < self.min_track_frames:
+            self.get_logger().warning(
+                "INVALID target track: "
+                f"matched_frames={matched_frames} < "
+                f"min_track_frames={self.min_track_frames}"
+            )
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        final_label, class_votes = (
+            self._final_cycle_label()
+        )
+
+        if (
+            final_label not in ("bolt", "nut")
+            or class_votes
+            < self.min_class_consistency_frames
+        ):
+            self.get_logger().warning(
+                "INVALID class consensus: "
+                f"history={self.class_history}, "
+                f"winner={final_label}, "
+                f"votes={class_votes}, "
+                f"required={self.min_class_consistency_frames}"
+            )
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        center, max_dev, stable = (
+            self._tracked_position_statistics()
+        )
+
+        if center is None:
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        stable_u = float(
+            center[0]
+        )
+        stable_v = float(
+            center[1]
+        )
+
+        if (
+            self.require_stable_position
+            and not stable
+        ):
+            self.get_logger().warning(
+                "INVALID position stability: "
+                f"class={final_label}, "
+                f"center=({stable_u:.2f},{stable_v:.2f}), "
+                f"max_dev={max_dev:.2f}px > "
+                f"{self.stable_pixel_tolerance:.2f}px"
+            )
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        if self.H is None:
+            self.get_logger().warning(
+                "INVALID: Homography is not loaded."
+            )
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        if self.target_z <= -10.0:
+            self.get_logger().warning(
+                "INVALID: target_z is not configured."
+            )
+            self._finish_positioning_cycle(
+                "invalid"
+            )
+            return
+
+        base_x, base_y = (
+            self.pixel_to_base_xy(
+                stable_u,
+                stable_v,
+            )
+        )
+
+        stable_angle_deg = (
+            self._stable_detection_angle_deg()
+        )
+
+        q = self.fixed_q.copy()
+        yaw_delta_deg = None
+
+        use_angle_for_class = (
+            self.use_detection_angle
+            and (
+                (
+                    final_label == "bolt"
+                    and self.use_detection_angle_for_bolt
+                )
+                or (
+                    final_label == "nut"
+                    and self.use_detection_angle_for_nut
+                )
+            )
+        )
+
+        if (
+            use_angle_for_class
+            and stable_angle_deg is not None
+        ):
+            yaw_delta_deg = (
+                self._pixel_angle_to_base_delta_yaw_deg(
+                    stable_u,
+                    stable_v,
+                    stable_angle_deg,
+                )
+            )
+
+            if yaw_delta_deg is not None:
+                yaw = math.radians(
+                    yaw_delta_deg
+                    + self.yaw_offset_deg
+                )
+
+                # Rotate in Base frame around Z while preserving the taught
+                # vertical-down HOME orientation.
+                q = quaternion_multiply(
+                    yaw_quaternion(yaw),
+                    q,
+                )
+
+                q = quaternion_normalize(
+                    q
+                )
+
+        pose = PoseStamped()
+        pose.header.stamp = msg.header.stamp
+        pose.header.frame_id = (
+            self.target_frame
+        )
+
+        pose.pose.position.x = base_x
+        pose.pose.position.y = base_y
+        pose.pose.position.z = self.target_z
+
+        pose.pose.orientation.x = float(q[0])
+        pose.pose.orientation.y = float(q[1])
+        pose.pose.orientation.z = float(q[2])
+        pose.pose.orientation.w = float(q[3])
+
+        self.pose_pub.publish(
+            pose
+        )
+
+        final_class_msg = String()
+        final_class_msg.data = final_label
+        self.class_pub.publish(
+            final_class_msg
+        )
+
+        angle_info = (
+            "disabled"
+            if not use_angle_for_class
+            else (
+                f"image={stable_angle_deg:.1f}deg, "
+                f"base_delta={yaw_delta_deg:.1f}deg"
+                if yaw_delta_deg is not None
+                else "unavailable"
+            )
+        )
+
         self.get_logger().info(
-            f"Vision cycle result: {msg.data}"
+            "FINAL TRACKED TARGET: "
+            f"class={final_label} "
+            f"votes={class_votes}/{matched_frames}, "
+            f"pixel=({stable_u:.2f},{stable_v:.2f}), "
+            f"max_dev={max_dev:.2f}px, "
+            f"base=({base_x:.4f},{base_y:.4f})m, "
+            f"angle={angle_info}"
         )
 
-    def _reset_positioning_cycle(self):
-        self.stable_history.clear()
-        self.class_history.clear()
-        self.cycle_frame_count = 0
-        self.cycle_had_candidate = False
-
-    def _finish_positioning_cycle(self, status):
-        self._publish_result_status(status)
-        self._reset_positioning_cycle()
-
-    def _final_cycle_label(self):
-        """
-        对本轮已经选中的目标类别做多数投票。
-        只把 bolt / nut 视为可分拣类别。
-        """
-        valid = [
-            str(label).strip().lower()
-            for label in self.class_history
-            if str(label).strip().lower() in ("bolt", "nut")
-        ]
-
-        if not valid:
-            return None
-
-        bolt_count = valid.count("bolt")
-        nut_count = valid.count("nut")
-
-        if bolt_count == nut_count:
-            return None
-
-        return "bolt" if bolt_count > nut_count else "nut"
+        self._finish_positioning_cycle(
+            f"target:{final_label}"
+        )
 
     # ================================================================
     # Main image callback
     # ================================================================
     def on_image(self, msg):
         try:
-            # HIK 当前每次 run_once 发布 stable_frames 张图。
-            # 无论这一帧有没有检测到目标，都属于当前定位周期。
             self.cycle_frame_count += 1
 
             img = self.bridge.imgmsg_to_cv2(
@@ -694,7 +1171,9 @@ class SvmDetectorNode(Node):
 
             for contour in contours:
                 area = float(
-                    cv2.contourArea(contour)
+                    cv2.contourArea(
+                        contour
+                    )
                 )
 
                 if (
@@ -711,6 +1190,9 @@ class SvmDetectorNode(Node):
                 if rw <= 1.0 or rh <= 1.0:
                     continue
 
+                # Something object-like exists in this frame.
+                self.cycle_had_object_like_contour = True
+
                 try:
                     (
                         class_name,
@@ -726,10 +1208,23 @@ class SvmDetectorNode(Node):
                     )
                     continue
 
+                if self.classifier is not None:
+                    label = str(
+                        class_name
+                    ).strip().lower()
+                else:
+                    label = str(
+                        self.labels.get(
+                            class_id,
+                            f"class_{class_id}",
+                        )
+                    ).strip().lower()
+
                 if (
                     self.classifier is not None
                     and self.target_class_id >= 0
-                    and class_id != self.target_class_id
+                    and class_id
+                    != self.target_class_id
                 ):
                     continue
 
@@ -739,155 +1234,182 @@ class SvmDetectorNode(Node):
                 ):
                     continue
 
-                angle_deg = normalize_rect_angle(
-                    rect
+                # Only recognized sorting classes are eligible targets.
+                if label not in (
+                    "bolt",
+                    "nut",
+                ):
+                    continue
+
+                # Classification confidence now affects selection.
+                if (
+                    self.classifier is not None
+                    and float(class_score)
+                    < self.min_target_score
+                ):
+                    continue
+
+                angle_deg = (
+                    normalize_rect_angle(
+                        rect
+                    )
                 )
 
                 candidates.append(
-                    (
-                        area,
-                        contour,
-                        u,
-                        v,
-                        angle_deg,
-                        class_name,
-                        class_score,
-                        class_id,
-                    )
+                    {
+                        "area": area,
+                        "contour": contour,
+                        "u": float(u),
+                        "v": float(v),
+                        "angle_deg": float(
+                            angle_deg
+                        ),
+                        "label": label,
+                        "score": float(
+                            class_score
+                        ),
+                        "class_id": int(
+                            class_id
+                        ),
+                    }
                 )
 
-            if not candidates:
-                self._publish_debug(
-                    msg,
+            selected = (
+                self._match_tracked_candidate(
+                    candidates
+                )
+            )
+
+            # Draw all eligible candidates in blue.
+            for candidate in candidates:
+                rect = cv2.minAreaRect(
+                    candidate["contour"]
+                )
+                box = cv2.boxPoints(
+                    rect
+                ).astype(np.int32)
+
+                cv2.drawContours(
                     debug,
+                    [box],
+                    0,
+                    (255, 0, 0),
+                    1,
                 )
 
-                # 只有整轮 stable_frames 张图都没有候选，才认为桌面为空。
-                # 如果前面某些帧看到了候选而本轮最终不完整，则返回 invalid，
-                # 由任务节点重拍，而不是误认为分拣已经结束。
-                if self.cycle_frame_count >= self.stable_frames:
-                    status = (
-                        "invalid"
-                        if self.cycle_had_candidate
-                        else "none"
+            if selected is not None:
+                u = selected["u"]
+                v = selected["v"]
+
+                # Update the locked physical target.
+                self.track_center = (
+                    u,
+                    v,
+                )
+
+                self.stable_history.append(
+                    np.array(
+                        [u, v],
+                        dtype=np.float64,
                     )
-                    self._finish_positioning_cycle(status)
-
-                return
-
-            # Preserve the original ROS V1 policy:
-            # choose the largest accepted contour.
-            candidates.sort(
-                key=lambda item: item[0],
-                reverse=True,
-            )
-
-            (
-                area,
-                contour,
-                u,
-                v,
-                angle_deg,
-                class_name,
-                class_score,
-                class_id,
-            ) = candidates[0]
-
-            box = cv2.boxPoints(
-                cv2.minAreaRect(contour)
-            ).astype(np.int32)
-
-            cv2.drawContours(
-                debug,
-                [box],
-                0,
-                (0, 255, 0),
-                2,
-            )
-
-            cv2.circle(
-                debug,
-                (
-                    int(round(u)),
-                    int(round(v)),
-                ),
-                5,
-                (0, 0, 255),
-                -1,
-            )
-
-            # When the complete classifier is available, labels.json from the
-            # original model is authoritative.  labels.yaml is only a fallback
-            # for contour-only mode / legacy use.
-            if self.classifier is not None:
-                label = class_name
-            else:
-                label = self.labels.get(
-                    class_id,
-                    f"class_{class_id}",
+                )
+                self.angle_history.append(
+                    selected["angle_deg"]
+                )
+                self.class_history.append(
+                    selected["label"]
+                )
+                self.score_history.append(
+                    selected["score"]
                 )
 
-            self.cycle_had_candidate = True
-            self.class_history.append(
-                str(label).strip().lower()
-            )
+                box = cv2.boxPoints(
+                    cv2.minAreaRect(
+                        selected["contour"]
+                    )
+                ).astype(np.int32)
+
+                cv2.drawContours(
+                    debug,
+                    [box],
+                    0,
+                    (0, 255, 0),
+                    3,
+                )
+
+                cv2.circle(
+                    debug,
+                    (
+                        int(round(u)),
+                        int(round(v)),
+                    ),
+                    6,
+                    (0, 0, 255),
+                    -1,
+                )
+
+                cv2.putText(
+                    debug,
+                    (
+                        f"TRACK {selected['label']} "
+                        f"score={selected['score']:.3f} "
+                        f"u={u:.1f} v={v:.1f} "
+                        f"a={selected['angle_deg']:.1f}"
+                    ),
+                    (
+                        max(0, int(u) - 210),
+                        max(25, int(v) - 20),
+                    ),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    0.6,
+                    (255, 255, 255),
+                    2,
+                    cv2.LINE_AA,
+                )
+
+                class_msg = String()
+                class_msg.data = (
+                    selected["label"]
+                )
+                self.class_pub.publish(
+                    class_msg
+                )
+
+                if self.H is not None:
+                    base_x, base_y = (
+                        self.pixel_to_base_xy(
+                            u,
+                            v,
+                        )
+                    )
+
+                    self.get_logger().info(
+                        "Tracked: "
+                        f"class={selected['label']}, "
+                        f"score={selected['score']:.3f}, "
+                        f"pixel=({u:.1f},{v:.1f}), "
+                        f"base=({base_x:.4f},{base_y:.4f})m, "
+                        f"angle={selected['angle_deg']:.1f}deg",
+                        throttle_duration_sec=1.0,
+                    )
+            else:
+                # A track already exists but no candidate is close enough:
+                # do NOT switch to another object.
+                if self.track_center is not None:
+                    self.get_logger().warning(
+                        "No candidate matched the locked target "
+                        f"within {self.target_match_radius_px:.1f}px "
+                        f"on frame {self.cycle_frame_count}/"
+                        f"{self.stable_frames}."
+                    )
 
             cv2.putText(
                 debug,
                 (
-                    f"{label} "
-                    f"score={class_score:.3f} "
-                    f"u={u:.1f} v={v:.1f} "
-                    f"a={angle_deg:.1f}"
+                    f"cycle={self.cycle_frame_count}/"
+                    f"{self.stable_frames} "
+                    f"matched={len(self.stable_history)}"
                 ),
-                (
-                    max(0, int(u) - 180),
-                    max(25, int(v) - 20),
-                ),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.6,
-                (255, 255, 255),
-                2,
-                cv2.LINE_AA,
-            )
-
-            (
-                stable_ready,
-                stable,
-                stable_center,
-                stable_max_dev,
-            ) = self.is_stable(
-                u,
-                v,
-            )
-
-            # 前 stable_frames-1 帧只用于积累定位数据。
-            if stable_ready:
-                stable_u = float(
-                    stable_center[0]
-                )
-                stable_v = float(
-                    stable_center[1]
-                )
-
-                stability_text = (
-                    f"stable={stable} "
-                    f"avg=({stable_u:.1f},{stable_v:.1f}) "
-                    f"max_dev={stable_max_dev:.2f}px"
-                )
-            else:
-                stable_u = None
-                stable_v = None
-
-                stability_text = (
-                    f"collecting="
-                    f"{len(self.stable_history)}/"
-                    f"{self.stable_frames}"
-                )
-
-            cv2.putText(
-                debug,
-                stability_text,
                 (10, 25),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.7,
@@ -896,166 +1418,14 @@ class SvmDetectorNode(Node):
                 cv2.LINE_AA,
             )
 
-            class_msg = String()
-            class_msg.data = label
-            self.class_pub.publish(
-                class_msg
-            )
-
-            final_label = (
-                self._final_cycle_label()
-                if stable_ready
-                else None
-            )
-
-            # Homography 加载以后，还可以同时显示机器人 XY 和相机里面的 uv
-            if self.H is not None:
-                base_x, base_y = self.pixel_to_base_xy(u, v)
-
-                self.get_logger().info(
-                    f"Detected: class={label}, "
-                    f"score={class_score:.3f}, "
-                    f"pixel=({u:.1f}, {v:.1f}), "
-                    f"base=({base_x:.4f}, {base_y:.4f}) m, "
-                    f"angle={angle_deg:.1f} deg",
-                    throttle_duration_sec=1.0,
-                )
-            else:
-                self.get_logger().info(
-                    f"Detected: class={label}, "
-                    f"score={class_score:.3f}, "
-                    f"pixel=({u:.1f}, {v:.1f}), "
-                    f"angle={angle_deg:.1f} deg",
-                    throttle_duration_sec=1.0,
-                )
-
-            # ========================================================
-            # 5 帧最终定位结果
-            # ========================================================
-            # 与原版不同：
-            #
-            # stable=True
-            #   -> 使用 5 帧平均坐标正常发布。
-            #
-            # stable=False
-            #   -> 仍然使用 5 帧平均坐标发布，
-            #      但通过 WARNING 明确告诉操作者当前定位波动较大。
-            #
-            # 尚未收集满 stable_frames 帧时，不发布最终 target_pose。
-            #
-            # 其他安全条件仍然保留：
-            #   1. 必须已经完成 Homography 标定；
-            #   2. target_z 必须有效；
-            #   3. SVM 结果不能为 unknown。
             if (
-                stable_ready
-                and self.H is not None
-                and self.target_z > -10.0
-                and final_label in ("bolt", "nut")
+                self.cycle_frame_count
+                >= self.stable_frames
             ):
-                # ----------------------------------------------------
-                # 关键修改：
-                # 使用 stable_frames 帧的平均像素坐标，
-                # 而不是当前第 5 帧的 (u, v)。
-                # ----------------------------------------------------
-                base_x, base_y = self.pixel_to_base_xy(
-                    stable_u,
-                    stable_v,
-                )
-
-                if stable:
-                    self.get_logger().info(
-                        f"Stable positioning result: "
-                        f"class={final_label}, "
-                        f"frames={self.stable_frames}, "
-                        f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
-                        f"max_dev={stable_max_dev:.2f}px <= "
-                        f"{self.stable_pixel_tolerance:.2f}px, "
-                        f"base=({base_x:.4f}, {base_y:.4f}) m"
-                    )
-                else:
-                    self.get_logger().warning(
-                        f"UNSTABLE positioning: "
-                        f"class={final_label}, "
-                        f"frames={self.stable_frames}, "
-                        f"avg_pixel=({stable_u:.2f}, {stable_v:.2f}), "
-                        f"max_dev={stable_max_dev:.2f}px > "
-                        f"{self.stable_pixel_tolerance:.2f}px. "
-                        f"Still publishing the AVERAGE position: "
-                        f"base=({base_x:.4f}, {base_y:.4f}) m"
-                    )
-
-                q = self.fixed_q.copy()
-
-                if self.use_detection_angle:
-                    yaw = math.radians(
-                        angle_deg
-                        + self.yaw_offset_deg
-                    )
-
-                    q = quaternion_multiply(
-                        yaw_quaternion(yaw),
-                        q,
-                    )
-
-                    q = quaternion_normalize(
-                        q
-                    )
-
-                pose = PoseStamped()
-                pose.header.stamp = msg.header.stamp
-                pose.header.frame_id = self.target_frame
-
-                pose.pose.position.x = base_x
-                pose.pose.position.y = base_y
-                pose.pose.position.z = self.target_z
-
-                pose.pose.orientation.x = float(q[0])
-                pose.pose.orientation.y = float(q[1])
-                pose.pose.orientation.z = float(q[2])
-                pose.pose.orientation.w = float(q[3])
-
-                self.pose_pub.publish(
-                    pose
-                )
-
-                # 最终类别与最终 Pose 同一轮发布，任务节点据此冻结本轮目标。
-                final_class_msg = String()
-                final_class_msg.data = final_label
-                self.class_pub.publish(final_class_msg)
-
-                cv2.putText(
+                self._finalize_cycle(
+                    msg,
                     debug,
-                    (
-                        f"AVG base=({base_x:.3f},"
-                        f"{base_y:.3f},"
-                        f"{self.target_z:.3f})"
-                    ),
-                    (10, 52),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.7,
-                    (255, 255, 255),
-                    2,
-                    cv2.LINE_AA,
                 )
-
-                # 本轮形成合法目标：
-                # 先发布 Pose，再发布 target:<class> 最终状态，然后清空整轮缓存。
-                self._finish_positioning_cycle(
-                    f"target:{final_label}"
-                )
-
-            # 已经走完一整轮图像，但没有形成合法 bolt/nut 位姿。
-            # 这不是“桌面为空”，而是 invalid；任务节点会按配置重新拍照。
-            if (
-                self.cycle_frame_count >= self.stable_frames
-                and self.cycle_frame_count != 0
-            ):
-                self.get_logger().warning(
-                    "Vision cycle completed but no valid bolt/nut pose was "
-                    "produced. Publishing result=invalid."
-                )
-                self._finish_positioning_cycle("invalid")
 
             self._publish_debug(
                 msg,

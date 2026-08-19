@@ -86,6 +86,11 @@ public:
     drop_lowering_enabled_ = this->declare_parameter<bool>(
       "drop_lowering_enabled", true);
 
+    // Vision-derived orientation is used only for PREGRASP / GRASP / LIFT.
+    // Before the placement phase, reset to the fixed taught drop orientation.
+    align_after_lift_before_drop_ = this->declare_parameter<bool>(
+      "align_after_lift_before_drop", true);
+
     // ------------------------------------------------------------
     // Timing / retry
     // ------------------------------------------------------------
@@ -659,6 +664,47 @@ private:
       geometry_msgs::msg::PoseStamped drop_approach = drop;
       drop_approach.pose.position.z += drop_approach_height_;
 
+      // ----------------------------------------------------------
+      // DECOUPLE VISION GRASP ORIENTATION FROM PLACEMENT
+      // ----------------------------------------------------------
+      // PREGRASP / GRASP / LIFT may use the orientation calculated
+      // from the visual target angle. From here on, placement must
+      // use only the fixed taught Bolt/Nut drop orientation.
+      //
+      // At the already-lifted XYZ, first rotate to the fixed drop
+      // orientation. This prevents the target angle from propagating
+      // directly into the subsequent placement transfer.
+      if (align_after_lift_before_drop_) {
+        geometry_msgs::msg::PoseStamped transfer_align = lift;
+        transfer_align.header.frame_id = required_frame_;
+        transfer_align.pose.orientation = drop.pose.orientation;
+
+        RCLCPP_WARN(
+          this->get_logger(),
+          "ALIGN_FOR_DROP [%s]: pos=(%.5f, %.5f, %.5f), "
+          "fixed_q=(%.6f, %.6f, %.6f, %.6f)",
+          target_class.c_str(),
+          transfer_align.pose.position.x,
+          transfer_align.pose.position.y,
+          transfer_align.pose.position.z,
+          transfer_align.pose.orientation.x,
+          transfer_align.pose.orientation.y,
+          transfer_align.pose.orientation.z,
+          transfer_align.pose.orientation.w);
+
+        setState("ALIGN_FOR_DROP", "");
+
+        if (!moveToPose(
+            transfer_align, "ALIGN_FOR_DROP", error))
+        {
+          finishMotionAware(
+            "LIFT succeeded, but ALIGN_FOR_DROP failed: " + error);
+          return;
+        }
+      }
+
+      // Placement begins here. DROP_APPROACH / DROP / DROP_RETREAT
+      // never inherit vision.pose orientation.
       setState(
         target_class == "bolt"
           ? "MOVE_TO_BOLT_BIN"
@@ -1177,6 +1223,7 @@ private:
 
   double drop_approach_height_{0.10};
   bool drop_lowering_enabled_{true};
+  bool align_after_lift_before_drop_{true};
 
   // Timing / retries.
   double home_settle_sec_{2.0};
