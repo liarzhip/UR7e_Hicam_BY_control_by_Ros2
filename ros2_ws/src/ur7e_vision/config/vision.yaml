@@ -37,12 +37,12 @@ svm_detector_node:
     target_class_id: -1
     publish_when_no_svm: true
     stable_frames: 5
-    stable_pixel_tolerance: 10.0
+    stable_pixel_tolerance: 15.0 # 中心变动像素点的上限值
     use_detection_angle_for_bolt: true
     use_detection_angle_for_nut: true
     target_selection_mode: confidence
     min_target_score: 0.50
-    target_match_radius_px: 100.0
+    target_match_radius_px: 150.0
     min_track_frames: 3
     min_class_consistency_frames: 3
     require_stable_position: true

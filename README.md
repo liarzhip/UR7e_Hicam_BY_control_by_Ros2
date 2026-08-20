@@ -6,11 +6,10 @@
 建立终端：\
 ![alt text](./image/terminal.png)
 #### (2)修改编译
-
+如果修改了如下文件，需要重新使用colcon编译：\
 target_motion_node.cpp\
 gripper_io_node.cpp\
 pick_task_node.cpp\
-motion.yaml\
 CMakeLists.txt
 
 ```sh
@@ -64,7 +63,7 @@ data: true
 
 有时如果不长时间操作，程序会自动断开，这是需要重新在示教器上点击运行。
 
-UR7e的相关IP设置：
+（补充）UR7e的相关IP设置：
 
 ```yaml
 Robot IP:
@@ -214,7 +213,7 @@ Run Once burst finished:
 success=True
 ```
 
-打开可视化图像节点：
+可以打开可视化图像节点观察相机采取的图像：
 
 ```sh
 ros2 run rqt_image_view rqt_image_view

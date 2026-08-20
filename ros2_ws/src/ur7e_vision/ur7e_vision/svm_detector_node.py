@@ -157,7 +157,7 @@ class SvmDetectorNode(Node):
         self.declare_parameter("target_class_id", -1)
         self.declare_parameter("publish_when_no_svm", True)
         self.declare_parameter("stable_frames", 5)
-        self.declare_parameter("stable_pixel_tolerance", 3.0)
+        self.declare_parameter("stable_pixel_tolerance", 15.0) # 目标中心不稳定变化的像素点上限值
 
         # ============================================================
         # Multi-target association / classification robustness
@@ -167,7 +167,7 @@ class SvmDetectorNode(Node):
 
         # Only bolt/nut predictions above this score are eligible to be picked.
         # Low-confidence/unknown objects make the cycle INVALID rather than NONE.
-        self.declare_parameter("min_target_score", 0.55)
+        self.declare_parameter("min_target_score", 0.50)
 
         # After the first frame locks one object, later frames may only match
         # a candidate near the previously tracked center.
@@ -931,7 +931,7 @@ class SvmDetectorNode(Node):
             self.stable_history
         )
 
-        if matched_frames == 0:
+        if matched_frames == 0: # 返回invalid条件1：检测到面积轮廓符合但是类别不存在（不能正确分类）
             if self.cycle_had_object_like_contour:
                 self._finish_positioning_cycle(
                     "invalid"
@@ -942,7 +942,7 @@ class SvmDetectorNode(Node):
                 )
             return
 
-        if matched_frames < self.min_track_frames:
+        if matched_frames < self.min_track_frames: # 成功匹配的帧数太少了，至少需要同一个目标3帧
             self.get_logger().warning(
                 "INVALID target track: "
                 f"matched_frames={matched_frames} < "
@@ -961,7 +961,7 @@ class SvmDetectorNode(Node):
             final_label not in ("bolt", "nut")
             or class_votes
             < self.min_class_consistency_frames
-        ):
+        ): # 类别投票小于3票（一般不存在）
             self.get_logger().warning(
                 "INVALID class consensus: "
                 f"history={self.class_history}, "
@@ -993,7 +993,7 @@ class SvmDetectorNode(Node):
 
         if (
             self.require_stable_position
-            and not stable
+            and not stable # 中心坐标不稳定，超过了上限值（经常发生）
         ):
             self.get_logger().warning(
                 "INVALID position stability: "
