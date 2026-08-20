@@ -1,0 +1,6 @@
+#!/home/liar/UR7e/.venv/bin/python
+import sys
+from openvino.tools.benchmark.main import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
