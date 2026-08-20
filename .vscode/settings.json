@@ -1,7 +1,7 @@
 {
   "C_Cpp.errorSquiggles": "disabled",
   "python.defaultInterpreterPath": "/usr/bin/python3",
-  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
   "python-envs.defaultPackageManager": "ms-python.python:pip",
   "cmake.sourceDirectory": "/home/liar/UR7e/ros2_ws/src/ur7e_motion"
 }
