@@ -94,7 +94,7 @@ rviz2
 点击左下角Add，选择By topic\
 ->/camera/camera/depth/color/points/pointsCloud2
 
-![alt text](../image/pointcloud.png)
+![alt text](../image/pointcloud_0.png)
 ![alt text](../image/pointcloud_1.png)
 ![alt text](../image/pointcloud_3.png)
 ![alt text](../image/pointcloud_2.png)
