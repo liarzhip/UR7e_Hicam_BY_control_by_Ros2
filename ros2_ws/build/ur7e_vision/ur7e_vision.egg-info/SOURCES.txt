@@ -2,7 +2,7 @@ package.xml
 setup.cfg
 setup.py
 calibration/homography.yaml
-calibration/homography.yaml.example
+calibration/homography_old.yaml
 calibration/pixel_base_points.csv
 config/labels.yaml
 config/vision.yaml

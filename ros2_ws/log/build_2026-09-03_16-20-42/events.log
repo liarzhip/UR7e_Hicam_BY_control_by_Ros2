@@ -1,0 +1,458 @@
+[0.000000] (-) TimerEvent: {}
+[0.000306] (ur7e_motion) JobQueued: {'identifier': 'ur7e_motion', 'dependencies': OrderedDict()}
+[0.000349] (ur7e_vision) JobQueued: {'identifier': 'ur7e_vision', 'dependencies': OrderedDict()}
+[0.000843] (ur7e_motion) JobStarted: {'identifier': 'ur7e_motion'}
+[0.009857] (ur7e_vision) JobStarted: {'identifier': 'ur7e_vision'}
+[0.025762] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'cmake'}
+[0.026976] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '/home/liar/UR7e/ros2_ws/src/ur7e_motion', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/liar/UR7e/ros2_ws/install/ur7e_motion'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.135.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3070', 'SYSTEMD_EXEC_PID': '3702', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '5473', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install:/home/liar/PiPER_X/piper_pick_handover_ws/install:/home/liar/PiPER_X/agx_arm_ws/install:/home/liar/PiPER_X/piper_hand_follow_ws/install:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:19985', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/home/liar/miniconda3/condabin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/liar:@/tmp/.ICE-unix/3650,unix/liar:/tmp/.ICE-unix/3650', 'INVOCATION_ID': 'f82fbff99a8f4cc08992ac9f76c57287', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/8052c3c7400c3aa48eca677e10f55a9b/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3600f32fab.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '1011f6c0894c01eee686bfd2600bec1a', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/piper_pick_handover_ws/build/piper_pick_handover:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover/lib/python3.12/site-packages:/home/liar/PiPER_X/piper_hand_follow_ws/build/piper_hand_follow:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow/lib/python3.12/site-packages:/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib/python3.12/site-packages:/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[0.099841] (-) TimerEvent: {}
+[0.169340] (ur7e_motion) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.199977] (-) TimerEvent: {}
+[0.259461] (ur7e_motion) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.278381] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.300065] (-) TimerEvent: {}
+[0.400337] (-) TimerEvent: {}
+[0.406791] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.432220] (ur7e_motion) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.432664] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.433498] (ur7e_motion) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.446455] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.500482] (-) TimerEvent: {}
+[0.600867] (-) TimerEvent: {}
+[0.601773] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.616582] (ur7e_motion) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.617061] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.618025] (ur7e_motion) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.637714] (ur7e_motion) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.701049] (-) TimerEvent: {}
+[0.801508] (-) TimerEvent: {}
+[0.901890] (-) TimerEvent: {}
+[0.928207] (ur7e_motion) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.002009] (-) TimerEvent: {}
+[1.102632] (-) TimerEvent: {}
+[1.203000] (-) TimerEvent: {}
+[1.208194] (ur7e_motion) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.303105] (-) TimerEvent: {}
+[1.403556] (-) TimerEvent: {}
+[1.495070] (ur7e_motion) StdoutLine: {'line': b'-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.503629] (-) TimerEvent: {}
+[1.603899] (-) TimerEvent: {}
+[1.704575] (-) TimerEvent: {}
+[1.784521] (ur7e_motion) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[1.804669] (-) TimerEvent: {}
+[1.905079] (-) TimerEvent: {}
+[1.930978] (ur7e_motion) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.005152] (-) TimerEvent: {}
+[2.105462] (-) TimerEvent: {}
+[2.119364] (ur7e_motion) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.205580] (-) TimerEvent: {}
+[2.246897] (ur7e_motion) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.305663] (-) TimerEvent: {}
+[2.405916] (-) TimerEvent: {}
+[2.506190] (-) TimerEvent: {}
+[2.554526] (ur7e_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/liar/UR7e/ros2_ws/build/ur7e_vision/build', '--no-deps', 'symlink_data'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_vision', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.135.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3070', 'SYSTEMD_EXEC_PID': '3702', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '5473', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install:/home/liar/PiPER_X/piper_pick_handover_ws/install:/home/liar/PiPER_X/agx_arm_ws/install:/home/liar/PiPER_X/piper_hand_follow_ws/install:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:19985', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/home/liar/miniconda3/condabin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/liar:@/tmp/.ICE-unix/3650,unix/liar:/tmp/.ICE-unix/3650', 'INVOCATION_ID': 'f82fbff99a8f4cc08992ac9f76c57287', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/8052c3c7400c3aa48eca677e10f55a9b/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3600f32fab.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_vision', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '1011f6c0894c01eee686bfd2600bec1a', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/piper_pick_handover_ws/build/piper_pick_handover:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover/lib/python3.12/site-packages:/home/liar/PiPER_X/piper_hand_follow_ws/build/piper_hand_follow:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow/lib/python3.12/site-packages:/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib/python3.12/site-packages:/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}, 'shell': False}
+[2.606293] (-) TimerEvent: {}
+[2.682606] (ur7e_motion) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.706414] (-) TimerEvent: {}
+[2.736737] (ur7e_motion) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.806583] (-) TimerEvent: {}
+[2.907078] (-) TimerEvent: {}
+[2.986208] (ur7e_motion) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[3.007138] (-) TimerEvent: {}
+[3.049242] (ur7e_motion) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[3.082895] (ur7e_motion) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.107226] (-) TimerEvent: {}
+[3.192546] (ur7e_vision) StdoutLine: {'line': b'running develop\n'}
+[3.207343] (-) TimerEvent: {}
+[3.307599] (-) TimerEvent: {}
+[3.407987] (-) TimerEvent: {}
+[3.508342] (-) TimerEvent: {}
+[3.515430] (ur7e_motion) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[3.604998] (ur7e_motion) StdoutLine: {'line': b'-- Found std_srvs: 5.3.8 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[3.608457] (-) TimerEvent: {}
+[3.620053] (ur7e_vision) StdoutLine: {'line': b'running egg_info\n'}
+[3.653546] (ur7e_motion) StdoutLine: {'line': b'-- Found ur_msgs: 2.5.0 (/opt/ros/jazzy/share/ur_msgs/cmake)\n'}
+[3.663274] (ur7e_vision) StdoutLine: {'line': b'creating ur7e_vision.egg-info\n'}
+[3.663612] (ur7e_vision) StdoutLine: {'line': b'writing ur7e_vision.egg-info/PKG-INFO\n'}
+[3.663890] (ur7e_vision) StdoutLine: {'line': b'writing dependency_links to ur7e_vision.egg-info/dependency_links.txt\n'}
+[3.664160] (ur7e_vision) StdoutLine: {'line': b'writing entry points to ur7e_vision.egg-info/entry_points.txt\n'}
+[3.664388] (ur7e_vision) StdoutLine: {'line': b'writing requirements to ur7e_vision.egg-info/requires.txt\n'}
+[3.664651] (ur7e_vision) StdoutLine: {'line': b'writing top-level names to ur7e_vision.egg-info/top_level.txt\n'}
+[3.664834] (ur7e_vision) StdoutLine: {'line': b"writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'\n"}
+[3.708771] (-) TimerEvent: {}
+[3.756206] (ur7e_vision) StdoutLine: {'line': b"reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'\n"}
+[3.757384] (ur7e_vision) StdoutLine: {'line': b"writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'\n"}
+[3.808816] (-) TimerEvent: {}
+[3.816820] (ur7e_vision) StdoutLine: {'line': b'running build_ext\n'}
+[3.817149] (ur7e_vision) StdoutLine: {'line': b'Creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)\n'}
+[3.818164] (ur7e_vision) StdoutLine: {'line': b'Installing hik_camera_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision\n'}
+[3.818428] (ur7e_vision) StdoutLine: {'line': b'Installing svm_detector_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision\n'}
+[3.818767] (ur7e_vision) StdoutLine: {'line': b'\n'}
+[3.818985] (ur7e_vision) StdoutLine: {'line': b'Installed /home/liar/UR7e/ros2_ws/build/ur7e_vision\n'}
+[3.819154] (ur7e_vision) StdoutLine: {'line': b'running symlink_data\n'}
+[3.819340] (ur7e_vision) StdoutLine: {'line': b'creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages\n'}
+[3.819521] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/resource/ur7e_vision -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages\n'}
+[3.819789] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/package.xml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision\n'}
+[3.820024] (ur7e_vision) StdoutLine: {'line': b'creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch\n'}
+[3.820251] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/launch/vision.launch.py -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch\n'}
+[3.820452] (ur7e_vision) StdoutLine: {'line': b'creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config\n'}
+[3.820668] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/labels.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config\n'}
+[3.820874] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/vision.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config\n'}
+[3.821079] (ur7e_vision) StdoutLine: {'line': b'creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.821300] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/svm_scaler.npz -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.821503] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/svm_model.xml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.821705] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/class_reference.npz -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.821933] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/labels.json -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.822153] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/model_meta.json -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models\n'}
+[3.822354] (ur7e_vision) StdoutLine: {'line': b'creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration\n'}
+[3.822551] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/pixel_base_points.csv -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration\n'}
+[3.822762] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/homography_old.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration\n'}
+[3.822931] (ur7e_vision) StdoutLine: {'line': b'symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/homography.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration\n'}
+[3.908939] (-) TimerEvent: {}
+[3.911501] (ur7e_vision) CommandEnded: {'returncode': 0}
+[3.930347] (ur7e_vision) JobEnded: {'identifier': 'ur7e_vision', 'rc': 0}
+[4.009026] (-) TimerEvent: {}
+[4.109383] (-) TimerEvent: {}
+[4.196602] (ur7e_motion) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[4.209490] (-) TimerEvent: {}
+[4.309815] (-) TimerEvent: {}
+[4.405617] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread \n'}
+[4.410030] (-) TimerEvent: {}
+[4.510480] (-) TimerEvent: {}
+[4.610815] (-) TimerEvent: {}
+[4.711097] (-) TimerEvent: {}
+[4.811432] (-) TimerEvent: {}
+[4.911744] (-) TimerEvent: {}
+[4.925764] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[5.011856] (-) TimerEvent: {}
+[5.112118] (-) TimerEvent: {}
+[5.208117] (ur7e_motion) StdoutLine: {'line': b'-- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[5.212210] (-) TimerEvent: {}
+[5.257290] (ur7e_motion) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):\n'}
+[5.257536] (ur7e_motion) StderrLine: {'line': b"  Package 'tl_expected' is deprecated (This package will be removed in ROS 2\n"}
+[5.257639] (ur7e_motion) StderrLine: {'line': b'  Lyrical Luth.\n'}
+[5.257726] (ur7e_motion) StderrLine: {'line': b'\n'}
+[5.257811] (ur7e_motion) StderrLine: {'line': b'        Use tl/expected.hpp from libexpected-dev,\n'}
+[5.257896] (ur7e_motion) StderrLine: {'line': b'        or rcpputils/tl_expected/expected.hpp if the system header is not available)\n'}
+[5.257996] (ur7e_motion) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.258088] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[5.258171] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)\n'}
+[5.258254] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)\n'}
+[5.258336] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)\n'}
+[5.258430] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[5.258555] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)\n'}
+[5.258641] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[5.258725] (ur7e_motion) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)\n'}
+[5.258816] (ur7e_motion) StderrLine: {'line': b'  CMakeLists.txt:19 (find_package)\n'}
+[5.258909] (ur7e_motion) StderrLine: {'line': b'\n'}
+[5.259014] (ur7e_motion) StderrLine: {'line': b'\x1b[0m\n'}
+[5.286235] (ur7e_motion) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[5.312315] (-) TimerEvent: {}
+[5.412589] (-) TimerEvent: {}
+[5.512859] (-) TimerEvent: {}
+[5.613135] (-) TimerEvent: {}
+[5.713375] (-) TimerEvent: {}
+[5.766898] (ur7e_motion) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[5.767130] (ur7e_motion) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[5.813472] (-) TimerEvent: {}
+[5.913758] (-) TimerEvent: {}
+[6.014327] (-) TimerEvent: {}
+[6.115142] (-) TimerEvent: {}
+[6.215718] (-) TimerEvent: {}
+[6.316354] (-) TimerEvent: {}
+[6.417019] (-) TimerEvent: {}
+[6.517416] (-) TimerEvent: {}
+[6.617827] (-) TimerEvent: {}
+[6.718261] (-) TimerEvent: {}
+[6.801121] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono \n'}
+[6.818522] (-) TimerEvent: {}
+[6.919137] (-) TimerEvent: {}
+[6.950323] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options \n'}
+[7.019299] (-) TimerEvent: {}
+[7.119872] (-) TimerEvent: {}
+[7.220479] (-) TimerEvent: {}
+[7.221876] (ur7e_motion) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread \n'}
+[7.320612] (-) TimerEvent: {}
+[7.420966] (-) TimerEvent: {}
+[7.521548] (-) TimerEvent: {}
+[7.603337] (ur7e_motion) StdoutLine: {'line': b'-- Configuring done (7.5s)\n'}
+[7.621616] (-) TimerEvent: {}
+[7.721976] (-) TimerEvent: {}
+[7.757393] (ur7e_motion) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[7.776087] (ur7e_motion) StdoutLine: {'line': b'-- Build files have been written to: /home/liar/UR7e/ros2_ws/build/ur7e_motion\n'}
+[7.821582] (ur7e_motion) CommandEnded: {'returncode': 0}
+[7.822098] (-) TimerEvent: {}
+[7.823845] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'build'}
+[7.823905] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/liar/UR7e/ros2_ws/build/ur7e_motion', '--', '-j16', '-l16'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.135.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3070', 'SYSTEMD_EXEC_PID': '3702', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '5473', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install:/home/liar/PiPER_X/piper_pick_handover_ws/install:/home/liar/PiPER_X/agx_arm_ws/install:/home/liar/PiPER_X/piper_hand_follow_ws/install:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:19985', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/home/liar/miniconda3/condabin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/liar:@/tmp/.ICE-unix/3650,unix/liar:/tmp/.ICE-unix/3650', 'INVOCATION_ID': 'f82fbff99a8f4cc08992ac9f76c57287', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/8052c3c7400c3aa48eca677e10f55a9b/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3600f32fab.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '1011f6c0894c01eee686bfd2600bec1a', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/piper_pick_handover_ws/build/piper_pick_handover:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover/lib/python3.12/site-packages:/home/liar/PiPER_X/piper_hand_follow_ws/build/piper_hand_follow:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow/lib/python3.12/site-packages:/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib/python3.12/site-packages:/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[7.922402] (-) TimerEvent: {}
+[7.944482] (ur7e_motion) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/target_motion_node.dir/src/target_motion_node.cpp.o\x1b[0m\n'}
+[7.946001] (ur7e_motion) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/gripper_io_node.dir/src/gripper_io_node.cpp.o\x1b[0m\n'}
+[7.947876] (ur7e_motion) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pick_task_node.dir/src/pick_task_node.cpp.o\x1b[0m\n'}
+[8.022507] (-) TimerEvent: {}
+[8.123037] (-) TimerEvent: {}
+[8.223592] (-) TimerEvent: {}
+[8.323944] (-) TimerEvent: {}
+[8.424272] (-) TimerEvent: {}
+[8.524578] (-) TimerEvent: {}
+[8.624929] (-) TimerEvent: {}
+[8.725223] (-) TimerEvent: {}
+[8.825520] (-) TimerEvent: {}
+[8.925972] (-) TimerEvent: {}
+[9.026426] (-) TimerEvent: {}
+[9.126820] (-) TimerEvent: {}
+[9.227088] (-) TimerEvent: {}
+[9.327340] (-) TimerEvent: {}
+[9.427609] (-) TimerEvent: {}
+[9.527944] (-) TimerEvent: {}
+[9.628435] (-) TimerEvent: {}
+[9.728832] (-) TimerEvent: {}
+[9.829214] (-) TimerEvent: {}
+[9.929530] (-) TimerEvent: {}
+[10.029803] (-) TimerEvent: {}
+[10.130083] (-) TimerEvent: {}
+[10.230338] (-) TimerEvent: {}
+[10.330697] (-) TimerEvent: {}
+[10.431306] (-) TimerEvent: {}
+[10.531561] (-) TimerEvent: {}
+[10.631837] (-) TimerEvent: {}
+[10.732118] (-) TimerEvent: {}
+[10.832374] (-) TimerEvent: {}
+[10.932717] (-) TimerEvent: {}
+[11.033024] (-) TimerEvent: {}
+[11.133603] (-) TimerEvent: {}
+[11.234302] (-) TimerEvent: {}
+[11.334629] (-) TimerEvent: {}
+[11.434923] (-) TimerEvent: {}
+[11.535266] (-) TimerEvent: {}
+[11.635532] (-) TimerEvent: {}
+[11.735791] (-) TimerEvent: {}
+[11.836146] (-) TimerEvent: {}
+[11.936644] (-) TimerEvent: {}
+[12.036961] (-) TimerEvent: {}
+[12.137240] (-) TimerEvent: {}
+[12.237555] (-) TimerEvent: {}
+[12.337921] (-) TimerEvent: {}
+[12.438260] (-) TimerEvent: {}
+[12.538661] (-) TimerEvent: {}
+[12.639399] (-) TimerEvent: {}
+[12.739838] (-) TimerEvent: {}
+[12.840214] (-) TimerEvent: {}
+[12.940643] (-) TimerEvent: {}
+[13.040928] (-) TimerEvent: {}
+[13.141202] (-) TimerEvent: {}
+[13.241506] (-) TimerEvent: {}
+[13.341767] (-) TimerEvent: {}
+[13.442236] (-) TimerEvent: {}
+[13.542769] (-) TimerEvent: {}
+[13.643013] (-) TimerEvent: {}
+[13.743350] (-) TimerEvent: {}
+[13.843609] (-) TimerEvent: {}
+[13.943900] (-) TimerEvent: {}
+[14.044233] (-) TimerEvent: {}
+[14.144816] (-) TimerEvent: {}
+[14.245195] (-) TimerEvent: {}
+[14.345473] (-) TimerEvent: {}
+[14.445804] (-) TimerEvent: {}
+[14.546102] (-) TimerEvent: {}
+[14.646401] (-) TimerEvent: {}
+[14.746824] (-) TimerEvent: {}
+[14.847219] (-) TimerEvent: {}
+[14.947672] (-) TimerEvent: {}
+[15.048401] (-) TimerEvent: {}
+[15.148745] (-) TimerEvent: {}
+[15.249006] (-) TimerEvent: {}
+[15.349314] (-) TimerEvent: {}
+[15.449746] (-) TimerEvent: {}
+[15.550320] (-) TimerEvent: {}
+[15.650689] (-) TimerEvent: {}
+[15.750948] (-) TimerEvent: {}
+[15.851213] (-) TimerEvent: {}
+[15.951457] (-) TimerEvent: {}
+[16.051703] (-) TimerEvent: {}
+[16.151966] (-) TimerEvent: {}
+[16.252291] (-) TimerEvent: {}
+[16.352787] (-) TimerEvent: {}
+[16.453066] (-) TimerEvent: {}
+[16.553346] (-) TimerEvent: {}
+[16.653594] (-) TimerEvent: {}
+[16.753847] (-) TimerEvent: {}
+[16.854108] (-) TimerEvent: {}
+[16.954369] (-) TimerEvent: {}
+[17.055085] (-) TimerEvent: {}
+[17.155649] (-) TimerEvent: {}
+[17.255900] (-) TimerEvent: {}
+[17.356160] (-) TimerEvent: {}
+[17.456382] (-) TimerEvent: {}
+[17.556704] (-) TimerEvent: {}
+[17.656945] (-) TimerEvent: {}
+[17.757197] (-) TimerEvent: {}
+[17.857437] (-) TimerEvent: {}
+[17.957730] (-) TimerEvent: {}
+[18.057993] (-) TimerEvent: {}
+[18.158237] (-) TimerEvent: {}
+[18.258525] (-) TimerEvent: {}
+[18.358910] (-) TimerEvent: {}
+[18.459206] (-) TimerEvent: {}
+[18.559577] (-) TimerEvent: {}
+[18.659850] (-) TimerEvent: {}
+[18.760107] (-) TimerEvent: {}
+[18.860392] (-) TimerEvent: {}
+[18.960697] (-) TimerEvent: {}
+[19.060944] (-) TimerEvent: {}
+[19.161195] (-) TimerEvent: {}
+[19.261488] (-) TimerEvent: {}
+[19.361773] (-) TimerEvent: {}
+[19.462009] (-) TimerEvent: {}
+[19.562276] (-) TimerEvent: {}
+[19.662568] (-) TimerEvent: {}
+[19.762897] (-) TimerEvent: {}
+[19.863199] (-) TimerEvent: {}
+[19.963518] (-) TimerEvent: {}
+[20.064010] (-) TimerEvent: {}
+[20.164250] (-) TimerEvent: {}
+[20.264531] (-) TimerEvent: {}
+[20.364786] (-) TimerEvent: {}
+[20.465009] (-) TimerEvent: {}
+[20.565246] (-) TimerEvent: {}
+[20.665514] (-) TimerEvent: {}
+[20.765806] (-) TimerEvent: {}
+[20.866054] (-) TimerEvent: {}
+[20.966317] (-) TimerEvent: {}
+[21.066568] (-) TimerEvent: {}
+[21.166818] (-) TimerEvent: {}
+[21.267129] (-) TimerEvent: {}
+[21.367374] (-) TimerEvent: {}
+[21.467687] (-) TimerEvent: {}
+[21.568248] (-) TimerEvent: {}
+[21.668569] (-) TimerEvent: {}
+[21.768841] (-) TimerEvent: {}
+[21.869205] (-) TimerEvent: {}
+[21.918914] (ur7e_motion) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable gripper_io_node\x1b[0m\n'}
+[21.969310] (-) TimerEvent: {}
+[22.069555] (-) TimerEvent: {}
+[22.169792] (-) TimerEvent: {}
+[22.270115] (-) TimerEvent: {}
+[22.370561] (-) TimerEvent: {}
+[22.470863] (-) TimerEvent: {}
+[22.571151] (-) TimerEvent: {}
+[22.671409] (-) TimerEvent: {}
+[22.771691] (-) TimerEvent: {}
+[22.871946] (-) TimerEvent: {}
+[22.972337] (-) TimerEvent: {}
+[23.072866] (-) TimerEvent: {}
+[23.173161] (-) TimerEvent: {}
+[23.273526] (-) TimerEvent: {}
+[23.357947] (ur7e_motion) StdoutLine: {'line': b'[ 66%] Built target gripper_io_node\n'}
+[23.373614] (-) TimerEvent: {}
+[23.473944] (-) TimerEvent: {}
+[23.574187] (-) TimerEvent: {}
+[23.674476] (-) TimerEvent: {}
+[23.775212] (-) TimerEvent: {}
+[23.875441] (-) TimerEvent: {}
+[23.975711] (-) TimerEvent: {}
+[24.075968] (-) TimerEvent: {}
+[24.176223] (-) TimerEvent: {}
+[24.276529] (-) TimerEvent: {}
+[24.376786] (-) TimerEvent: {}
+[24.477103] (-) TimerEvent: {}
+[24.577341] (-) TimerEvent: {}
+[24.677591] (-) TimerEvent: {}
+[24.777909] (-) TimerEvent: {}
+[24.878173] (-) TimerEvent: {}
+[24.978540] (-) TimerEvent: {}
+[25.078780] (-) TimerEvent: {}
+[25.179100] (-) TimerEvent: {}
+[25.279533] (-) TimerEvent: {}
+[25.379809] (-) TimerEvent: {}
+[25.480248] (-) TimerEvent: {}
+[25.580971] (-) TimerEvent: {}
+[25.681202] (-) TimerEvent: {}
+[25.781518] (-) TimerEvent: {}
+[25.881947] (-) TimerEvent: {}
+[25.982527] (-) TimerEvent: {}
+[26.083300] (-) TimerEvent: {}
+[26.184045] (-) TimerEvent: {}
+[26.284687] (-) TimerEvent: {}
+[26.384986] (-) TimerEvent: {}
+[26.485243] (-) TimerEvent: {}
+[26.585566] (-) TimerEvent: {}
+[26.686005] (-) TimerEvent: {}
+[26.786242] (-) TimerEvent: {}
+[26.886577] (-) TimerEvent: {}
+[26.986836] (-) TimerEvent: {}
+[27.087088] (-) TimerEvent: {}
+[27.187368] (-) TimerEvent: {}
+[27.287623] (-) TimerEvent: {}
+[27.349313] (ur7e_motion) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable pick_task_node\x1b[0m\n'}
+[27.387789] (-) TimerEvent: {}
+[27.488216] (-) TimerEvent: {}
+[27.588532] (-) TimerEvent: {}
+[27.688909] (-) TimerEvent: {}
+[27.789195] (-) TimerEvent: {}
+[27.889464] (-) TimerEvent: {}
+[27.981691] (ur7e_motion) StdoutLine: {'line': b'[ 83%] Built target pick_task_node\n'}
+[27.989539] (-) TimerEvent: {}
+[28.089764] (-) TimerEvent: {}
+[28.190156] (-) TimerEvent: {}
+[28.290467] (-) TimerEvent: {}
+[28.390878] (-) TimerEvent: {}
+[28.491169] (-) TimerEvent: {}
+[28.591434] (-) TimerEvent: {}
+[28.688706] (ur7e_motion) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable target_motion_node\x1b[0m\n'}
+[28.691506] (-) TimerEvent: {}
+[28.791734] (-) TimerEvent: {}
+[28.892095] (-) TimerEvent: {}
+[28.992763] (-) TimerEvent: {}
+[29.093142] (-) TimerEvent: {}
+[29.193450] (-) TimerEvent: {}
+[29.293701] (-) TimerEvent: {}
+[29.393957] (-) TimerEvent: {}
+[29.494207] (-) TimerEvent: {}
+[29.594597] (-) TimerEvent: {}
+[29.695074] (-) TimerEvent: {}
+[29.795334] (-) TimerEvent: {}
+[29.895580] (-) TimerEvent: {}
+[29.995826] (-) TimerEvent: {}
+[30.096139] (-) TimerEvent: {}
+[30.196455] (-) TimerEvent: {}
+[30.297051] (-) TimerEvent: {}
+[30.397497] (-) TimerEvent: {}
+[30.497980] (-) TimerEvent: {}
+[30.598306] (-) TimerEvent: {}
+[30.698706] (-) TimerEvent: {}
+[30.798977] (-) TimerEvent: {}
+[30.899345] (-) TimerEvent: {}
+[30.999657] (-) TimerEvent: {}
+[31.028859] (ur7e_motion) StdoutLine: {'line': b'[100%] Built target target_motion_node\n'}
+[31.045988] (ur7e_motion) CommandEnded: {'returncode': 0}
+[31.047569] (ur7e_motion) JobProgress: {'identifier': 'ur7e_motion', 'progress': 'install'}
+[31.061609] (ur7e_motion) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/liar/UR7e/ros2_ws/build/ur7e_motion'], 'cwd': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'liar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:', 'HOME': '/home/liar', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/liar/UR7e', 'TERM_PROGRAM_VERSION': '1.135.0', 'DESKTOP_SESSION': 'ubuntu-xorg', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '3070', 'SYSTEMD_EXEC_PID': '3702', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/liar/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '5473', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/liar/UR7e/ros2_ws/install:/home/liar/PiPER_X/piper_pick_handover_ws/install:/home/liar/PiPER_X/agx_arm_ws/install:/home/liar/PiPER_X/piper_hand_follow_ws/install:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'liar', 'JOURNAL_STREAM': '10:19985', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'liar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/home/liar/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/liar/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/liar/.local/bin:/home/liar/miniconda3/condabin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/liar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/liar:@/tmp/.ICE-unix/3650,unix/liar:/tmp/.ICE-unix/3650', 'INVOCATION_ID': 'f82fbff99a8f4cc08992ac9f76c57287', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/liar/.config/Code/User/workspaceStorage/8052c3c7400c3aa48eca677e10f55a9b/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3600f32fab.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/liar/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/liar/UR7e/ros2_ws/build/ur7e_motion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'COPILOT_DEBUG_NONCE': '1011f6c0894c01eee686bfd2600bec1a', 'CONDA_EXE': '/home/liar/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/piper_pick_handover_ws/build/piper_pick_handover:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover/lib/python3.12/site-packages:/home/liar/PiPER_X/piper_hand_follow_ws/build/piper_hand_follow:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow/lib/python3.12/site-packages:/home/liar/PiPER_X/orbbec/pyorbbecsdk/install/lib:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl/lib/python3.12/site-packages:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs/lib/python3.12/site-packages:/home/liar/UR7e/ros2_ws/build/ur7e_vision:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'MVCAM_SDK_VERSION': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_description:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera:/home/liar/PiPER_X/orbbec/orbbec_dc1_ws/install/orbbec_camera_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_moveit:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_msgs:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_description:/home/liar/UR7e/ros2_ws/install/ur7e_motion:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/liar/PiPER_X/piper_pick_handover_ws/install/piper_pick_handover:/home/liar/PiPER_X/piper_hand_follow_ws/install/piper_hand_follow:/home/liar/PiPER_X/agx_arm_ws/install/agx_arm_ctrl:/home/liar/UR7e/ros2_ws/install/ur7e_vision:/opt/ros/jazzy', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}), 'shell': False}
+[31.076699] (ur7e_motion) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[31.077515] (ur7e_motion) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[31.078185] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/target_motion_node\n'}
+[31.091195] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/gripper_io_node\n'}
+[31.100035] (-) TimerEvent: {}
+[31.105349] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/lib/ur7e_motion/pick_task_node\n'}
+[31.124890] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/config/motion.yaml\n'}
+[31.139699] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/launch/motion.launch.py\n'}
+[31.152425] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/package_run_dependencies/ur7e_motion\n'}
+[31.169032] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/parent_prefix_path/ur7e_motion\n'}
+[31.181790] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.sh\n'}
+[31.195115] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/ament_prefix_path.dsv\n'}
+[31.200053] (-) TimerEvent: {}
+[31.209813] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.sh\n'}
+[31.227849] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/environment/path.dsv\n'}
+[31.243227] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.bash\n'}
+[31.256355] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.sh\n'}
+[31.272253] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.zsh\n'}
+[31.286526] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/local_setup.dsv\n'}
+[31.299604] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.dsv\n'}
+[31.300130] (-) TimerEvent: {}
+[31.316789] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ament_index/resource_index/packages/ur7e_motion\n'}
+[31.334691] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig.cmake\n'}
+[31.347257] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/cmake/ur7e_motionConfig-version.cmake\n'}
+[31.362131] (ur7e_motion) StdoutLine: {'line': b'-- Symlinking: /home/liar/UR7e/ros2_ws/install/ur7e_motion/share/ur7e_motion/package.xml\n'}
+[31.377372] (ur7e_motion) CommandEnded: {'returncode': 0}
+[31.400294] (-) TimerEvent: {}
+[31.431444] (ur7e_motion) JobEnded: {'identifier': 'ur7e_motion', 'rc': 0}
+[31.434990] (-) EventReactorShutdown: {}

@@ -1,0 +1,38 @@
+[2.548s] Invoking command in '/home/liar/UR7e/ros2_ws/build/ur7e_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/ros2_ws/build/ur7e_vision/build --no-deps symlink_data
+[3.183s] running develop
+[3.610s] running egg_info
+[3.654s] creating ur7e_vision.egg-info
+[3.654s] writing ur7e_vision.egg-info/PKG-INFO
+[3.654s] writing dependency_links to ur7e_vision.egg-info/dependency_links.txt
+[3.654s] writing entry points to ur7e_vision.egg-info/entry_points.txt
+[3.655s] writing requirements to ur7e_vision.egg-info/requires.txt
+[3.655s] writing top-level names to ur7e_vision.egg-info/top_level.txt
+[3.655s] writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[3.746s] reading manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[3.748s] writing manifest file 'ur7e_vision.egg-info/SOURCES.txt'
+[3.807s] running build_ext
+[3.807s] Creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages/ur7e-vision.egg-link (link to .)
+[3.808s] Installing hik_camera_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+[3.809s] Installing svm_detector_node script to /home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/ur7e_vision
+[3.809s] 
+[3.809s] Installed /home/liar/UR7e/ros2_ws/build/ur7e_vision
+[3.809s] running symlink_data
+[3.809s] creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages
+[3.810s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/resource/ur7e_vision -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ament_index/resource_index/packages
+[3.810s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/package.xml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision
+[3.810s] creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch
+[3.810s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/launch/vision.launch.py -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/launch
+[3.811s] creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+[3.811s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/labels.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+[3.811s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/config/vision.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/config
+[3.811s] creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.811s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/svm_scaler.npz -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.812s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/svm_model.xml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.812s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/class_reference.npz -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.812s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/labels.json -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.812s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/models/model_meta.json -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/models
+[3.812s] creating /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+[3.813s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/pixel_base_points.csv -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+[3.813s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/homography_old.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+[3.813s] symbolically linking /home/liar/UR7e/ros2_ws/build/ur7e_vision/calibration/homography.yaml -> /home/liar/UR7e/ros2_ws/install/ur7e_vision/share/ur7e_vision/calibration
+[3.902s] Invoked command in '/home/liar/UR7e/ros2_ws/build/ur7e_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/liar/UR7e/ros2_ws/build/ur7e_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liar/UR7e/ros2_ws/install/ur7e_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liar/UR7e/ros2_ws/build/ur7e_vision/build --no-deps symlink_data

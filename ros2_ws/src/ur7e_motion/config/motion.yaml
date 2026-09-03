@@ -1,7 +1,7 @@
 target_motion_node:
   ros__parameters:
     planning_group: ur_manipulator
-    velocity_scale: 0.35
+    velocity_scale: 0.50
     acceleration_scale: 0.05250499
     planning_time: 3.0
     manual_plan_execute_enabled: true

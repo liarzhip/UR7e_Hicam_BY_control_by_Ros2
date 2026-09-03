@@ -134,8 +134,8 @@ class SvmDetectorNode(Node):
 
         # Homography -> Base XY 后的固定系统补偿，单位：m
         # 当前机械臂需要沿 Base -X、-Y 各补偿 10 mm。
-        self.declare_parameter("target_offset_x", -0.005)
-        self.declare_parameter("target_offset_y", -0.007)
+        self.declare_parameter("target_offset_x", 0.005)
+        self.declare_parameter("target_offset_y", -0.004)
 
         # Zero-angle grasp reference: the user's taught HOME pose with
         # the gripper level / vertical-down.
